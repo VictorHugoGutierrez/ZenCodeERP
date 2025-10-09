@@ -16,7 +16,6 @@ namespace ZenCodeERP.Forms
 {
     public partial class FormCadastroUsuarios : Form
     {
-        private DataBaseConnection connection = new DataBaseConnection();
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
         public string codUsuario;
         public bool edita = false;
@@ -29,10 +28,10 @@ namespace ZenCodeERP.Forms
         private void FormCadastroUsuarios_Load(object sender, EventArgs e)
         {
             if (edita)
-                carragaCampos();
+                CarregaCampos();
         }
 
-        private void carragaCampos()
+        private void CarregaCampos()
         {
             Usuario usuario = usuarioRepository.GetByCodUsuario(codUsuario);
 
@@ -43,22 +42,29 @@ namespace ZenCodeERP.Forms
         {
             try
             {
-                string name = tbNome.Text;
-                string codUsuario = tbCodUsuario.Text;
-
-                if(string.IsNullOrWhiteSpace(name) || string.IsNullOrWhiteSpace(codUsuario))
+                if(!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM USUARIO WHERE ID = {codUsuario}"))
                 {
-                    MessageBox.Show("Nome e Email são obrigatórios.", "Atenção", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                    return false;
-                }
-
-                if(!connection.ExecuteHasRows($"SELECT * FROM USUARIO WHERE ID = {codUsuario}"))
-                {
-                    connection.ExecuteTransaction($"INSERT INTO USUARIO (NOME, EMAIL) VALUES (?, ?)", new object[] {name, codUsuario });
+                    usuarioRepository.Add(new Usuario
+                    {
+                        CODEMPRESA = 1,
+                        CODUSUARIO = tbCodUsuario.Text,
+                        NOME = tbNome.Text,
+                        SENHA = tbSenha.Text,
+                        ATIVO = chkAtivo.Checked ? 1 : 0,
+                        ULTIMOLOGIN = DateTime.Now
+                    });
                 }
                 else
                 {
-                    connection.ExecuteTransaction($"UPDATE USUARIO SET NOME = '{name}', EMAIL = '{codUsuario}' WHERE ID = {codUsuario}");
+                    usuarioRepository.Update(new Usuario
+                    {
+                        CODEMPRESA = 1,
+                        CODUSUARIO = tbCodUsuario.Text,
+                        NOME = tbNome.Text,
+                        SENHA = tbSenha.Text,
+                        ATIVO = chkAtivo.Checked ? 1 : 0,
+                        ULTIMOLOGIN = DateTime.Now
+                    });
                 }
 
                 return true;

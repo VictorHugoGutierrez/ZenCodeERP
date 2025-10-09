@@ -1,5 +1,6 @@
 ﻿using System.Data;
 using ZenCodeERP.Data.Repositories;
+using ZenCodeERP.Forms.Cadastro;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
@@ -39,22 +40,22 @@ namespace ZenCodeERP.Forms.Visao
 
         private void btnNovo_Click(object sender, EventArgs e)
         {
-            //FormCadastroUsuarios frm = new FormCadastroUsuarios();
-            //frm.ShowDialog();
-            //CarregaGrid();
+            FormCadastroEmpresa frm = new FormCadastroEmpresa();
+            frm.ShowDialog();
+            CarregaGrid();
         }
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
             if(gvEmpresa.SelectedRows.Count > 0)
             {
-                //int index = gvEmpresa.SelectedRows[0].Index;
-                //DataRow row1 = ((DataRowView)gvEmpresa.Rows[index].DataBoundItem).Row;
-                //FormCadastroUsuarios frm = new FormCadastroUsuarios();
-                //frm.edita = true;
-                //frm.codUsuario = Convert.ToInt32(row1["CODUSUARIO"]);
-                //frm.ShowDialog();
-                //CarregaGrid();
+                int index = gvEmpresa.SelectedRows[0].Index;
+                DataRow row1 = ((DataRowView)gvEmpresa.Rows[index].DataBoundItem).Row;
+                FormCadastroEmpresa frm = new FormCadastroEmpresa();
+                frm.edita = true;
+                frm.codEmpresa = Convert.ToInt32(row1["CODEMPRESA"]);
+                frm.ShowDialog();
+                CarregaGrid();
             }
         }
 

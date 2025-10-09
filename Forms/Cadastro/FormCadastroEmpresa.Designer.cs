@@ -30,6 +30,18 @@
         {
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            lbNomeFantasia = new Label();
+            tbNomeFantasia = new TextBox();
+            gpContato = new GroupBox();
+            lbEmail = new Label();
+            tbEmail = new TextBox();
+            lbTelefone = new Label();
+            tbTelefone = new TextBox();
+            lbCNPJ = new Label();
+            tbCNPJ = new TextBox();
+            lbNome = new Label();
+            tbNome = new TextBox();
+            pictureBox1 = new PictureBox();
             lbCodEmpresa = new Label();
             tbCodEmpresa = new TextBox();
             panelBottom = new Panel();
@@ -37,30 +49,16 @@
             btnCancelar = new Button();
             btnSalvar = new Button();
             flowButtons = new FlowLayoutPanel();
-            tabEndereço = new TabPage();
-            pictureBox1 = new PictureBox();
-            lbNome = new Label();
-            tbNome = new TextBox();
-            lbCNPJ = new Label();
-            tbCNPJ = new TextBox();
-            gpContato = new GroupBox();
-            lbNomeFantasia = new Label();
-            tbNomeFantasia = new TextBox();
-            lbTelefone = new Label();
-            textBox1 = new TextBox();
-            lbEmail = new Label();
-            tbEmail = new TextBox();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            panelBottom.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             gpContato.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            panelBottom.SuspendLayout();
             SuspendLayout();
             // 
             // tabControl1
             // 
             tabControl1.Controls.Add(tabPage1);
-            tabControl1.Controls.Add(tabEndereço);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
             tabControl1.Margin = new Padding(4, 3, 4, 3);
@@ -90,6 +88,117 @@
             tabPage1.Text = "Identificação";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lbNomeFantasia
+            // 
+            lbNomeFantasia.AutoSize = true;
+            lbNomeFantasia.Location = new Point(9, 85);
+            lbNomeFantasia.Margin = new Padding(4, 0, 4, 0);
+            lbNomeFantasia.Name = "lbNomeFantasia";
+            lbNomeFantasia.Size = new Size(86, 15);
+            lbNomeFantasia.TabIndex = 11;
+            lbNomeFantasia.Text = "Nome Fantasia";
+            // 
+            // tbNomeFantasia
+            // 
+            tbNomeFantasia.Location = new Point(9, 100);
+            tbNomeFantasia.Margin = new Padding(4, 3, 4, 3);
+            tbNomeFantasia.Name = "tbNomeFantasia";
+            tbNomeFantasia.Size = new Size(457, 23);
+            tbNomeFantasia.TabIndex = 12;
+            // 
+            // gpContato
+            // 
+            gpContato.Controls.Add(lbEmail);
+            gpContato.Controls.Add(tbEmail);
+            gpContato.Controls.Add(lbTelefone);
+            gpContato.Controls.Add(tbTelefone);
+            gpContato.Location = new Point(9, 131);
+            gpContato.Name = "gpContato";
+            gpContato.Size = new Size(457, 122);
+            gpContato.TabIndex = 10;
+            gpContato.TabStop = false;
+            gpContato.Text = "Contato";
+            // 
+            // lbEmail
+            // 
+            lbEmail.AutoSize = true;
+            lbEmail.Location = new Point(7, 60);
+            lbEmail.Margin = new Padding(4, 0, 4, 0);
+            lbEmail.Name = "lbEmail";
+            lbEmail.Size = new Size(36, 15);
+            lbEmail.TabIndex = 13;
+            lbEmail.Text = "Email";
+            // 
+            // tbEmail
+            // 
+            tbEmail.Location = new Point(7, 75);
+            tbEmail.Margin = new Padding(4, 3, 4, 3);
+            tbEmail.Name = "tbEmail";
+            tbEmail.Size = new Size(443, 23);
+            tbEmail.TabIndex = 14;
+            // 
+            // lbTelefone
+            // 
+            lbTelefone.AutoSize = true;
+            lbTelefone.Location = new Point(7, 19);
+            lbTelefone.Margin = new Padding(4, 0, 4, 0);
+            lbTelefone.Name = "lbTelefone";
+            lbTelefone.Size = new Size(52, 15);
+            lbTelefone.TabIndex = 13;
+            lbTelefone.Text = "Telefone";
+            // 
+            // tbTelefone
+            // 
+            tbTelefone.Location = new Point(7, 34);
+            tbTelefone.Margin = new Padding(4, 3, 4, 3);
+            tbTelefone.Name = "tbTelefone";
+            tbTelefone.Size = new Size(202, 23);
+            tbTelefone.TabIndex = 14;
+            // 
+            // lbCNPJ
+            // 
+            lbCNPJ.AutoSize = true;
+            lbCNPJ.Location = new Point(159, 3);
+            lbCNPJ.Margin = new Padding(4, 0, 4, 0);
+            lbCNPJ.Name = "lbCNPJ";
+            lbCNPJ.Size = new Size(34, 15);
+            lbCNPJ.TabIndex = 8;
+            lbCNPJ.Text = "CNPJ";
+            // 
+            // tbCNPJ
+            // 
+            tbCNPJ.Location = new Point(159, 18);
+            tbCNPJ.Margin = new Padding(4, 3, 4, 3);
+            tbCNPJ.Name = "tbCNPJ";
+            tbCNPJ.Size = new Size(202, 23);
+            tbCNPJ.TabIndex = 9;
+            // 
+            // lbNome
+            // 
+            lbNome.AutoSize = true;
+            lbNome.Location = new Point(9, 44);
+            lbNome.Margin = new Padding(4, 0, 4, 0);
+            lbNome.Name = "lbNome";
+            lbNome.Size = new Size(40, 15);
+            lbNome.TabIndex = 6;
+            lbNome.Text = "Nome";
+            // 
+            // tbNome
+            // 
+            tbNome.Location = new Point(9, 59);
+            tbNome.Margin = new Padding(4, 3, 4, 3);
+            tbNome.Name = "tbNome";
+            tbNome.Size = new Size(457, 23);
+            tbNome.TabIndex = 7;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Location = new Point(483, 18);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(235, 235);
+            pictureBox1.TabIndex = 5;
+            pictureBox1.TabStop = false;
+            // 
             // lbCodEmpresa
             // 
             lbCodEmpresa.AutoSize = true;
@@ -102,6 +211,7 @@
             // 
             // tbCodEmpresa
             // 
+            tbCodEmpresa.ReadOnly = true;
             tbCodEmpresa.Location = new Point(9, 18);
             tbCodEmpresa.Margin = new Padding(4, 3, 4, 3);
             tbCodEmpresa.Name = "tbCodEmpresa";
@@ -130,6 +240,7 @@
             btnOk.Size = new Size(88, 29);
             btnOk.TabIndex = 2;
             btnOk.Text = "OK";
+            btnOk.Click += new System.EventHandler(this.btnOk_Click);
             // 
             // btnCancelar
             // 
@@ -140,6 +251,7 @@
             btnCancelar.Size = new Size(88, 29);
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
+            btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnSalvar
             // 
@@ -150,6 +262,7 @@
             btnSalvar.Size = new Size(88, 29);
             btnSalvar.TabIndex = 0;
             btnSalvar.Text = "Salvar";
+            btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
             // flowButtons
             // 
@@ -163,130 +276,9 @@
             flowButtons.Size = new Size(12, 46);
             flowButtons.TabIndex = 0;
             // 
-            // tabEndereço
-            // 
-            tabEndereço.Location = new Point(4, 24);
-            tabEndereço.Margin = new Padding(4, 3, 4, 3);
-            tabEndereço.Name = "tabEndereço";
-            tabEndereço.Padding = new Padding(4, 3, 4, 3);
-            tabEndereço.Size = new Size(726, 297);
-            tabEndereço.TabIndex = 0;
-            tabEndereço.Text = "Endereço";
-            tabEndereço.UseVisualStyleBackColor = true;
-            // 
-            // pictureBox1
-            // 
-            pictureBox1.Location = new Point(483, 18);
-            pictureBox1.Name = "pictureBox1";
-            pictureBox1.Size = new Size(235, 235);
-            pictureBox1.TabIndex = 5;
-            pictureBox1.TabStop = false;
-            // 
-            // lbNome
-            // 
-            lbNome.AutoSize = true;
-            lbNome.Location = new Point(9, 44);
-            lbNome.Margin = new Padding(4, 0, 4, 0);
-            lbNome.Name = "lbNome";
-            lbNome.Size = new Size(40, 15);
-            lbNome.TabIndex = 6;
-            lbNome.Text = "Nome";
-            // 
-            // tbNome
-            // 
-            tbNome.Location = new Point(9, 59);
-            tbNome.Margin = new Padding(4, 3, 4, 3);
-            tbNome.Name = "tbNome";
-            tbNome.Size = new Size(457, 23);
-            tbNome.TabIndex = 7;
-            // 
-            // lbCNPJ
-            // 
-            lbCNPJ.AutoSize = true;
-            lbCNPJ.Location = new Point(159, 3);
-            lbCNPJ.Margin = new Padding(4, 0, 4, 0);
-            lbCNPJ.Name = "lbCNPJ";
-            lbCNPJ.Size = new Size(34, 15);
-            lbCNPJ.TabIndex = 8;
-            lbCNPJ.Text = "CNPJ";
-            // 
-            // tbCNPJ
-            // 
-            tbCNPJ.Location = new Point(159, 18);
-            tbCNPJ.Margin = new Padding(4, 3, 4, 3);
-            tbCNPJ.Name = "tbCNPJ";
-            tbCNPJ.Size = new Size(202, 23);
-            tbCNPJ.TabIndex = 9;
-            // 
-            // gpContato
-            // 
-            gpContato.Controls.Add(lbEmail);
-            gpContato.Controls.Add(tbEmail);
-            gpContato.Controls.Add(lbTelefone);
-            gpContato.Controls.Add(textBox1);
-            gpContato.Location = new Point(9, 131);
-            gpContato.Name = "gpContato";
-            gpContato.Size = new Size(457, 122);
-            gpContato.TabIndex = 10;
-            gpContato.TabStop = false;
-            gpContato.Text = "Contato";
-            // 
-            // lbNomeFantasia
-            // 
-            lbNomeFantasia.AutoSize = true;
-            lbNomeFantasia.Location = new Point(9, 85);
-            lbNomeFantasia.Margin = new Padding(4, 0, 4, 0);
-            lbNomeFantasia.Name = "lbNomeFantasia";
-            lbNomeFantasia.Size = new Size(86, 15);
-            lbNomeFantasia.TabIndex = 11;
-            lbNomeFantasia.Text = "Nome Fantasia";
-            // 
-            // tbNomeFantasia
-            // 
-            tbNomeFantasia.Location = new Point(9, 100);
-            tbNomeFantasia.Margin = new Padding(4, 3, 4, 3);
-            tbNomeFantasia.Name = "tbNomeFantasia";
-            tbNomeFantasia.Size = new Size(457, 23);
-            tbNomeFantasia.TabIndex = 12;
-            // 
-            // lbTelefone
-            // 
-            lbTelefone.AutoSize = true;
-            lbTelefone.Location = new Point(7, 19);
-            lbTelefone.Margin = new Padding(4, 0, 4, 0);
-            lbTelefone.Name = "lbTelefone";
-            lbTelefone.Size = new Size(52, 15);
-            lbTelefone.TabIndex = 13;
-            lbTelefone.Text = "Telefone";
-            // 
-            // textBox1
-            // 
-            textBox1.Location = new Point(7, 34);
-            textBox1.Margin = new Padding(4, 3, 4, 3);
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(202, 23);
-            textBox1.TabIndex = 14;
-            // 
-            // lbEmail
-            // 
-            lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(7, 60);
-            lbEmail.Margin = new Padding(4, 0, 4, 0);
-            lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(36, 15);
-            lbEmail.TabIndex = 13;
-            lbEmail.Text = "Email";
-            // 
-            // tbEmail
-            // 
-            tbEmail.Location = new Point(7, 75);
-            tbEmail.Margin = new Padding(4, 3, 4, 3);
-            tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(443, 23);
-            tbEmail.TabIndex = 14;
-            // 
             // FormCadastroEmpresa
             // 
+            Load += new System.EventHandler(this.FormCadastroEmpresa_Load);
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 371);
@@ -297,11 +289,11 @@
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            panelBottom.ResumeLayout(false);
-            panelBottom.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             gpContato.ResumeLayout(false);
             gpContato.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            panelBottom.ResumeLayout(false);
+            panelBottom.PerformLayout();
             ResumeLayout(false);
         }
 
@@ -309,7 +301,6 @@
 
         private TabControl tabControl1;
         private TabPage tabPage1;
-        private TabPage tabEndereço;
         private Panel panelBottom;
         private Button btnOk;
         private Button btnCancelar;
@@ -328,6 +319,6 @@
         private Label lbEmail;
         private TextBox tbEmail;
         private Label lbTelefone;
-        private TextBox textBox1;
+        private TextBox tbTelefone;
     }
 }

@@ -41,13 +41,6 @@ namespace ZenCodeERP.Data
                     object value = values[i] ?? DBNull.Value;
 
                     command.Parameters.AddWithValue(paramName, value);
-
-                    int index = query.IndexOf('?');
-
-                    if (index == -1)
-                        break;
-
-                    query = query.Remove(index, 1).Insert(index, paramName);
                 }
 
                 command.ExecuteNonQuery();

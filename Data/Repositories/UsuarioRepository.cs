@@ -11,11 +11,9 @@ namespace ZenCodeERP.Data.Repositories
 {
     public class UsuarioRepository : IUsuarioRepository
     {
-        private DataBaseConnection connection = new DataBaseConnection();
-
         public void Add(Usuario usuario)
         {
-            connection.ExecuteTransaction("INSERT INTO USUARIO (CODEMPRESA, CODUSUARIO, NOME, SENHA, ATIVO, ULTIMOLOGIN) VALUES (? ,? ,? ,? ,? ,?)",
+            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO USUARIO (CODEMPRESA, CODUSUARIO, NOME, SENHA, ATIVO, ULTIMOLOGIN) VALUES (? ,? ,? ,? ,? ,?)",
                 usuario.CODEMPRESA,
                 usuario.CODUSUARIO,
                 usuario.NOME,
@@ -26,7 +24,7 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Update(Usuario usuario)
         {
-            connection.ExecuteTransaction("UPDATE USUARIO SET CODEMPRESA = ?, NOME = ?, SENHA = ?, ATIVO = ?, ULTIMOLOGIN = ? WHERE CODUSUARIO = ?",
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET CODEMPRESA = ?, NOME = ?, SENHA = ?, ATIVO = ?, ULTIMOLOGIN = ? WHERE CODUSUARIO = ?",
                 usuario.CODEMPRESA,
                 usuario.NOME,
                 usuario.SENHA,
@@ -37,12 +35,12 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(string codUsuario)
         {
-            connection.ExecuteTransaction("DELETE FROM USUARIO WHERE CODUSUARIO = ?", codUsuario);
+            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM USUARIO WHERE CODUSUARIO = ?", codUsuario);
         }
 
         public Usuario GetByCodUsuario(string codUsuario)
         {
-            DataTable dataTable = connection.ExecuteQuery($"SELECT * FROM USUARIO WHERE CODUSUARIO = {codUsuario}");
+            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery($"SELECT * FROM USUARIO WHERE CODUSUARIO = {codUsuario}");
             if (dataTable.Rows.Count == 0)
                 return null;
             DataRow row = dataTable.Rows[0];
@@ -59,7 +57,7 @@ namespace ZenCodeERP.Data.Repositories
 
         public List<Usuario> GetAll()
         {
-            DataTable dataTable = connection.ExecuteQuery("SELECT * FROM USUARIO");
+            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM USUARIO");
             List<Usuario> usuarios = new List<Usuario>();
             foreach (DataRow row in dataTable.Rows)
             {

@@ -16,7 +16,6 @@ namespace ZenCodeERP.Forms.Visao
 {
     public partial class FormVisaoUsuarios : Form
     {
-        private DataBaseConnection connection = new DataBaseConnection();
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
 
         public FormVisaoUsuarios()
