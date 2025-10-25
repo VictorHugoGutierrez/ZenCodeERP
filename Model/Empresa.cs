@@ -14,7 +14,7 @@ namespace ZenCodeERP.Model
         public string CNPJ { get; set; }
         public string TELEFONE { get; set; }
         public string EMAIL { get; set; }
-        public string IMAGEM { get; set; }
+        public Image IMAGEM { get; set; }
         public int CODENDERECO { get; set; }
     }
 }

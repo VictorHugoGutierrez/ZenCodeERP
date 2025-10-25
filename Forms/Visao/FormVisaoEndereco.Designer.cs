@@ -1,9 +1,9 @@
-﻿using System.Windows.Forms;
-using FontAwesome.Sharp;
+﻿using FontAwesome.Sharp;
+using System.Windows.Forms;
 
 namespace ZenCodeERP.Forms.Visao
 {
-    partial class FormVisaoUsuarios
+    partial class FormVisaoEndereco
     {
         /// <summary>
         /// Required designer variable.
@@ -31,16 +31,16 @@ namespace ZenCodeERP.Forms.Visao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisaoUsuarios));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.iBtnNovo = new FontAwesome.Sharp.IconToolStripButton();
-            this.iBtnEditar = new FontAwesome.Sharp.IconToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gvUsuarios = new System.Windows.Forms.DataGridView();
-            this.iBtnExcluir = new FontAwesome.Sharp.IconToolStripButton();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisaoEndereco));
+            this.toolStrip1 = new ToolStrip();
+            this.iBtnNovo = new IconToolStripButton();
+            this.iBtnEditar = new IconToolStripButton();
+            this.panel1 = new Panel();
+            this.gvEndereco = new DataGridView();
+            this.iBtnExcluir = new IconToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvUsuarios)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEndereco)).BeginInit();
             this.SuspendLayout();
             // 
             // toolStrip1
@@ -54,7 +54,7 @@ namespace ZenCodeERP.Forms.Visao
             this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 29);
+            this.toolStrip1.Size = new System.Drawing.Size(800, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
             // 
@@ -65,9 +65,9 @@ namespace ZenCodeERP.Forms.Visao
             this.iBtnNovo.IconFont = IconFont.Auto;
             this.iBtnNovo.IconSize = 32;
             this.iBtnNovo.Name = "iBtnNovo";
-            this.iBtnNovo.Size = new System.Drawing.Size(40, 26);
+            this.iBtnNovo.Size = new Size(90, 44);
             this.iBtnNovo.Text = "Novo";
-            this.iBtnNovo.Click += new System.EventHandler(this.iBtnNovo_Click);
+            this.iBtnNovo.Click += iBtnNovo_Click;
             // 
             // iBtnEditar
             // 
@@ -75,35 +75,35 @@ namespace ZenCodeERP.Forms.Visao
             this.iBtnEditar.IconColor = Color.DodgerBlue;
             this.iBtnEditar.IconFont = IconFont.Auto;
             this.iBtnEditar.IconSize = 32;
-            this.iBtnEditar.Name = "iBtnEditar";
-            this.iBtnEditar.Size = new System.Drawing.Size(41, 26);
+            this.iBtnEditar.Name = "iBtnNovo";
+            this.iBtnEditar.Size = new Size(90, 44);
             this.iBtnEditar.Text = "Editar";
-            this.iBtnEditar.Click += new System.EventHandler(this.iBtnEditar_Click);
+            this.iBtnEditar.Click += iBtnEditar_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gvUsuarios);
-            this.panel1.Location = new System.Drawing.Point(0, 25);
+            this.panel1.Controls.Add(this.gvEndereco);
+            this.panel1.Location = new System.Drawing.Point(0, 47);
             this.panel1.Name = "panel1";
             this.panel1.TabIndex = 1;
             this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
             // 
-            // gvUsuarios
+            // gvEndereco
             // 
-            this.gvUsuarios.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvUsuarios.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvUsuarios.MultiSelect = true;
-            this.gvUsuarios.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.gvUsuarios.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvUsuarios.AllowUserToAddRows = false;
-            this.gvUsuarios.AllowUserToDeleteRows = false;
-            this.gvUsuarios.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240))))); // Linhas zebradas
-            this.gvUsuarios.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvUsuarios.RowHeadersVisible = false;
-            this.gvUsuarios.ReadOnly = true;
-            this.gvUsuarios.Name = "gvUsuarios";
-            this.gvUsuarios.TabIndex = 0;
-            this.gvUsuarios.DoubleClick += new System.EventHandler(this.gvUsuarios_DoubleClick);
+            this.gvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.gvEndereco.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gvEndereco.MultiSelect = true;
+            this.gvEndereco.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            this.gvEndereco.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            this.gvEndereco.AllowUserToAddRows = false;
+            this.gvEndereco.AllowUserToDeleteRows = false;
+            this.gvEndereco.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240))))); // Linhas zebradas
+            this.gvEndereco.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.gvEndereco.RowHeadersVisible = false;
+            this.gvEndereco.ReadOnly = true;
+            this.gvEndereco.Name = "gvEndereco";
+            this.gvEndereco.TabIndex = 0;
+            this.gvEndereco.DoubleClick += new System.EventHandler(this.gvEndereco_DoubleClick);
             // 
             // iBtnExcluir
             // 
@@ -111,26 +111,26 @@ namespace ZenCodeERP.Forms.Visao
             this.iBtnExcluir.IconColor = Color.DodgerBlue;
             this.iBtnExcluir.IconFont = IconFont.Auto;
             this.iBtnExcluir.IconSize = 32;
-            this.iBtnExcluir.Name = "iBtnExcluir";
-            this.iBtnExcluir.Size = new System.Drawing.Size(23, 26);
+            this.iBtnExcluir.Name = "iBtnNovo";
+            this.iBtnExcluir.Size = new Size(90, 44);
             this.iBtnExcluir.Text = "Excluir";
-            this.iBtnExcluir.Click += new System.EventHandler(this.iBtnExcluir_Click);
+            this.iBtnExcluir.Click += iBtnExcluir_Click;
             // 
-            // FormVisaoUsuarios
+            // FormVisaoEndereco
             // 
-            this.Load += new System.EventHandler(this.FormVisaoUsuarios_Load);
+            this.Load += new System.EventHandler(this.FormVisaoEndereco_Load);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(840, 395);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.toolStrip1);
-            this.Name = "FormVisaoUsuarios";
-            this.Text = "Visão Usuário";
+            this.Name = "FormVisaoEndereco";
+            this.Text = "Visão Endereço";
             this.toolStrip1.ResumeLayout(false);
             this.toolStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvUsuarios)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.gvEndereco)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -138,11 +138,11 @@ namespace ZenCodeERP.Forms.Visao
 
         #endregion
 
-        private System.Windows.Forms.ToolStrip toolStrip1;
-        private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView gvUsuarios;
-        private FontAwesome.Sharp.IconToolStripButton iBtnNovo;
-        private FontAwesome.Sharp.IconToolStripButton iBtnEditar;
-        private FontAwesome.Sharp.IconToolStripButton iBtnExcluir;
+        private ToolStrip toolStrip1;
+        private Panel panel1;
+        private DataGridView gvEndereco;
+        private IconToolStripButton iBtnNovo;
+        private IconToolStripButton iBtnEditar;
+        private IconToolStripButton iBtnExcluir;
     }
 }

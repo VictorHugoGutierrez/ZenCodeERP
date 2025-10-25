@@ -8,14 +8,16 @@ namespace ZenCodeERP.Model
 {
     public class Endereco
     {
-        private int CODENDERECO { get; set; }
-        private string RUA { get; set; }
-        private string NUMERO { get; set; }
-        private string COMPLEMENTO { get; set; }
-        private string BAIRRO { get; set; }
-        private string CEP { get; set; }
-        private string CIDADE { get; set; } 
-        private string ESTADO { get; set; }
-        private string PAIS { get; set; }
+        public int CODENDERECO { get; set; }
+
+        public string NOME { get; set; }
+        public string RUA { get; set; }
+        public string NUMERO { get; set; }
+        public string COMPLEMENTO { get; set; }
+        public string BAIRRO { get; set; }
+        public string CEP { get; set; }
+        public string CIDADE { get; set; } 
+        public string ESTADO { get; set; }
+        public string PAIS { get; set; }
     }
 }

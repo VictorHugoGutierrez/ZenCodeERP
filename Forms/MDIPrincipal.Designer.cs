@@ -1,4 +1,5 @@
 ﻿using System.Windows.Forms;
+using FontAwesome.Sharp;
 
 namespace ZenCodeERP.Forms
 {
@@ -30,61 +31,84 @@ namespace ZenCodeERP.Forms
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MDIPrincipal));
-            this.toolStrip1 = new ToolStrip();
-            this.toolStripButtonEmpresa = new ToolStripButton();
-            this.toolStripButtonUsuario = new ToolStripButton();
-            this.toolStrip1.SuspendLayout();
+            toolStrip1 = new ToolStrip();
+            toolStripButtonEndereco = new IconToolStripButton();
+            toolStripButtonEmpresa = new IconToolStripButton();
+            toolStripButtonUsuario = new IconToolStripButton();
+            toolStrip1.SuspendLayout();
             SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonEmpresa, toolStripButtonUsuario });
-            this.toolStrip1.Location = new Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new Size(875, 25);
-            this.toolStrip1.TabIndex = 7;
-            this.toolStrip1.Text = "toolStrip1";
+            toolStrip1.Font = new Font("Tahoma", 9.25F);
+            toolStrip1.Dock = DockStyle.Top;
+            toolStrip1.ImageScalingSize = new Size(30, 30);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonEndereco, toolStripButtonEmpresa, toolStripButtonUsuario });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1000, 47);
+            toolStrip1.TabIndex = 7;
+            toolStrip1.Text = "toolStrip1";
+            // 
+            // toolStripButtonEndereco
+            // 
+            toolStripButtonEndereco.IconChar = IconChar.MapLocationDot;
+            toolStripButtonEndereco.IconColor = Color.DodgerBlue;
+            toolStripButtonEndereco.IconFont = IconFont.Auto;
+            toolStripButtonEndereco.IconSize = 64;
+            toolStripButtonEndereco.Name = "toolStripButtonEndereco";
+            toolStripButtonEndereco.Size = new Size(75, 44);
+            toolStripButtonEndereco.Text = "Endereço";
+            toolStripButtonEndereco.TextImageRelation = TextImageRelation.ImageAboveText;
+            toolStripButtonEndereco.Click += toolStripButtonEndereco_Click;
             // 
             // toolStripButtonEmpresa
             // 
-            this.toolStripButtonEmpresa.Image = (Image)resources.GetObject("toolStripButtonEmpresa.Image");
-            this.toolStripButtonEmpresa.ImageTransparentColor = Color.Magenta;
-            this.toolStripButtonEmpresa.Name = "toolStripButtonEmpresa";
-            this.toolStripButtonEmpresa.Size = new Size(72, 22);
-            this.toolStripButtonEmpresa.Text = "Empresa";
-            this.toolStripButtonEmpresa.Click += new EventHandler(this.toolStripButtonEmpresa_Click);
+            toolStripButtonEmpresa.IconChar = IconChar.Building;
+            toolStripButtonEmpresa.IconColor = Color.DodgerBlue;
+            toolStripButtonEmpresa.IconFont = IconFont.Auto;
+            toolStripButtonEmpresa.IconSize = 64;
+            toolStripButtonEmpresa.Name = "toolStripButtonEmpresa";
+            toolStripButtonEmpresa.Size = new Size(70, 44);
+            toolStripButtonEmpresa.Text = "Empresa";
+            toolStripButtonEmpresa.TextImageRelation = TextImageRelation.ImageAboveText;
+            toolStripButtonEmpresa.Click += toolStripButtonEmpresa_Click;
             // 
             // toolStripButtonUsuario
             // 
-            this.toolStripButtonUsuario.Image = (Image)resources.GetObject("toolStripButtonUsuario.Image");
-            this.toolStripButtonUsuario.ImageTransparentColor = Color.Magenta;
-            this.toolStripButtonUsuario.Name = "toolStripButtonUsuario";
-            this.toolStripButtonUsuario.Size = new Size(72, 22);
-            this.toolStripButtonUsuario.Text = "Usuários";
-            this.toolStripButtonUsuario.Click += new EventHandler(this.usuariosToolStripMenuItem_Click);
+            toolStripButtonUsuario.IconChar = IconChar.User;
+            toolStripButtonUsuario.IconColor = Color.DodgerBlue;
+            toolStripButtonUsuario.IconFont = IconFont.Auto;
+            toolStripButtonUsuario.IconSize = 64;
+            toolStripButtonUsuario.Name = "toolStripButtonUsuario";
+            toolStripButtonUsuario.Size = new Size(69, 44);
+            toolStripButtonUsuario.Text = "Usuários";
+            toolStripButtonUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
+            toolStripButtonUsuario.Click += toolStripButtonUsuario_Click;
             // 
             // MDIPrincipal
             // 
-            this.AutoScaleDimensions = new SizeF(7F, 15F);
-            this.AutoScaleMode = AutoScaleMode.Font;
-            this.BackColor = Color.WhiteSmoke;
-            this.ClientSize = new Size(875, 562);
-            this.Controls.Add(toolStrip1);
-            this.IsMdiContainer = true;
-            this.Name = "MDIPrincipal";
-            this.Text = "ZenCode ERP - Principal";
-            this.WindowState = FormWindowState.Maximized;
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.WhiteSmoke;
+            ClientSize = new Size(1000, 749);
+            Controls.Add(toolStrip1);
+            IsMdiContainer = true;
+            Margin = new Padding(3, 4, 3, 4);
+            Name = "MDIPrincipal";
+            Text = "ZenCode ERP - Principal";
+            WindowState = FormWindowState.Maximized;
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButtonEmpresa;
-        private ToolStripButton toolStripButtonUsuario;
+        private IconToolStripButton toolStripButtonEndereco;
+        private IconToolStripButton toolStripButtonEmpresa;
+        private IconToolStripButton toolStripButtonUsuario;
     }
 }

@@ -1,4 +1,5 @@
-﻿using MySql.Data.MySqlClient;
+﻿using Google.Protobuf.WellKnownTypes;
+using MySql.Data.MySqlClient;
 using System.Configuration;
 using System.Data;
 
@@ -47,11 +48,20 @@ namespace ZenCodeERP.Data
             }
         }
 
-        public DataTable ExecuteQuery(string query)
+        public DataTable ExecuteQuery(string query, params object[] values)
         {
             using(MySqlConnection connection = OpenConnection())
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
+
+                for (int i = 0; i < values.Length; i++)
+                {
+                    string paramName = $"@p{i}";
+                    object value = values[i] ?? DBNull.Value;
+
+                    command.Parameters.AddWithValue(paramName, value);
+                }
+
                 MySqlDataAdapter adapter = new MySqlDataAdapter(command);
                 DataTable dataTable = new DataTable();
                 adapter.Fill(dataTable);
@@ -59,11 +69,20 @@ namespace ZenCodeERP.Data
             }
         }
 
-        public object ExecuteGetField(string query)
+        public object ExecuteGetField(string query, params object[] values)
         {
             using(MySqlConnection connection = OpenConnection())
             {
                 MySqlCommand command = new MySqlCommand(query, connection);
+
+                for (int i = 0; i < values.Length; i++)
+                {
+                    string paramName = $"@p{i}";
+                    object value = values[i] ?? DBNull.Value;
+
+                    command.Parameters.AddWithValue(paramName, value);
+                }
+
                 return command.ExecuteScalar();
             }
         }

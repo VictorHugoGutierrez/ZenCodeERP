@@ -1,4 +1,5 @@
-﻿using System.Windows.Forms;
+﻿using FontAwesome.Sharp;
+using System.Windows.Forms;
 
 namespace ZenCodeERP.Forms.Visao
 {
@@ -30,98 +31,112 @@ namespace ZenCodeERP.Forms.Visao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisaoEmpresa));
-            this.toolStrip1 = new System.Windows.Forms.ToolStrip();
-            this.btnNovo = new System.Windows.Forms.ToolStripButton();
-            this.btnEditar = new System.Windows.Forms.ToolStripButton();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.gvEmpresa = new System.Windows.Forms.DataGridView();
-            this.btnExcluir = new System.Windows.Forms.ToolStripButton();
-            this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEmpresa)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            toolStrip1 = new ToolStrip();
+            iBtnNovo = new IconToolStripButton();
+            iBtnEditar = new IconToolStripButton();
+            iBtnExcluir = new IconToolStripButton();
+            panel1 = new Panel();
+            gvEmpresa = new DataGridView();
+            toolStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gvEmpresa).BeginInit();
+            SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.btnNovo,
-            this.btnEditar,
-            this.btnExcluir});
-            this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 29);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
+            toolStrip1.Font = new Font("Tahoma", 8.25F);
+            toolStrip1.ImageScalingSize = new Size(30, 30);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1067, 47);
+            toolStrip1.TabIndex = 0;
+            toolStrip1.Text = "toolStrip1";
             // 
-            // btnNovo
+            // iBtnNovo
             // 
-            this.btnNovo.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
-            this.btnNovo.Name = "btnNovo";
-            this.btnNovo.Size = new System.Drawing.Size(40, 26);
-            this.btnNovo.Text = "Novo";
-            this.btnNovo.Click += new System.EventHandler(this.btnNovo_Click);
+            iBtnNovo.IconChar = IconChar.FileCirclePlus;
+            iBtnNovo.IconColor = Color.DodgerBlue;
+            iBtnNovo.IconFont = IconFont.Auto;
+            iBtnNovo.IconSize = 32;
+            iBtnNovo.Name = "iBtnNovo";
+            iBtnNovo.Size = new Size(90, 44);
+            iBtnNovo.Text = "Novo";
+            iBtnNovo.Click += iBtnNovo_Click;
             // 
-            // btnEditar
+            // iBtnEditar
             // 
-            this.btnEditar.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.ImageAndText;
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(41, 26);
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
+            iBtnEditar.IconChar = IconChar.Edit;
+            iBtnEditar.IconColor = Color.DodgerBlue;
+            iBtnEditar.IconFont = IconFont.Auto;
+            iBtnEditar.IconSize = 32;
+            iBtnEditar.Name = "iBtnEditar";
+            iBtnEditar.Size = new Size(94, 44);
+            iBtnEditar.Text = "Editar";
+            iBtnEditar.Click += iBtnEditar_Click;
+            // 
+            // iBtnExcluir
+            // 
+            iBtnExcluir.IconChar = IconChar.Trash;
+            iBtnExcluir.IconColor = Color.DodgerBlue;
+            iBtnExcluir.IconFont = IconFont.Auto;
+            iBtnExcluir.IconSize = 32;
+            iBtnExcluir.Name = "iBtnExcluir";
+            iBtnExcluir.Size = new Size(100, 44);
+            iBtnExcluir.Text = "Excluir";
+            iBtnExcluir.Click += iBtnExcluir_Click;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.gvEmpresa);
-            this.panel1.Location = new System.Drawing.Point(0, 25);
-            this.panel1.Name = "panel1";
-            this.panel1.TabIndex = 1;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            panel1.Controls.Add(gvEmpresa);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 47);
+            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1067, 645);
+            panel1.TabIndex = 1;
             // 
             // gvEmpresa
             // 
-            this.gvEmpresa.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvEmpresa.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvEmpresa.MultiSelect = true;
-            this.gvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.gvEmpresa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvEmpresa.AllowUserToAddRows = false;
-            this.gvEmpresa.AllowUserToDeleteRows = false;
-            this.gvEmpresa.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240))))); // Linhas zebradas
-            this.gvEmpresa.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvEmpresa.RowHeadersVisible = false;
-            this.gvEmpresa.ReadOnly = true;
-            this.gvEmpresa.Name = "gvEmpresa";
-            this.gvEmpresa.TabIndex = 0;
-            this.gvEmpresa.DoubleClick += new System.EventHandler(this.gvEmpresa_DoubleClick);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Text;
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(23, 26);
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
+            gvEmpresa.AllowUserToAddRows = false;
+            gvEmpresa.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
+            gvEmpresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gvEmpresa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gvEmpresa.BackgroundColor = Color.WhiteSmoke;
+            gvEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvEmpresa.Dock = DockStyle.Fill;
+            gvEmpresa.Location = new Point(0, 0);
+            gvEmpresa.Margin = new Padding(4, 5, 4, 5);
+            gvEmpresa.Name = "gvEmpresa";
+            gvEmpresa.ReadOnly = true;
+            gvEmpresa.RowHeadersVisible = false;
+            gvEmpresa.RowHeadersWidth = 51;
+            gvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvEmpresa.Size = new Size(1067, 645);
+            gvEmpresa.TabIndex = 0;
+            gvEmpresa.DoubleClick += gvEmpresa_DoubleClick;
             // 
             // FormVisaoEmpresa
             // 
-            this.Load += new System.EventHandler(this.FormVisaoEmpresa_Load);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ClientSize = new System.Drawing.Size(800, 450);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
-            this.Name = "FormVisaoEmpresa";
-            this.Text = "Visão Empresa";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvEmpresa)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1067, 692);
+            Controls.Add(panel1);
+            Controls.Add(toolStrip1);
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "FormVisaoEmpresa";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Visão Empresa";
+            Load += FormVisaoEmpresa_Load;
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gvEmpresa).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
@@ -130,8 +145,8 @@ namespace ZenCodeERP.Forms.Visao
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.DataGridView gvEmpresa;
-        private System.Windows.Forms.ToolStripButton btnNovo;
-        private System.Windows.Forms.ToolStripButton btnEditar;
-        private System.Windows.Forms.ToolStripButton btnExcluir;
+        private IconToolStripButton iBtnNovo;
+        private IconToolStripButton iBtnEditar;
+        private IconToolStripButton iBtnExcluir;
     }
 }

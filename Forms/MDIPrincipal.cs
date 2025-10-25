@@ -9,7 +9,7 @@ namespace ZenCodeERP.Forms
             InitializeComponent();
         }
 
-        private void usuariosToolStripMenuItem_Click(object sender, EventArgs e)
+        private void toolStripButtonUsuario_Click(object sender, EventArgs e)
         {
             FormVisaoUsuarios form = new FormVisaoUsuarios();
             form.MdiParent = this;
@@ -19,6 +19,13 @@ namespace ZenCodeERP.Forms
         private void toolStripButtonEmpresa_Click(object sender, EventArgs e)
         {
             FormVisaoEmpresa form = new FormVisaoEmpresa();
+            form.MdiParent = this;
+            form.Show();
+        }
+
+        private void toolStripButtonEndereco_Click(object sender, EventArgs e)
+        {
+            FormVisaoEndereco form = new FormVisaoEndereco();
             form.MdiParent = this;
             form.Show();
         }

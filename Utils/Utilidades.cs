@@ -1,9 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Data;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using System.Data;
+using System.Drawing.Imaging;
+using System.IO;
 using ZenCodeERP.Data;
 
 namespace ZenCodeERP.Utils
@@ -40,6 +37,25 @@ namespace ZenCodeERP.Utils
             {
                 throw ex;
             }   
+        }
+
+        public byte[] ConverterFotoParaByteArray(Image image)
+        {
+            if (image == null)
+                return null;
+
+            MemoryStream stream = new MemoryStream();
+            image.Save(stream, ImageFormat.Jpeg);
+            return stream.ToArray();
+        }
+
+        public Image ConverterByteArrayParaFoto(byte[] byteArray)
+        {
+            if (byteArray == null)
+                return null;
+
+            MemoryStream ms = new MemoryStream(byteArray);
+            return Image.FromStream(ms);
         }
 
     }

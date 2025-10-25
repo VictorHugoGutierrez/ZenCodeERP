@@ -22,15 +22,18 @@ namespace ZenCodeERP.Forms
             tbCodUsuario = new TextBox();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            lbUsuario = new Label();
+            tbUsuario = new TextBox();
+            lbUltimoLogin = new Label();
+            dtUltimoLogin = new DateTimePicker();
+            lbSenha = new Label();
+            tbSenha = new TextBox();
             chkAtivo = new CheckBox();
             panelBottom = new Panel();
             btnOk = new Button();
             btnCancelar = new Button();
             btnSalvar = new Button();
             flowButtons = new FlowLayoutPanel();
-            lbSenha = new Label();
-            tbSenha = new TextBox();
-            dt = new DateTimePicker();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panelBottom.SuspendLayout();
@@ -39,7 +42,7 @@ namespace ZenCodeERP.Forms
             // lbNome
             // 
             lbNome.AutoSize = true;
-            lbNome.Location = new Point(9, 44);
+            lbNome.Location = new Point(8, 47);
             lbNome.Margin = new Padding(4, 0, 4, 0);
             lbNome.Name = "lbNome";
             lbNome.Size = new Size(100, 15);
@@ -48,7 +51,7 @@ namespace ZenCodeERP.Forms
             // 
             // tbNome
             // 
-            tbNome.Location = new Point(9, 59);
+            tbNome.Location = new Point(8, 65);
             tbNome.Margin = new Padding(4, 3, 4, 3);
             tbNome.Name = "tbNome";
             tbNome.Size = new Size(708, 23);
@@ -66,7 +69,8 @@ namespace ZenCodeERP.Forms
             // 
             // tbCodUsuario
             // 
-            tbCodUsuario.Location = new Point(9, 18);
+            tbCodUsuario.ReadOnly = true;
+            tbCodUsuario.Location = new Point(10, 21);
             tbCodUsuario.Margin = new Padding(4, 3, 4, 3);
             tbCodUsuario.Name = "tbCodUsuario";
             tbCodUsuario.Size = new Size(209, 23);
@@ -85,7 +89,10 @@ namespace ZenCodeERP.Forms
             // 
             // tabPage1
             // 
-            tabPage1.Controls.Add(dt);
+            tabPage1.Controls.Add(lbUsuario);
+            tabPage1.Controls.Add(tbUsuario);
+            tabPage1.Controls.Add(lbUltimoLogin);
+            tabPage1.Controls.Add(dtUltimoLogin);
             tabPage1.Controls.Add(lbSenha);
             tabPage1.Controls.Add(tbSenha);
             tabPage1.Controls.Add(chkAtivo);
@@ -102,10 +109,69 @@ namespace ZenCodeERP.Forms
             tabPage1.Text = "Identificação";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // lbUsuario
+            // 
+            lbUsuario.AutoSize = true;
+            lbUsuario.Location = new Point(9, 91);
+            lbUsuario.Margin = new Padding(4, 0, 4, 0);
+            lbUsuario.Name = "lbUsuario";
+            lbUsuario.Size = new Size(47, 15);
+            lbUsuario.TabIndex = 8;
+            lbUsuario.Text = "Usuário";
+            // 
+            // tbUsuario
+            // 
+            tbUsuario.Location = new Point(10, 109);
+            tbUsuario.Margin = new Padding(4, 3, 4, 3);
+            tbUsuario.Name = "tbUsuario";
+            tbUsuario.Size = new Size(350, 23);
+            tbUsuario.TabIndex = 9;
+            // 
+            // lbUltimoLogin
+            // 
+            lbUltimoLogin.AutoSize = true;
+            lbUltimoLogin.Location = new Point(226, 3);
+            lbUltimoLogin.Margin = new Padding(4, 0, 4, 0);
+            lbUltimoLogin.Name = "lbUltimoLogin";
+            lbUltimoLogin.Size = new Size(76, 15);
+            lbUltimoLogin.TabIndex = 7;
+            lbUltimoLogin.Text = "Último Login";
+            // 
+            // dtUltimoLogin
+            // 
+            dtUltimoLogin.CustomFormat = "dd/MM/yyyy HH:mm";
+            dtUltimoLogin.Enabled = false;
+            dtUltimoLogin.ForeColor = Color.Black;
+            dtUltimoLogin.Format = DateTimePickerFormat.Custom;
+            dtUltimoLogin.Location = new Point(226, 21);
+            dtUltimoLogin.Name = "dtUltimoLogin";
+            dtUltimoLogin.Size = new Size(134, 23);
+            dtUltimoLogin.TabIndex = 6;
+            // 
+            // lbSenha
+            // 
+            lbSenha.AutoSize = true;
+            lbSenha.Location = new Point(367, 91);
+            lbSenha.Margin = new Padding(4, 0, 4, 0);
+            lbSenha.Name = "lbSenha";
+            lbSenha.Size = new Size(39, 15);
+            lbSenha.TabIndex = 4;
+            lbSenha.Text = "Senha";
+            // 
+            // tbSenha
+            // 
+            tbSenha.Location = new Point(366, 109);
+            tbSenha.Margin = new Padding(4, 3, 4, 3);
+            tbSenha.Name = "tbSenha";
+            tbSenha.PasswordChar = '*';
+            tbSenha.Size = new Size(350, 23);
+            tbSenha.TabIndex = 5;
+            tbSenha.UseSystemPasswordChar = true;
+            // 
             // chkAtivo
             // 
             chkAtivo.AutoSize = true;
-            chkAtivo.Location = new Point(225, 20);
+            chkAtivo.Location = new Point(367, 23);
             chkAtivo.Name = "chkAtivo";
             chkAtivo.Size = new Size(54, 19);
             chkAtivo.TabIndex = 3;
@@ -170,31 +236,6 @@ namespace ZenCodeERP.Forms
             flowButtons.Size = new Size(12, 46);
             flowButtons.TabIndex = 0;
             // 
-            // lbSenha
-            // 
-            lbSenha.AutoSize = true;
-            lbSenha.Location = new Point(9, 85);
-            lbSenha.Margin = new Padding(4, 0, 4, 0);
-            lbSenha.Name = "lbSenha";
-            lbSenha.Size = new Size(39, 15);
-            lbSenha.TabIndex = 4;
-            lbSenha.Text = "Senha";
-            // 
-            // tbSenha
-            // 
-            tbSenha.Location = new Point(9, 100);
-            tbSenha.Margin = new Padding(4, 3, 4, 3);
-            tbSenha.Name = "tbSenha";
-            tbSenha.Size = new Size(209, 23);
-            tbSenha.TabIndex = 5;
-            // 
-            // dt
-            // 
-            dt.Location = new Point(225, 100);
-            dt.Name = "dt";
-            dt.Size = new Size(200, 23);
-            dt.TabIndex = 6;
-            // 
             // FormCadastroUsuarios
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -219,7 +260,7 @@ namespace ZenCodeERP.Forms
         private CheckBox chkAtivo;
         private Label lbSenha;
         private TextBox tbSenha;
-        private DateTimePicker dt;
+        private DateTimePicker dtUltimoLogin;
         private System.ComponentModel.IContainer components = null;
         private Label lbNome;
         private TextBox tbNome;
@@ -232,5 +273,8 @@ namespace ZenCodeERP.Forms
         private Button btnCancelar;
         private Button btnSalvar;
         private FlowLayoutPanel flowButtons;
+        private Label lbUltimoLogin;
+        private Label lbUsuario;
+        private TextBox tbUsuario;
     }
 }

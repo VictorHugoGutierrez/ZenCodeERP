@@ -24,7 +24,7 @@ namespace ZenCodeERP.Forms.Visao
         {
             try
             {
-                string coluna = "*";
+                string coluna = "CODEMPRESA, NOME, NOMEFANTASIA, CNPJ, TELEFONE, EMAIL, CODENDERECO";
                 string tabela = "EMPRESA";
                 string relacionamento = string.Empty;
 
@@ -38,14 +38,14 @@ namespace ZenCodeERP.Forms.Visao
             }
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void iBtnNovo_Click(object sender, EventArgs e)
         {
             FormCadastroEmpresa frm = new FormCadastroEmpresa();
             frm.ShowDialog();
             CarregaGrid();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void iBtnEditar_Click(object sender, EventArgs e)
         {
             if(gvEmpresa.SelectedRows.Count > 0)
             {
@@ -53,20 +53,20 @@ namespace ZenCodeERP.Forms.Visao
                 DataRow row1 = ((DataRowView)gvEmpresa.Rows[index].DataBoundItem).Row;
                 FormCadastroEmpresa frm = new FormCadastroEmpresa();
                 frm.edita = true;
-                frm.codEmpresa = Convert.ToInt32(row1["CODEMPRESA"]);
+                frm.codEmpresa = Convert.ToInt32(row1["Cód. Empresa"]);
                 frm.ShowDialog();
                 CarregaGrid();
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void iBtnExcluir_Click(object sender, EventArgs e)
         {
             for(int i = 0; i < gvEmpresa.SelectedRows.Count; i++)
             {
                 int index = gvEmpresa.SelectedRows[i].Index;
                 DataRow row1 = ((DataRowView)gvEmpresa.Rows[index].DataBoundItem).Row;
 
-                empresaRepository.Delete(Convert.ToInt32(row1["CODEMPRESA"]));
+                empresaRepository.Delete(Convert.ToInt32(row1["Cód. Empresa"]));
             }
 
             CarregaGrid();
@@ -76,7 +76,7 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvEmpresa.SelectedRows.Count > 0)
             {
-                btnEditar_Click(sender, e);
+                iBtnEditar_Click(sender, e);
             }
         }
     }

@@ -8,8 +8,8 @@ namespace ZenCodeERP.Model
 {
     public class Usuario
     {
-        public int CODEMPRESA { get; set; }
         public string CODUSUARIO { get; set; }
+        public string USUARIO { get; set; }
         public string NOME { get; set; }
         public string SENHA { get; set; }
         public int ATIVO { get; set; }

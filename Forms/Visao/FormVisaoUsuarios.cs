@@ -47,14 +47,14 @@ namespace ZenCodeERP.Forms.Visao
             }
         }
 
-        private void btnNovo_Click(object sender, EventArgs e)
+        private void iBtnNovo_Click(object sender, EventArgs e)
         {
             FormCadastroUsuarios frm = new FormCadastroUsuarios();
             frm.ShowDialog();
             CarregaGrid();
         }
 
-        private void btnEditar_Click(object sender, EventArgs e)
+        private void iBtnEditar_Click(object sender, EventArgs e)
         {
             if(gvUsuarios.SelectedRows.Count > 0)
             {
@@ -68,7 +68,7 @@ namespace ZenCodeERP.Forms.Visao
             }
         }
 
-        private void btnExcluir_Click(object sender, EventArgs e)
+        private void iBtnExcluir_Click(object sender, EventArgs e)
         {
             for(int i = 0; i < gvUsuarios.SelectedRows.Count; i++)
             {
@@ -85,7 +85,7 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvUsuarios.SelectedRows.Count > 0)
             {
-                btnEditar_Click(sender, e);
+                iBtnEditar_Click(sender, e);
             }
         }
     }

@@ -29,25 +29,32 @@ namespace ZenCodeERP.Forms
         {
             if (edita)
                 CarregaCampos();
+            else
+                tbCodUsuario.Text = usuarioRepository.GetNextCodUsuario().ToString();
         }
 
         private void CarregaCampos()
         {
             Usuario usuario = usuarioRepository.GetByCodUsuario(codUsuario);
 
+            tbCodUsuario.Text = usuario.CODUSUARIO;
+            tbUsuario.Text = usuario.USUARIO;
+            tbSenha.Text = usuario.SENHA;
             tbNome.Text = usuario.NOME;
+            dtUltimoLogin.Value = usuario.ULTIMOLOGIN;
+            chkAtivo.Checked = usuario.ATIVO == 1 ? true : false;
         }
 
         private bool Salvar()
         {
             try
             {
-                if(!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM USUARIO WHERE ID = {codUsuario}"))
+                if (!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM USUARIO WHERE ID = {codUsuario}"))
                 {
                     usuarioRepository.Add(new Usuario
                     {
-                        CODEMPRESA = 1,
                         CODUSUARIO = tbCodUsuario.Text,
+                        USUARIO = tbUsuario.Text,
                         NOME = tbNome.Text,
                         SENHA = tbSenha.Text,
                         ATIVO = chkAtivo.Checked ? 1 : 0,
@@ -58,8 +65,8 @@ namespace ZenCodeERP.Forms
                 {
                     usuarioRepository.Update(new Usuario
                     {
-                        CODEMPRESA = 1,
                         CODUSUARIO = tbCodUsuario.Text,
+                        USUARIO = tbUsuario.Text,
                         NOME = tbNome.Text,
                         SENHA = tbSenha.Text,
                         ATIVO = chkAtivo.Checked ? 1 : 0,
@@ -69,7 +76,7 @@ namespace ZenCodeERP.Forms
 
                 return true;
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show($"Erro ao salvar: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;

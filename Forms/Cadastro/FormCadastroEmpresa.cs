@@ -3,12 +3,14 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Imaging;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZenCodeERP.Data;
 using ZenCodeERP.Data.Repositories;
+using ZenCodeERP.Forms.Visao;
 using ZenCodeERP.Model;
 
 namespace ZenCodeERP.Forms.Cadastro
@@ -18,6 +20,9 @@ namespace ZenCodeERP.Forms.Cadastro
         private EmpresaRepository empresaRepository = new EmpresaRepository();
         public int codEmpresa;
         public bool edita = false;
+
+        public string codEndereco;
+        public string nomeEndereco;
 
         public FormCadastroEmpresa()
         {
@@ -42,7 +47,9 @@ namespace ZenCodeERP.Forms.Cadastro
             tbCNPJ.Text = empresa.CNPJ;
             tbTelefone.Text = empresa.TELEFONE;
             tbEmail.Text = empresa.EMAIL;
-            //tbCodEndereco.Text = empresa.CODENDERECO.ToString();
+            pictureBox1.Image = empresa.IMAGEM;
+            tbCodigoEndereco.Text = empresa.CODENDERECO.ToString();
+            tbCodigoEndereco_Leave(null, null);
         }
 
         private bool Salvar()
@@ -59,7 +66,11 @@ namespace ZenCodeERP.Forms.Cadastro
                         CNPJ = tbCNPJ.Text,
                         TELEFONE = tbTelefone.Text,
                         EMAIL = tbEmail.Text,
+                        IMAGEM = pictureBox1.Image,
+                        CODENDERECO = Convert.ToInt32(tbCodigoEndereco.Text),
                     });
+
+                    codEmpresa = Convert.ToInt32(tbCodEmpresa.Text);
                 }
                 else
                 {
@@ -71,6 +82,8 @@ namespace ZenCodeERP.Forms.Cadastro
                         CNPJ = tbCNPJ.Text,
                         TELEFONE = tbTelefone.Text,
                         EMAIL = tbEmail.Text,
+                        IMAGEM = pictureBox1.Image,
+                        CODENDERECO = Convert.ToInt32(tbCodigoEndereco.Text),
                     });
                 }
 
@@ -101,6 +114,44 @@ namespace ZenCodeERP.Forms.Cadastro
         private void btnCancelar_Click(object sender, EventArgs e)
         {
             this.Dispose();
+        }
+
+        private void iBtnCarregarImagem_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                if (openFileDialog1.ShowDialog() == DialogResult.OK)
+                {
+                    pictureBox1.Image = Image.FromFile(openFileDialog1.FileName);
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show($"Erro ao carregar imagem: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }   
+        }
+
+        private void iBtnRemoverImage_Click(object sender, EventArgs e)
+        {
+            pictureBox1.Image = null;
+        }
+
+
+        private void btnLookupEndereco_Click(object sender, EventArgs e)
+        {
+            FormVisaoEndereco formVisaoEndereco = new FormVisaoEndereco(this);
+            formVisaoEndereco.ShowDialog();
+
+            tbCodigoEndereco.Text = string.IsNullOrEmpty(codEndereco) ? string.Empty : codEndereco;
+            tbNomeEndereco.Text = string.IsNullOrEmpty(nomeEndereco) ? string.Empty : nomeEndereco;
+        }
+
+        private void tbCodigoEndereco_Leave(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(tbCodigoEndereco.Text))
+                tbNomeEndereco.Text = DataBaseConnection.Instance().ExecuteGetField("SELECT NOME FROM ENDERECO WHERE CODENDERECO = ?", new object[] { tbCodigoEndereco.Text }).ToString();
+            else
+                tbNomeEndereco.Text = string.Empty;
         }
     }
 }

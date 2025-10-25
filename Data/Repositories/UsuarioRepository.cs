@@ -13,9 +13,9 @@ namespace ZenCodeERP.Data.Repositories
     {
         public void Add(Usuario usuario)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO USUARIO (CODEMPRESA, CODUSUARIO, NOME, SENHA, ATIVO, ULTIMOLOGIN) VALUES (? ,? ,? ,? ,? ,?)",
-                usuario.CODEMPRESA,
+            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO USUARIO (CODUSUARIO, USUARIO, NOME, SENHA, ATIVO, ULTIMOLOGIN) VALUES (? ,? ,? ,? ,? ,? ,?)",
                 usuario.CODUSUARIO,
+                usuario.USUARIO,
                 usuario.NOME,
                 CriarHashBCrypt(usuario.SENHA),
                 usuario.ATIVO,
@@ -24,9 +24,9 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Update(Usuario usuario)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET CODEMPRESA = ?, NOME = ?, SENHA = ?, ATIVO = ?, ULTIMOLOGIN = ? WHERE CODUSUARIO = ?",
-                usuario.CODEMPRESA,
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET NOME = ?, USUARIO = ?, SENHA = ?, ATIVO = ?, ULTIMOLOGIN = ? WHERE CODUSUARIO = ?",
                 usuario.NOME,
+                usuario.USUARIO,
                 usuario.SENHA,
                 usuario.ATIVO,
                 usuario.ULTIMOLOGIN,
@@ -46,8 +46,8 @@ namespace ZenCodeERP.Data.Repositories
             DataRow row = dataTable.Rows[0];
             return new Usuario
             {
-                CODEMPRESA = Convert.ToInt32(row["CODEMPRESA"]),
                 CODUSUARIO = row["CODUSUARIO"].ToString(),
+                USUARIO = row["USUARIO"].ToString(),
                 NOME = row["NOME"].ToString(),
                 SENHA = row["SENHA"].ToString(),
                 ATIVO = Convert.ToInt32(row["ATIVO"]),
@@ -63,8 +63,8 @@ namespace ZenCodeERP.Data.Repositories
             {
                 usuarios.Add(new Usuario
                 {
-                    CODEMPRESA = Convert.ToInt32(row["CODEMPRESA"]),
                     CODUSUARIO = row["CODUSUARIO"].ToString(),
+                    USUARIO = row["USUARIO"].ToString(),
                     NOME = row["NOME"].ToString(),
                     SENHA = row["SENHA"].ToString(),
                     ATIVO = Convert.ToInt32(row["ATIVO"]),
@@ -72,6 +72,11 @@ namespace ZenCodeERP.Data.Repositories
                 });
             }
             return usuarios;
+        }
+
+        public int GetNextCodUsuario()
+        {
+            return Convert.ToInt32(DataBaseConnection.Instance().ExecuteGetField("SELECT COALESCE(MAX(CODUSUARIO), 0) + 1 FROM USUARIO"));
         }
 
         public string CriarHashBCrypt(string senha)
