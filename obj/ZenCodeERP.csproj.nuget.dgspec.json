@@ -1,23 +1,23 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\ZenCodeERP.csproj": {}
+    "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\ZenCodeERP.csproj": {}
   },
   "projects": {
-    "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\ZenCodeERP.csproj": {
+    "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\ZenCodeERP.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\ZenCodeERP.csproj",
+        "projectUniqueName": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\ZenCodeERP.csproj",
         "projectName": "ZenCodeERP",
-        "projectPath": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\ZenCodeERP.csproj",
-        "packagesPath": "C:\\Users\\joao\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\obj\\",
+        "projectPath": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\ZenCodeERP.csproj",
+        "packagesPath": "C:\\Users\\Victor Hugo\\.nuget\\packages\\",
+        "outputPath": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
         ],
         "configFilePaths": [
-          "C:\\Users\\joao\\AppData\\Roaming\\NuGet\\NuGet.Config",
+          "C:\\Users\\Victor Hugo\\AppData\\Roaming\\NuGet\\NuGet.Config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.FallbackLocation.config",
           "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
         ],
@@ -53,10 +53,6 @@
             "BCrypt.Net-Core": {
               "target": "Package",
               "version": "[1.6.0, )"
-            },
-            "FontAwesome.Sharp": {
-              "target": "Package",
-              "version": "[6.6.0, )"
             },
             "MySql.Data": {
               "target": "Package",
