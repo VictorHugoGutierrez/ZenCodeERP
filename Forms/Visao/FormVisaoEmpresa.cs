@@ -12,7 +12,6 @@ namespace ZenCodeERP.Forms.Visao
         public FormVisaoEmpresa()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormVisaoEmpresa_Load(object sender, EventArgs e)

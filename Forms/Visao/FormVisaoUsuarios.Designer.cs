@@ -118,6 +118,8 @@ namespace ZenCodeERP.Forms.Visao
             // 
             // FormVisaoUsuarios
             // 
+            this.Dock = DockStyle.Fill;
+            this.Icon = global:: ZenCodeERP.Properties.Resources.iconZenCode;
             this.Load += new System.EventHandler(this.FormVisaoUsuarios_Load);
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;

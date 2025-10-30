@@ -21,7 +21,6 @@ namespace ZenCodeERP.Forms.Visao
         public FormVisaoUsuarios()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
         private void FormVisaoUsuarios_Load(object sender, EventArgs e)
@@ -62,7 +61,7 @@ namespace ZenCodeERP.Forms.Visao
                 DataRow row1 = ((DataRowView)gvUsuarios.Rows[index].DataBoundItem).Row;
                 FormCadastroUsuarios frm = new FormCadastroUsuarios();
                 frm.edita = true;
-                frm.codUsuario = row1["CODUSUARIO"].ToString();
+                frm.codUsuario = Convert.ToInt32(row1["Cód. Usuário"]);
                 frm.ShowDialog();
                 CarregaGrid();
             }
@@ -75,7 +74,7 @@ namespace ZenCodeERP.Forms.Visao
                 int index = gvUsuarios.SelectedRows[i].Index;
                 DataRow row1 = ((DataRowView)gvUsuarios.Rows[index].DataBoundItem).Row;
 
-                usuarioRepository.Delete(row1["CODUSUARIO"].ToString());
+                usuarioRepository.Delete(Convert.ToInt32(row1["Cód. Usuário"]));
             }
 
             CarregaGrid();

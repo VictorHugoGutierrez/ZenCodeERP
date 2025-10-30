@@ -238,6 +238,7 @@ namespace ZenCodeERP.Forms
             // 
             // FormCadastroUsuarios
             // 
+            Icon = global::ZenCodeERP.Properties.Resources.iconZenCode; 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 371);

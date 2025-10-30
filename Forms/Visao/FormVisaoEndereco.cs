@@ -14,7 +14,6 @@ namespace ZenCodeERP.Forms.Visao
         public FormVisaoEndereco()
         {
             InitializeComponent();
-            this.WindowState = FormWindowState.Maximized;
         }
 
         public FormVisaoEndereco(FormCadastroEmpresa lookup)

@@ -17,7 +17,7 @@ namespace ZenCodeERP.Forms
     public partial class FormCadastroUsuarios : Form
     {
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
-        public string codUsuario;
+        public int codUsuario;
         public bool edita = false;
 
         public FormCadastroUsuarios()
@@ -37,7 +37,7 @@ namespace ZenCodeERP.Forms
         {
             Usuario usuario = usuarioRepository.GetByCodUsuario(codUsuario);
 
-            tbCodUsuario.Text = usuario.CODUSUARIO;
+            tbCodUsuario.Text = usuario.CODUSUARIO.ToString();
             tbUsuario.Text = usuario.USUARIO;
             tbSenha.Text = usuario.SENHA;
             tbNome.Text = usuario.NOME;
@@ -49,23 +49,25 @@ namespace ZenCodeERP.Forms
         {
             try
             {
-                if (!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM USUARIO WHERE ID = {codUsuario}"))
+                if (!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM USUARIO WHERE CODUSUARIO = {codUsuario}"))
                 {
                     usuarioRepository.Add(new Usuario
                     {
-                        CODUSUARIO = tbCodUsuario.Text,
+                        CODUSUARIO = Convert.ToInt32(tbCodUsuario.Text),
                         USUARIO = tbUsuario.Text,
                         NOME = tbNome.Text,
                         SENHA = tbSenha.Text,
                         ATIVO = chkAtivo.Checked ? 1 : 0,
                         ULTIMOLOGIN = DateTime.Now
                     });
+
+                    codUsuario = Convert.ToInt32(tbCodUsuario.Text);
                 }
                 else
                 {
                     usuarioRepository.Update(new Usuario
                     {
-                        CODUSUARIO = tbCodUsuario.Text,
+                        CODUSUARIO = Convert.ToInt32(tbCodUsuario.Text),
                         USUARIO = tbUsuario.Text,
                         NOME = tbNome.Text,
                         SENHA = tbSenha.Text,

@@ -11,8 +11,8 @@ namespace ZenCodeERP.Data.Repositories
     {
         void Add(Usuario usuario);
         void Update(Usuario usuario);
-        void Delete(string codUsuario);
-        Usuario GetByCodUsuario(string codUsuario);
+        void Delete(int codUsuario);
+        Usuario GetByCodUsuario(int codUsuario);
         List<Usuario> GetAll();
     }
 }

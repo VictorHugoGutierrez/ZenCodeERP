@@ -357,6 +357,7 @@
             // 
             // FormCadastroEndereco
             // 
+            Icon = global::ZenCodeERP.Properties.Resources.iconZenCode; 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 371);
@@ -364,7 +365,7 @@
             Controls.Add(panelBottom);
             Name = "FormCadastroEndereco";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormCadastroEndereco";
+            Text = "Cadastro de Endereço";
             Load += FormCadastroEndereco_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

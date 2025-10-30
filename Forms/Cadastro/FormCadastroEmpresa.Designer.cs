@@ -381,6 +381,7 @@ namespace ZenCodeERP.Forms.Cadastro
             // 
             // FormCadastroEmpresa
             // 
+            Icon = global::ZenCodeERP.Properties.Resources.iconZenCode; 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(734, 371);
@@ -388,7 +389,7 @@ namespace ZenCodeERP.Forms.Cadastro
             Controls.Add(panelBottom);
             Name = "FormCadastroEmpresa";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "FormCadastroEmpresa";
+            Text = "Cadastro de Empresa";
             Load += FormCadastroEmpresa_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);

@@ -8,7 +8,7 @@ namespace ZenCodeERP.Model
 {
     public class Usuario
     {
-        public string CODUSUARIO { get; set; }
+        public int CODUSUARIO { get; set; }
         public string USUARIO { get; set; }
         public string NOME { get; set; }
         public string SENHA { get; set; }

@@ -13,7 +13,7 @@ namespace ZenCodeERP.Data.Repositories
     {
         public void Add(Usuario usuario)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO USUARIO (CODUSUARIO, USUARIO, NOME, SENHA, ATIVO, ULTIMOLOGIN) VALUES (? ,? ,? ,? ,? ,? ,?)",
+            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO USUARIO (CODUSUARIO, USUARIO, NOME, SENHA, ATIVO, ULTIMOLOGIN) VALUES (? ,? ,? ,? ,? ,?)",
                 usuario.CODUSUARIO,
                 usuario.USUARIO,
                 usuario.NOME,
@@ -33,12 +33,12 @@ namespace ZenCodeERP.Data.Repositories
                 usuario.CODUSUARIO);
         }
 
-        public void Delete(string codUsuario)
+        public void Delete(int codUsuario)
         {
             DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM USUARIO WHERE CODUSUARIO = ?", codUsuario);
         }
 
-        public Usuario GetByCodUsuario(string codUsuario)
+        public Usuario GetByCodUsuario(int codUsuario)
         {
             DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery($"SELECT * FROM USUARIO WHERE CODUSUARIO = {codUsuario}");
             if (dataTable.Rows.Count == 0)
@@ -46,7 +46,24 @@ namespace ZenCodeERP.Data.Repositories
             DataRow row = dataTable.Rows[0];
             return new Usuario
             {
-                CODUSUARIO = row["CODUSUARIO"].ToString(),
+                CODUSUARIO = Convert.ToInt32(row["CODUSUARIO"]),
+                USUARIO = row["USUARIO"].ToString(),
+                NOME = row["NOME"].ToString(),
+                SENHA = row["SENHA"].ToString(),
+                ATIVO = Convert.ToInt32(row["ATIVO"]),
+                ULTIMOLOGIN = Convert.ToDateTime(row["ULTIMOLOGIN"])
+            };
+        }
+
+        public Usuario GetByUsuario(string usuario)
+        {
+            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery($"SELECT * FROM USUARIO WHERE USUARIO = '{usuario}'");
+            if (dataTable.Rows.Count == 0)
+                return null;
+            DataRow row = dataTable.Rows[0];
+            return new Usuario
+            {
+                CODUSUARIO = Convert.ToInt32(row["CODUSUARIO"]),
                 USUARIO = row["USUARIO"].ToString(),
                 NOME = row["NOME"].ToString(),
                 SENHA = row["SENHA"].ToString(),
@@ -63,7 +80,7 @@ namespace ZenCodeERP.Data.Repositories
             {
                 usuarios.Add(new Usuario
                 {
-                    CODUSUARIO = row["CODUSUARIO"].ToString(),
+                    CODUSUARIO = Convert.ToInt32(row["CODUSUARIO"]),
                     USUARIO = row["USUARIO"].ToString(),
                     NOME = row["NOME"].ToString(),
                     SENHA = row["SENHA"].ToString(),

@@ -120,7 +120,9 @@ namespace ZenCodeERP.Forms.Visao
             gvEmpresa.DoubleClick += gvEmpresa_DoubleClick;
             // 
             // FormVisaoEmpresa
-            // 
+            //
+            Dock = DockStyle.Fill;
+            Icon = global::ZenCodeERP.Properties.Resources.iconZenCode; 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1067, 692);
