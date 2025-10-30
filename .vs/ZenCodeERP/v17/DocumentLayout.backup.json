@@ -3,24 +3,12 @@
   "WorkspaceRootPath": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\data\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:data\\repositories\\usuariorepository.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\data\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:data\\databaseconnection.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:model\\usuario.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\forms\\mdilogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdilogin.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\joao\\documents\\github\\zencodeerp\\model\\endereco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -47,45 +35,6 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "UsuarioRepository.cs",
-              "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Data\\Repositories\\UsuarioRepository.cs",
-              "RelativeDocumentMoniker": "Data\\Repositories\\UsuarioRepository.cs",
-              "ToolTip": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Data\\Repositories\\UsuarioRepository.cs",
-              "RelativeToolTip": "Data\\Repositories\\UsuarioRepository.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAABAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T01:51:32.704Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "DataBaseConnection.cs",
-              "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Data\\DataBaseConnection.cs",
-              "RelativeDocumentMoniker": "Data\\DataBaseConnection.cs",
-              "ToolTip": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Data\\DataBaseConnection.cs",
-              "RelativeToolTip": "Data\\DataBaseConnection.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAIAzwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T01:51:24.386Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "MDILogin.cs",
-              "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Forms\\MDILogin.cs",
-              "RelativeDocumentMoniker": "Forms\\MDILogin.cs",
-              "ToolTip": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Forms\\MDILogin.cs",
-              "RelativeToolTip": "Forms\\MDILogin.cs",
-              "ViewState": "AgIAACYAAAAAAAAAAAASwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T01:44:26.931Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
               "Title": "MDIPrincipal.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
               "RelativeDocumentMoniker": "Forms\\MDIPrincipal.cs",
@@ -97,7 +46,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "Usuario.cs",
               "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Model\\Usuario.cs",
               "RelativeDocumentMoniker": "Model\\Usuario.cs",
@@ -105,12 +54,11 @@
               "RelativeToolTip": "Model\\Usuario.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-10-30T00:32:56.381Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-10-30T00:32:56.381Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 2,
               "Title": "Endereco.cs",
               "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Model\\Endereco.cs",
               "RelativeDocumentMoniker": "Model\\Endereco.cs",
@@ -122,7 +70,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 3,
               "Title": "Empresa.cs",
               "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Model\\Empresa.cs",
               "RelativeDocumentMoniker": "Model\\Empresa.cs",
@@ -134,7 +82,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "Program.cs",
               "DocumentMoniker": "C:\\Users\\joao\\Documents\\GitHub\\ZenCodeERP\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
