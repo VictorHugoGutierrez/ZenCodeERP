@@ -68,15 +68,26 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnExcluir_Click(object sender, EventArgs e)
         {
-            for(int i = 0; i < gvEndereco.SelectedRows.Count; i++)
+            if (MessageBox.Show("Deseja realmente excluir este registro?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                int index = gvEndereco.SelectedRows[i].Index;
-                DataRow row1 = ((DataRowView)gvEndereco.Rows[index].DataBoundItem).Row;
+                for (int i = 0; i < gvEndereco.SelectedRows.Count; i++)
+                {
+                    int index = gvEndereco.SelectedRows[i].Index;
+                    DataRow row1 = ((DataRowView)gvEndereco.Rows[index].DataBoundItem).Row;
 
-                enderecoRepository.Delete(Convert.ToInt32(row1["CODENDERECO"]));
+                    enderecoRepository.Delete(Convert.ToInt32(row1["CODENDERECO"]));
+                }
+
+                CarregaGrid();
             }
+        }
 
-            CarregaGrid();
+        private void iBtnFechar_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Dispose();
+            else
+                return;
         }
 
         private void gvEndereco_DoubleClick(object sender, EventArgs e)

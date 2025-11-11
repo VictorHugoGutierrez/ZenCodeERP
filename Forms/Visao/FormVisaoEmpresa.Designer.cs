@@ -36,6 +36,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnNovo = new IconToolStripButton();
             iBtnEditar = new IconToolStripButton();
             iBtnExcluir = new IconToolStripButton();
+            this.iBtnFechar = new IconToolStripButton();
             panel1 = new Panel();
             gvEmpresa = new DataGridView();
             toolStrip1.SuspendLayout();
@@ -48,7 +49,7 @@ namespace ZenCodeERP.Forms.Visao
             toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             toolStrip1.Font = new Font("Tahoma", 8.25F);
             toolStrip1.ImageScalingSize = new Size(30, 30);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnFechar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1067, 47);
@@ -87,6 +88,17 @@ namespace ZenCodeERP.Forms.Visao
             iBtnExcluir.Size = new Size(100, 44);
             iBtnExcluir.Text = "Excluir";
             iBtnExcluir.Click += iBtnExcluir_Click;
+            // 
+            // iBtnFechar
+            // 
+            this.iBtnFechar.IconChar = IconChar.Close;
+            this.iBtnFechar.IconColor = Color.DodgerBlue;
+            this.iBtnFechar.IconFont = IconFont.Auto;
+            this.iBtnFechar.IconSize = 32;
+            this.iBtnFechar.Name = "iBtnNovo";
+            this.iBtnFechar.Size = new Size(90, 44);
+            this.iBtnFechar.Text = "Fechar";
+            this.iBtnFechar.Click += iBtnFechar_Click;
             // 
             // panel1
             // 
@@ -150,5 +162,6 @@ namespace ZenCodeERP.Forms.Visao
         private IconToolStripButton iBtnNovo;
         private IconToolStripButton iBtnEditar;
         private IconToolStripButton iBtnExcluir;
+        private IconToolStripButton iBtnFechar;
     }
 }
