@@ -28,6 +28,18 @@
           }
         }
       },
+      "FontAwesome.Sharp/6.6.0": {
+        "type": "package",
+        "compile": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "runtime": {
+          "lib/net8.0-windows7.0/FontAwesome.Sharp.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App"
+        ]
+      },
       "Google.Protobuf/3.30.0": {
         "type": "package",
         "compile": {
@@ -507,6 +519,23 @@
         "lib/netstandard2.0/BouncyCastle.Cryptography.dll",
         "lib/netstandard2.0/BouncyCastle.Cryptography.xml",
         "packageIcon.png"
+      ]
+    },
+    "FontAwesome.Sharp/6.6.0": {
+      "sha512": "bJCb2x73UC1nD9+9iMLaUy6Ujf9Pf+buL6FHwVnaoDYT4CQNLazz59hO5gQ0+SMSW0G+ZXmjjShOYr3Jn2UZiw==",
+      "type": "package",
+      "path": "fontawesome.sharp/6.6.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "fontawesome.sharp.6.6.0.nupkg.sha512",
+        "fontawesome.sharp.nuspec",
+        "lib/net472/FontAwesome.Sharp.dll",
+        "lib/net48/FontAwesome.Sharp.dll",
+        "lib/net6.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net7.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/net8.0-windows7.0/FontAwesome.Sharp.dll",
+        "lib/netcoreapp3.1/FontAwesome.Sharp.dll"
       ]
     },
     "Google.Protobuf/3.30.0": {
@@ -1581,6 +1610,7 @@
   "projectFileDependencyGroups": {
     "net9.0-windows7.0": [
       "BCrypt.Net-Core >= 1.6.0",
+      "FontAwesome.Sharp >= 6.6.0",
       "MySql.Data >= 9.4.0"
     ]
   },
@@ -1591,11 +1621,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\ZenCodeERP.csproj",
+      "projectUniqueName": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP.csproj",
       "projectName": "ZenCodeERP",
-      "projectPath": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\ZenCodeERP.csproj",
+      "projectPath": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP.csproj",
       "packagesPath": "C:\\Users\\Victor Hugo\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\ZenCodeERP\\obj\\",
+      "outputPath": "C:\\Users\\Victor Hugo\\Desktop\\ZenCodeERP\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -1637,6 +1667,10 @@
           "BCrypt.Net-Core": {
             "target": "Package",
             "version": "[1.6.0, )"
+          },
+          "FontAwesome.Sharp": {
+            "target": "Package",
+            "version": "[6.6.0, )"
           },
           "MySql.Data": {
             "target": "Package",
