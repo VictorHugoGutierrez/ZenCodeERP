@@ -12,7 +12,7 @@ namespace ZenCodeERP.Data.Repositories
     {
         public void Add(Endereco endereco)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO ENDERECO (CODENDERECO, NOME, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, CIDADE, ESTADO, PAIS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)", new object[] { endereco.CODENDERECO, endereco.NOME, endereco.RUA, endereco.NUMERO, endereco.COMPLEMENTO, endereco.BAIRRO, endereco.CEP, endereco.CIDADE, endereco.ESTADO, endereco.PAIS });
+            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO ENDERECO (CODENDERECO, NOME, RUA, NUMERO, COMPLEMENTO, BAIRRO, CEP, CIDADE, ESTADO, PAIS) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)", new object[] { endereco.CODENDERECO, endereco.NOME, endereco.RUA, endereco.NUMERO, endereco.COMPLEMENTO, endereco.BAIRRO, endereco.CEP, endereco.CIDADE, endereco.ESTADO, endereco.PAIS });
         }
 
         public void Update(Endereco endereco)
