@@ -39,16 +39,19 @@ namespace ZenCodeERP.Forms
             // 
             // btnEntrar
             // 
-            btnEntrar.BackColor = SystemColors.Highlight;
+            btnEntrar.BackColor = Color.FromArgb(0, 120, 215);
+            btnEntrar.FlatAppearance.BorderColor = SystemColors.MenuHighlight;
             btnEntrar.FlatAppearance.BorderSize = 0;
+            btnEntrar.FlatAppearance.MouseDownBackColor = Color.FromArgb(0, 90, 180);
+            btnEntrar.FlatAppearance.MouseOverBackColor = Color.FromArgb(0, 150, 255);
             btnEntrar.FlatStyle = FlatStyle.Flat;
-            btnEntrar.Font = new Font("Segoe UI", 10.5F);
-            btnEntrar.ForeColor = SystemColors.ButtonFace;
-            btnEntrar.Location = new Point(283, 508);
-            btnEntrar.Margin = new Padding(3, 4, 3, 4);
+            btnEntrar.Font = new Font("Segoe UI Semibold", 11F, FontStyle.Bold);
+            btnEntrar.ForeColor = Color.Transparent;
+            btnEntrar.Location = new Point(195, 356);
             btnEntrar.Name = "btnEntrar";
-            btnEntrar.Size = new Size(205, 58);
+            btnEntrar.Size = new Size(145, 42);
             btnEntrar.TabIndex = 4;
+            btnEntrar.TabStop = false;
             btnEntrar.Text = "Entrar";
             btnEntrar.UseVisualStyleBackColor = false;
             btnEntrar.Click += btnEntrar_Click;
@@ -57,53 +60,53 @@ namespace ZenCodeERP.Forms
             // 
             tbSenha.BorderStyle = BorderStyle.None;
             tbSenha.Font = new Font("Segoe UI", 11.5F);
-            tbSenha.Location = new Point(128, 452);
-            tbSenha.Margin = new Padding(3, 4, 3, 4);
+            tbSenha.Location = new Point(90, 316);
             tbSenha.Name = "tbSenha";
-            tbSenha.PlaceholderText = "Senha";
-            tbSenha.Size = new Size(509, 26);
-            tbSenha.TabIndex = 3;
             tbSenha.PasswordChar = '*';
+            tbSenha.PlaceholderText = "Senha";
+            tbSenha.Size = new Size(353, 21);
+            tbSenha.TabIndex = 3;
             tbSenha.UseSystemPasswordChar = true;
             // 
             // tbUsuario
             // 
             tbUsuario.BorderStyle = BorderStyle.None;
             tbUsuario.Font = new Font("Segoe UI", 11.5F);
-            tbUsuario.Location = new Point(128, 391);
-            tbUsuario.Margin = new Padding(3, 4, 3, 4);
+            tbUsuario.Location = new Point(90, 273);
             tbUsuario.Name = "tbUsuario";
             tbUsuario.PlaceholderText = "Usuário";
-            tbUsuario.Size = new Size(509, 26);
+            tbUsuario.Size = new Size(353, 21);
             tbUsuario.TabIndex = 1;
             // 
             // btnFechar
             // 
             btnFechar.BackColor = Color.Transparent;
             btnFechar.Cursor = Cursors.Hand;
-            btnFechar.Location = new Point(726, 12);
+            btnFechar.Location = new Point(503, 4);
+            btnFechar.Margin = new Padding(3, 2, 3, 2);
             btnFechar.Name = "btnFechar";
-            btnFechar.Size = new Size(37, 27);
+            btnFechar.Size = new Size(30, 25);
             btnFechar.TabIndex = 5;
             btnFechar.Click += btnFechar_Click;
             // 
             // MDILogin
             // 
             AcceptButton = btnEntrar;
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = (Image)resources.GetObject("$this.BackgroundImage");
-            ClientSize = new Size(765, 750);
+            BackgroundImageLayout = ImageLayout.Zoom;
+            ClientSize = new Size(536, 556);
             Controls.Add(btnFechar);
             Controls.Add(btnEntrar);
             Controls.Add(tbSenha);
             Controls.Add(tbUsuario);
             FormBorderStyle = FormBorderStyle.None;
-            Margin = new Padding(3, 4, 3, 4);
+            Icon = Properties.Resources.iconZenCode;
             Name = "MDILogin";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "MDILogin";
-            Icon = global::ZenCodeERP.Properties.Resources.iconZenCode;
+            Shown += MDILogin_Shown;
             ResumeLayout(false);
             PerformLayout();
         }

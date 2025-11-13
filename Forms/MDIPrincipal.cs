@@ -1,5 +1,6 @@
 ﻿using System.Diagnostics.CodeAnalysis;
 using ZenCodeERP.Forms.Visao;
+using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms
 {
@@ -8,6 +9,11 @@ namespace ZenCodeERP.Forms
         public MDIPrincipal()
         {
             InitializeComponent();
+        }
+
+        private void MDIPrincipal_Load(object sender, EventArgs e)
+        {
+            this.Text = Text + " - Usuário: " + AppZenCodeContext.Usuario;
         }
 
         private void MDIPrincipal_FormClosing(object sender, FormClosingEventArgs e)

@@ -1,4 +1,6 @@
+using System.Security.Permissions;
 using ZenCodeERP.Forms;
+using ZenCodeERP.Utils;
 
 namespace ZenCodeERP
 {
@@ -12,6 +14,7 @@ namespace ZenCodeERP
         {
             ApplicationConfiguration.Initialize();
 
+            AppZenCodeContext.Usuario = Properties.Settings.Default.UltimoUsuario;
             MDILogin loginForm = new MDILogin();
 
             DialogResult dialogResult = loginForm.ShowDialog();

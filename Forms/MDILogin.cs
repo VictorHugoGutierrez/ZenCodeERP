@@ -1,14 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
-using ZenCodeERP.Data.Repositories;
+﻿using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Model;
+using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms
 {
@@ -17,6 +9,15 @@ namespace ZenCodeERP.Forms
         public MDILogin()
         {
             InitializeComponent();
+        }
+
+        private void MDILogin_Shown(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(AppZenCodeContext.Usuario))
+            {
+                tbUsuario.Text = AppZenCodeContext.Usuario;
+                tbSenha.Focus();
+            }
         }
 
         private bool ValidaCampos()
@@ -64,6 +65,11 @@ namespace ZenCodeERP.Forms
 
                     if (passwordMatch)
                     {
+                        AppZenCodeContext.CodUsuario = usuario.CODUSUARIO;
+                        AppZenCodeContext.Usuario = usuario.USUARIO;
+                        Properties.Settings.Default.UltimoUsuario = usuario.USUARIO;
+                        Properties.Settings.Default.Save();
+
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }

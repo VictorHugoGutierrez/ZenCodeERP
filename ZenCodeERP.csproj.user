@@ -4,6 +4,9 @@
     <Compile Update="Forms\Cadastro\FormCadastroEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Cadastro\FormCadastroEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Cadastro\FormCadastroUsuarios.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -11,6 +14,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\MDIPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Visao\FormVisaoUsuarios.cs">

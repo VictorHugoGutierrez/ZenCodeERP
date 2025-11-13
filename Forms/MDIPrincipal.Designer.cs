@@ -49,7 +49,7 @@
                 toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonEndereco, toolStripButtonEmpresa, toolStripButtonUsuario });
                 toolStrip1.Location = new Point(0, 0);
                 toolStrip1.Name = "toolStrip1";
-                toolStrip1.Size = new Size(1000, 56);
+                toolStrip1.Size = new Size(1000, 53);
                 toolStrip1.TabIndex = 7;
                 toolStrip1.Text = "toolStrip1";
                 // 
@@ -96,7 +96,7 @@
                 panel1.BackColor = Color.White;
                 panel1.Location = new Point(0, 0);
                 panel1.Name = "panel1";
-                panel1.Size = new Size(1000, 56);
+                panel1.Size = new Size(1000, 70);
                 panel1.TabIndex = 8;
                 // 
                 // panel2
@@ -119,9 +119,10 @@
                 Icon = Properties.Resources.iconZenCode;
                 Margin = new Padding(3, 4, 3, 4);
                 Name = "MDIPrincipal";
-                Text = "ZenCode ERP - Principal";
+                Text = "ZenCode ERP";
                 WindowState = FormWindowState.Maximized;
                 FormClosing += MDIPrincipal_FormClosing;
+                Load += MDIPrincipal_Load;
                 toolStrip1.ResumeLayout(false);
                 toolStrip1.PerformLayout();
                 ResumeLayout(false);
