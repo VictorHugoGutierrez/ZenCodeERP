@@ -21,7 +21,7 @@ namespace ZenCodeERP.Forms
             if (e.CloseReason == CloseReason.WindowsShutDown)
                 return;
 
-            if(MessageBox.Show("Deseja realmente fechar o sistema?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            if (MessageBox.Show("Deseja realmente fechar o sistema?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
                 e.Cancel = true;
         }
 
@@ -48,6 +48,16 @@ namespace ZenCodeERP.Forms
         private void toolStripButtonEndereco_Click(object sender, EventArgs e)
         {
             FormVisaoEndereco form = new FormVisaoEndereco();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(form);
+            form.Show();
+        }
+
+        private void iconToolStripButtonCliFor_Click(object sender, EventArgs e)
+        {
+            FormVisaoClienteFornecedor form = new FormVisaoClienteFornecedor();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             this.panel2.Controls.Clear();

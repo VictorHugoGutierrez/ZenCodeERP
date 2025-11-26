@@ -22,6 +22,7 @@ namespace ZenCodeERP.Forms.Visao
             this.lookup = lookup;
         }
 
+
         private void FormVisaoEndereco_Load(object sender, EventArgs e)
         {
             CarregaGrid();
