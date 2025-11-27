@@ -66,7 +66,10 @@ namespace ZenCodeERP.Forms.Cadastro
             if (edita)
                 CarregaCampos();
             else
-                tbCodEmpresa.Text = clientefornecedorRepository.GetNextCodEmpresa().ToString();
+            { 
+                tbCodCliFor.Text = clientefornecedorRepository.GetNextCodCliFor(codEmpresa).ToString();
+                tbCodEmpresa.Text = 1.ToString();
+            }
         }
 
         private void CarregaCampos()

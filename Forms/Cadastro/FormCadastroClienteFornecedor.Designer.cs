@@ -37,7 +37,6 @@ namespace ZenCodeERP.Forms.Cadastro
             tabPage1 = new TabPage();
             groupBox2 = new GroupBox();
             cbTipoPessoa = new ComboBox();
-            gbTipoCadastro = new GroupBox();
             cbTipoCadastro = new ComboBox();
             lbNomeFantasia = new Label();
             tbNomeFantasia = new TextBox();
@@ -68,7 +67,6 @@ namespace ZenCodeERP.Forms.Cadastro
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             groupBox2.SuspendLayout();
-            gbTipoCadastro.SuspendLayout();
             gpContato.SuspendLayout();
             panelBottom.SuspendLayout();
             SuspendLayout();
@@ -86,8 +84,8 @@ namespace ZenCodeERP.Forms.Cadastro
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(cbTipoCadastro);
             tabPage1.Controls.Add(groupBox2);
-            tabPage1.Controls.Add(gbTipoCadastro);
             tabPage1.Controls.Add(lbNomeFantasia);
             tabPage1.Controls.Add(tbNomeFantasia);
             tabPage1.Controls.Add(btnLookupEndereco);
@@ -131,20 +129,10 @@ namespace ZenCodeERP.Forms.Cadastro
             cbTipoPessoa.TabIndex = 1;
             cbTipoPessoa.SelectedIndexChanged += cbTipoPessoa_SelectedIndexChanged;
             // 
-            // gbTipoCadastro
-            // 
-            gbTipoCadastro.Controls.Add(cbTipoCadastro);
-            gbTipoCadastro.Location = new Point(461, 181);
-            gbTipoCadastro.Name = "gbTipoCadastro";
-            gbTipoCadastro.Size = new Size(164, 71);
-            gbTipoCadastro.TabIndex = 20;
-            gbTipoCadastro.TabStop = false;
-            gbTipoCadastro.Text = "Tipo do Cadastro";
-            // 
             // cbTipoCadastro
             // 
             cbTipoCadastro.FormattingEnabled = true;
-            cbTipoCadastro.Location = new Point(7, 28);
+            cbTipoCadastro.Location = new Point(470, 206);
             cbTipoCadastro.Name = "cbTipoCadastro";
             cbTipoCadastro.Size = new Size(151, 28);
             cbTipoCadastro.TabIndex = 0;
@@ -413,7 +401,6 @@ namespace ZenCodeERP.Forms.Cadastro
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
             groupBox2.ResumeLayout(false);
-            gbTipoCadastro.ResumeLayout(false);
             gpContato.ResumeLayout(false);
             gpContato.PerformLayout();
             panelBottom.ResumeLayout(false);
@@ -449,7 +436,6 @@ namespace ZenCodeERP.Forms.Cadastro
         private Label lbNomeFantasia;
         private TextBox tbNomeFantasia;
         private GroupBox groupBox2;
-        private GroupBox gbTipoCadastro;
         private ComboBox cbTipoPessoa;
         private ComboBox cbTipoCadastro;
         private Label lbEmail;
