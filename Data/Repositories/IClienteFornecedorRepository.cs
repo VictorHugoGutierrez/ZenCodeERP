@@ -16,6 +16,7 @@ namespace ZenCodeERP.Data.Repositories
         void Update(ClienteFornecedor cliente);
         void Delete(int codEmpresa, int codCliFor);
         ClienteFornecedor GetByCodCliFor(int codEmpresa, int CodCliFor);
-        List<ClienteFornecedor> GetAll();
+        List<ClienteFornecedor> GetAll(int codEmpresa);
+        int GetNextCodCliFor(int codEmpresa);
     }
 }

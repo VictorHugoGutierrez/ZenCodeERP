@@ -1,5 +1,7 @@
 ﻿using System.Diagnostics.CodeAnalysis;
+using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Visao;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms
@@ -14,6 +16,22 @@ namespace ZenCodeERP.Forms
         private void MDIPrincipal_Load(object sender, EventArgs e)
         {
             this.Text = Text + " - Usuário: " + AppZenCodeContext.Usuario;
+
+            EmpresaRepository empresaRepository = new EmpresaRepository();
+            List<Empresa> empresas = empresaRepository.GetAll();
+            if (empresas.Count > 1)
+            {
+                MDISelecaoEmpresa form = new MDISelecaoEmpresa();
+                if(form.ShowDialog() != DialogResult.OK)
+                {
+                    this.Close();
+                    return;
+                }
+            }
+            else if(empresas.Count == 1)
+            {
+                AppZenCodeContext.CodEmpresa = empresas[0].CODEMPRESA;
+            }
         }
 
         private void MDIPrincipal_FormClosing(object sender, FormClosingEventArgs e)

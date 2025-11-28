@@ -20,12 +20,12 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Update(ClienteFornecedor clientefornecedor)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("UPDATE CLIENTEFORNECEDOR SET NOME = ?, NOMEFANTASIA = ?, CNPJCPF = ?, TELEFONE = ?, TIPOCADASTRO = ?, TIPOPESSOA = ?, EMAIL = ?, CODENDERECO = ? WHERE CODCLIFOR = ? AND CODEMPRESA = ?", new object[] { clientefornecedor.NOME, clientefornecedor.NOMEFANTASIA, clientefornecedor.CNPJCPF, clientefornecedor.TELEFONE, clientefornecedor.TIPOCADASTRO, clientefornecedor.TIPOPESSOA, clientefornecedor.EMAIL, clientefornecedor.CODENDERECO, clientefornecedor.CODCLIFOR, clientefornecedor.CODEMPRESA });
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE CLIENTEFORNECEDOR SET NOME = ?, NOMEFANTASIA = ?, CNPJCPF = ?, TELEFONE = ?, TIPOCADASTRO = ?, TIPOPESSOA = ?, EMAIL = ?, CODENDERECO = ? WHERE CODEMPRESA = ? AND CODCLIFOR = ?", new object[] { clientefornecedor.NOME, clientefornecedor.NOMEFANTASIA, clientefornecedor.CNPJCPF, clientefornecedor.TELEFONE, clientefornecedor.TIPOCADASTRO, clientefornecedor.TIPOPESSOA, clientefornecedor.EMAIL, clientefornecedor.CODENDERECO, clientefornecedor.CODEMPRESA, clientefornecedor.CODCLIFOR });
         }
 
         public void Delete(int codEmpresa, int codCliFor)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM CLIENTEFORNECEDOR WHERE CODCLIFOR = ? AND CODEMPRESA = ?", codCliFor, codEmpresa);
+            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM CLIENTEFORNECEDOR WHERE CODEMPRESA = ? AND CODCLIFOR = ?", codEmpresa, codCliFor);
         }
 
         public ClienteFornecedor GetByCodCliFor(int codEmpresa, int codCliFor)
@@ -51,9 +51,9 @@ namespace ZenCodeERP.Data.Repositories
             };
         }
 
-        public List<ClienteFornecedor> GetAll()
+        public List<ClienteFornecedor> GetAll(int codEmpresa)
         {
-            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM CLIENTEFORNECEDOR");
+            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM CLIENTEFORNECEDOR WHERE CODEMPRESA = ?", codEmpresa);
             List<ClienteFornecedor> clientefornecedor = new List<ClienteFornecedor>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -74,15 +74,9 @@ namespace ZenCodeERP.Data.Repositories
             return clientefornecedor;
         }
 
-        public int GetNextCodEmpresa()
-        {
-            return Convert.ToInt32(DataBaseConnection.Instance().ExecuteGetField("SELECT COALESCE(MAX(CODEMPRESA), 0) + 1 FROM CLIENTEFORNECEDOR"));
-        }
         public int GetNextCodCliFor(int codEmpresa)
         {
             return Convert.ToInt32(DataBaseConnection.Instance().ExecuteGetField("SELECT COALESCE(MAX(CODCLIFOR), 0) + 1 FROM CLIENTEFORNECEDOR WHERE CODEMPRESA = ?", codEmpresa));
         }
-
-
     }
 }

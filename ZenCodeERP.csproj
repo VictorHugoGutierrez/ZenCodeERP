@@ -27,6 +27,9 @@
     <Compile Update="Forms\Cadastro\FormCadastroEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\MDISelecaoEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Visao\FormVisaoClienteFornecedor.cs">
       <SubType>Form</SubType>
     </Compile>

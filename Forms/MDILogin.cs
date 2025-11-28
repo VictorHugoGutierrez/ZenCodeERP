@@ -70,6 +70,8 @@ namespace ZenCodeERP.Forms
                         Properties.Settings.Default.UltimoUsuario = usuario.USUARIO;
                         Properties.Settings.Default.Save();
 
+                        usuarioRepository.AtualizaUltimoLogin(usuario.CODUSUARIO);
+
                         this.DialogResult = DialogResult.OK;
                         this.Close();
                     }

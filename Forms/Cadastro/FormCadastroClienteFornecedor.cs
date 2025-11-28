@@ -12,13 +12,13 @@ using ZenCodeERP.Data;
 using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Visao;
 using ZenCodeERP.Model;
+using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Cadastro
 {
     public partial class FormCadastroClienteFornecedor : Form
     {
         private ClienteFornecedorRepository clientefornecedorRepository = new ClienteFornecedorRepository();
-        public int codEmpresa;
         public int codCliFor;
         public bool edita = false;
 
@@ -67,14 +67,14 @@ namespace ZenCodeERP.Forms.Cadastro
                 CarregaCampos();
             else
             { 
-                tbCodCliFor.Text = clientefornecedorRepository.GetNextCodCliFor(codEmpresa).ToString();
-                tbCodEmpresa.Text = 1.ToString();
+                tbCodCliFor.Text = clientefornecedorRepository.GetNextCodCliFor(AppZenCodeContext.CodEmpresa).ToString();
+                tbCodEmpresa.Text = AppZenCodeContext.CodEmpresa.ToString();
             }
         }
 
         private void CarregaCampos()
         {
-            ClienteFornecedor clientefornecedor = clientefornecedorRepository.GetByCodCliFor(codEmpresa, codCliFor);
+            ClienteFornecedor clientefornecedor = clientefornecedorRepository.GetByCodCliFor(AppZenCodeContext.CodEmpresa, codCliFor);
 
             tbCodEmpresa.Text = clientefornecedor.CODEMPRESA.ToString();
             tbCodCliFor.Text = clientefornecedor.CODCLIFOR.ToString();
@@ -93,7 +93,7 @@ namespace ZenCodeERP.Forms.Cadastro
         {
             try
             {
-                if (!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM EMPRESA WHERE CODEMPRESA = {codEmpresa}"))
+                if (!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM CLIENTEFORNECEDOR WHERE CODEMPRESA = {AppZenCodeContext.CodEmpresa} AND CODCLIFOR = {codCliFor}"))
                 {
                     clientefornecedorRepository.Add(new ClienteFornecedor
                     {
@@ -109,7 +109,7 @@ namespace ZenCodeERP.Forms.Cadastro
                         CODENDERECO = Convert.ToInt32(tbCodigoEndereco.Text),
                     });
 
-                    codEmpresa = Convert.ToInt32(tbCodEmpresa.Text);
+                    codCliFor = Convert.ToInt32(tbCodCliFor.Text);
                 }
                 else
                 {
@@ -179,7 +179,6 @@ namespace ZenCodeERP.Forms.Cadastro
         {
             if(cbTipoPessoa.SelectedIndex == 0)
                 tbCNPJ.Mask = "000,000,000-00";
-            
             else 
                 tbCNPJ.Mask = "00,000,000/0000-00";
         }

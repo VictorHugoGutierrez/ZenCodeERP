@@ -27,7 +27,7 @@ namespace ZenCodeERP.Forms.Visao
                 string tabela = "CLIENTEFORNECEDOR";
                 string relacionamento = string.Empty; 
 
-                string where = "1 = 1";
+                string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
                 new Utilidades().GetVisao(gvClienteFornecedor, coluna, tabela, relacionamento, where);
             }
@@ -52,8 +52,7 @@ namespace ZenCodeERP.Forms.Visao
                 DataRow row1 = ((DataRowView)gvClienteFornecedor.Rows[index].DataBoundItem).Row;
                 FormCadastroClienteFornecedor frm = new FormCadastroClienteFornecedor();
                 frm.edita = true;
-                frm.codEmpresa = Convert.ToInt32(row1["CODEMPRESA"]);
-                frm.codCliFor = Convert.ToInt32(row1["CODCLIFOR"]);
+                frm.codCliFor = Convert.ToInt32(row1["Cliente/Fornecedor"]);
                 frm.ShowDialog();
                 CarregaGrid();
             }
@@ -68,7 +67,7 @@ namespace ZenCodeERP.Forms.Visao
                     int index = gvClienteFornecedor.SelectedRows[i].Index;
                     DataRow row1 = ((DataRowView)gvClienteFornecedor.Rows[index].DataBoundItem).Row;
 
-                    ClienteFornecedorRepository.Delete(Convert.ToInt32(row1["CODEMPRESA"]), Convert.ToInt32(row1["CODCLIFOR"]));
+                    ClienteFornecedorRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["Cliente/Fornecedor"]));
                 }
 
                 CarregaGrid();

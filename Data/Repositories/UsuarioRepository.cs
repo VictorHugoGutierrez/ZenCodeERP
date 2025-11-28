@@ -27,7 +27,7 @@ namespace ZenCodeERP.Data.Repositories
             DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET NOME = ?, USUARIO = ?, SENHA = ?, ATIVO = ?, ULTIMOLOGIN = ? WHERE CODUSUARIO = ?",
                 usuario.NOME,
                 usuario.USUARIO,
-                usuario.SENHA,
+                CriarHashBCrypt(usuario.SENHA),
                 usuario.ATIVO,
                 usuario.ULTIMOLOGIN,
                 usuario.CODUSUARIO);
@@ -106,6 +106,11 @@ namespace ZenCodeERP.Data.Repositories
         public bool VerificarSenhaBCrypt(string senhaDigitada, string hashArmazenado)
         {
             return BCrypt.Net.BCrypt.Verify(senhaDigitada, hashArmazenado);
+        }
+
+        public void AtualizaUltimoLogin(int codUsuario)
+        {
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET ULTIMOLOGIN = ? WHERE CODUSUARIO = ?", DateTime.Now, codUsuario);
         }
     }
 }

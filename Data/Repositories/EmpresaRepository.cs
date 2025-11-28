@@ -56,7 +56,7 @@ namespace ZenCodeERP.Data.Repositories
 
         public List<Empresa> GetAll()
         {
-            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM Empresa");
+            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM EMPRESA");
             List<Empresa> empresa = new List<Empresa>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -69,7 +69,6 @@ namespace ZenCodeERP.Data.Repositories
                     TELEFONE = row["TELEFONE"].ToString(),
                     EMAIL = row["EMAIL"].ToString(),
                     CODENDERECO = Convert.ToInt32(row["CODENDERECO"]),
-                    IMAGEM = (Image)row["IMAGEM"]
                 });
             }
             return empresa;

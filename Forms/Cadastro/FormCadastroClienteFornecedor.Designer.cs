@@ -35,9 +35,8 @@ namespace ZenCodeERP.Forms.Cadastro
             components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
-            groupBox2 = new GroupBox();
-            cbTipoPessoa = new ComboBox();
             cbTipoCadastro = new ComboBox();
+            cbTipoPessoa = new ComboBox();
             lbNomeFantasia = new Label();
             tbNomeFantasia = new TextBox();
             btnLookupEndereco = new Button();
@@ -64,9 +63,10 @@ namespace ZenCodeERP.Forms.Cadastro
             flowButtons = new FlowLayoutPanel();
             openFileDialog1 = new OpenFileDialog();
             contextMenuStrip1 = new ContextMenuStrip(components);
+            lbTipoCadastro = new Label();
+            lbTipoPessoa = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
-            groupBox2.SuspendLayout();
             gpContato.SuspendLayout();
             panelBottom.SuspendLayout();
             SuspendLayout();
@@ -76,16 +76,18 @@ namespace ZenCodeERP.Forms.Cadastro
             tabControl1.Controls.Add(tabPage1);
             tabControl1.Dock = DockStyle.Fill;
             tabControl1.Location = new Point(0, 0);
-            tabControl1.Margin = new Padding(5, 4, 5, 4);
+            tabControl1.Margin = new Padding(4, 3, 4, 3);
             tabControl1.Name = "tabControl1";
             tabControl1.SelectedIndex = 0;
-            tabControl1.Size = new Size(839, 434);
+            tabControl1.Size = new Size(734, 325);
             tabControl1.TabIndex = 5;
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(lbTipoPessoa);
+            tabPage1.Controls.Add(lbTipoCadastro);
+            tabPage1.Controls.Add(cbTipoPessoa);
             tabPage1.Controls.Add(cbTipoCadastro);
-            tabPage1.Controls.Add(groupBox2);
             tabPage1.Controls.Add(lbNomeFantasia);
             tabPage1.Controls.Add(tbNomeFantasia);
             tabPage1.Controls.Add(btnLookupEndereco);
@@ -101,65 +103,58 @@ namespace ZenCodeERP.Forms.Cadastro
             tabPage1.Controls.Add(tbCodCliFor);
             tabPage1.Controls.Add(lbCodEmpresa);
             tabPage1.Controls.Add(tbCodEmpresa);
-            tabPage1.Location = new Point(4, 29);
-            tabPage1.Margin = new Padding(5, 4, 5, 4);
+            tabPage1.Location = new Point(4, 24);
+            tabPage1.Margin = new Padding(4, 3, 4, 3);
             tabPage1.Name = "tabPage1";
-            tabPage1.Padding = new Padding(5, 4, 5, 4);
-            tabPage1.Size = new Size(831, 401);
+            tabPage1.Padding = new Padding(4, 3, 4, 3);
+            tabPage1.Size = new Size(726, 297);
             tabPage1.TabIndex = 0;
             tabPage1.Text = "Identificação";
             tabPage1.UseVisualStyleBackColor = true;
             // 
-            // groupBox2
+            // cbTipoCadastro
             // 
-            groupBox2.Controls.Add(cbTipoPessoa);
-            groupBox2.Location = new Point(642, 181);
-            groupBox2.Name = "groupBox2";
-            groupBox2.Size = new Size(164, 71);
-            groupBox2.TabIndex = 21;
-            groupBox2.TabStop = false;
-            groupBox2.Text = "Tipo Pessoa";
+            cbTipoCadastro.FormattingEnabled = true;
+            cbTipoCadastro.Location = new Point(437, 155);
+            cbTipoCadastro.Margin = new Padding(3, 2, 3, 2);
+            cbTipoCadastro.Name = "cbTipoCadastro";
+            cbTipoCadastro.Size = new Size(133, 23);
+            cbTipoCadastro.TabIndex = 0;
             // 
             // cbTipoPessoa
             // 
             cbTipoPessoa.FormattingEnabled = true;
-            cbTipoPessoa.Location = new Point(7, 28);
+            cbTipoPessoa.Location = new Point(575, 155);
+            cbTipoPessoa.Margin = new Padding(3, 2, 3, 2);
             cbTipoPessoa.Name = "cbTipoPessoa";
-            cbTipoPessoa.Size = new Size(151, 28);
+            cbTipoPessoa.Size = new Size(133, 23);
             cbTipoPessoa.TabIndex = 1;
             cbTipoPessoa.SelectedIndexChanged += cbTipoPessoa_SelectedIndexChanged;
-            // 
-            // cbTipoCadastro
-            // 
-            cbTipoCadastro.FormattingEnabled = true;
-            cbTipoCadastro.Location = new Point(470, 206);
-            cbTipoCadastro.Name = "cbTipoCadastro";
-            cbTipoCadastro.Size = new Size(151, 28);
-            cbTipoCadastro.TabIndex = 0;
             // 
             // lbNomeFantasia
             // 
             lbNomeFantasia.AutoSize = true;
-            lbNomeFantasia.Location = new Point(10, 123);
-            lbNomeFantasia.Margin = new Padding(5, 0, 5, 0);
+            lbNomeFantasia.Location = new Point(9, 92);
+            lbNomeFantasia.Margin = new Padding(4, 0, 4, 0);
             lbNomeFantasia.Name = "lbNomeFantasia";
-            lbNomeFantasia.Size = new Size(107, 20);
+            lbNomeFantasia.Size = new Size(86, 15);
             lbNomeFantasia.TabIndex = 18;
             lbNomeFantasia.Text = "Nome Fantasia";
             // 
             // tbNomeFantasia
             // 
-            tbNomeFantasia.Location = new Point(10, 147);
-            tbNomeFantasia.Margin = new Padding(5, 4, 5, 4);
+            tbNomeFantasia.Location = new Point(9, 110);
+            tbNomeFantasia.Margin = new Padding(4, 3, 4, 3);
             tbNomeFantasia.Name = "tbNomeFantasia";
-            tbNomeFantasia.Size = new Size(799, 27);
+            tbNomeFantasia.Size = new Size(700, 23);
             tbNomeFantasia.TabIndex = 19;
             // 
             // btnLookupEndereco
             // 
-            btnLookupEndereco.Location = new Point(120, 208);
+            btnLookupEndereco.Location = new Point(105, 156);
+            btnLookupEndereco.Margin = new Padding(3, 2, 3, 2);
             btnLookupEndereco.Name = "btnLookupEndereco";
-            btnLookupEndereco.Size = new Size(50, 29);
+            btnLookupEndereco.Size = new Size(44, 22);
             btnLookupEndereco.TabIndex = 17;
             btnLookupEndereco.Text = "...";
             btnLookupEndereco.UseVisualStyleBackColor = true;
@@ -168,44 +163,46 @@ namespace ZenCodeERP.Forms.Cadastro
             // lbEndereco
             // 
             lbEndereco.AutoSize = true;
-            lbEndereco.Location = new Point(10, 184);
+            lbEndereco.Location = new Point(9, 138);
             lbEndereco.Name = "lbEndereco";
-            lbEndereco.Size = new Size(71, 20);
+            lbEndereco.Size = new Size(56, 15);
             lbEndereco.TabIndex = 16;
             lbEndereco.Text = "Endereço";
             // 
             // tbNomeEndereco
             // 
             tbNomeEndereco.Enabled = false;
-            tbNomeEndereco.Location = new Point(177, 207);
+            tbNomeEndereco.Location = new Point(155, 155);
+            tbNomeEndereco.Margin = new Padding(3, 2, 3, 2);
             tbNomeEndereco.Name = "tbNomeEndereco";
-            tbNomeEndereco.Size = new Size(268, 27);
+            tbNomeEndereco.Size = new Size(276, 23);
             tbNomeEndereco.TabIndex = 15;
             // 
             // tbCodigoEndereco
             // 
-            tbCodigoEndereco.Location = new Point(10, 207);
+            tbCodigoEndereco.Location = new Point(9, 155);
+            tbCodigoEndereco.Margin = new Padding(3, 2, 3, 2);
             tbCodigoEndereco.Name = "tbCodigoEndereco";
-            tbCodigoEndereco.Size = new Size(102, 27);
+            tbCodigoEndereco.Size = new Size(90, 23);
             tbCodigoEndereco.TabIndex = 14;
             tbCodigoEndereco.Leave += tbCodigoEndereco_Leave;
             // 
             // lbNome
             // 
             lbNome.AutoSize = true;
-            lbNome.Location = new Point(10, 59);
-            lbNome.Margin = new Padding(5, 0, 5, 0);
+            lbNome.Location = new Point(9, 44);
+            lbNome.Margin = new Padding(4, 0, 4, 0);
             lbNome.Name = "lbNome";
-            lbNome.Size = new Size(50, 20);
+            lbNome.Size = new Size(40, 15);
             lbNome.TabIndex = 11;
             lbNome.Text = "Nome";
             // 
             // tbNome
             // 
-            tbNome.Location = new Point(10, 83);
-            tbNome.Margin = new Padding(5, 4, 5, 4);
+            tbNome.Location = new Point(9, 62);
+            tbNome.Margin = new Padding(4, 3, 4, 3);
             tbNome.Name = "tbNome";
-            tbNome.Size = new Size(799, 27);
+            tbNome.Size = new Size(700, 23);
             tbNome.TabIndex = 12;
             // 
             // gpContato
@@ -214,105 +211,105 @@ namespace ZenCodeERP.Forms.Cadastro
             gpContato.Controls.Add(lbEmail);
             gpContato.Controls.Add(tbEmail);
             gpContato.Controls.Add(lbTelefone);
-            gpContato.Location = new Point(10, 255);
-            gpContato.Margin = new Padding(3, 4, 3, 4);
+            gpContato.Location = new Point(9, 183);
             gpContato.Name = "gpContato";
-            gpContato.Padding = new Padding(3, 4, 3, 4);
-            gpContato.Size = new Size(799, 134);
+            gpContato.Size = new Size(699, 108);
             gpContato.TabIndex = 10;
             gpContato.TabStop = false;
             gpContato.Text = "Contato";
             // 
             // tbTelefone
             // 
-            tbTelefone.Location = new Point(7, 50);
+            tbTelefone.Location = new Point(6, 35);
+            tbTelefone.Margin = new Padding(3, 2, 3, 2);
             tbTelefone.Mask = "(00) 00000-0000";
             tbTelefone.Name = "tbTelefone";
-            tbTelefone.Size = new Size(783, 27);
+            tbTelefone.Size = new Size(686, 23);
             tbTelefone.TabIndex = 17;
             // 
             // lbEmail
             // 
             lbEmail.AutoSize = true;
-            lbEmail.Location = new Point(7, 80);
-            lbEmail.Margin = new Padding(5, 0, 5, 0);
+            lbEmail.Location = new Point(6, 61);
+            lbEmail.Margin = new Padding(4, 0, 4, 0);
             lbEmail.Name = "lbEmail";
-            lbEmail.Size = new Size(46, 20);
+            lbEmail.Size = new Size(36, 15);
             lbEmail.TabIndex = 15;
             lbEmail.Text = "Email";
             // 
             // tbEmail
             // 
-            tbEmail.Location = new Point(7, 100);
-            tbEmail.Margin = new Padding(5, 4, 5, 4);
+            tbEmail.Location = new Point(6, 79);
+            tbEmail.Margin = new Padding(4, 3, 4, 3);
             tbEmail.Name = "tbEmail";
-            tbEmail.Size = new Size(783, 27);
+            tbEmail.Size = new Size(686, 23);
             tbEmail.TabIndex = 16;
             // 
             // lbTelefone
             // 
             lbTelefone.AutoSize = true;
-            lbTelefone.Location = new Point(7, 29);
-            lbTelefone.Margin = new Padding(5, 0, 5, 0);
+            lbTelefone.Location = new Point(4, 19);
+            lbTelefone.Margin = new Padding(4, 0, 4, 0);
             lbTelefone.Name = "lbTelefone";
-            lbTelefone.Size = new Size(66, 20);
+            lbTelefone.Size = new Size(52, 15);
             lbTelefone.TabIndex = 13;
             lbTelefone.Text = "Telefone";
             // 
             // lbCNPJ
             // 
             lbCNPJ.AutoSize = true;
-            lbCNPJ.Location = new Point(388, 4);
-            lbCNPJ.Margin = new Padding(5, 0, 5, 0);
+            lbCNPJ.Location = new Point(340, 3);
+            lbCNPJ.Margin = new Padding(4, 0, 4, 0);
             lbCNPJ.Name = "lbCNPJ";
-            lbCNPJ.Size = new Size(71, 20);
+            lbCNPJ.Size = new Size(60, 15);
             lbCNPJ.TabIndex = 8;
             lbCNPJ.Text = "CNPJ/CPF";
             // 
             // tbCNPJ
             // 
-            tbCNPJ.Location = new Point(387, 24);
-            tbCNPJ.Margin = new Padding(5, 4, 5, 4);
+            tbCNPJ.Location = new Point(339, 18);
+            tbCNPJ.Margin = new Padding(4, 3, 4, 3);
             tbCNPJ.Mask = "00.000.000/0000-00";
             tbCNPJ.Name = "tbCNPJ";
-            tbCNPJ.Size = new Size(422, 27);
+            tbCNPJ.Size = new Size(370, 23);
             tbCNPJ.TabIndex = 9;
             // 
             // lbCodCliFor
             // 
             lbCodCliFor.AutoSize = true;
-            lbCodCliFor.Location = new Point(197, 4);
-            lbCodCliFor.Margin = new Padding(5, 0, 5, 0);
+            lbCodCliFor.Location = new Point(172, 3);
+            lbCodCliFor.Margin = new Padding(4, 0, 4, 0);
             lbCodCliFor.Name = "lbCodCliFor";
-            lbCodCliFor.Size = new Size(164, 20);
+            lbCodCliFor.Size = new Size(132, 15);
             lbCodCliFor.TabIndex = 6;
             lbCodCliFor.Text = "Cod. ClienteFornecedor";
             // 
             // tbCodCliFor
             // 
-            tbCodCliFor.Location = new Point(197, 24);
-            tbCodCliFor.Margin = new Padding(5, 4, 5, 4);
+            tbCodCliFor.Location = new Point(172, 18);
+            tbCodCliFor.Margin = new Padding(4, 3, 4, 3);
             tbCodCliFor.Name = "tbCodCliFor";
-            tbCodCliFor.Size = new Size(164, 27);
+            tbCodCliFor.ReadOnly = true;
+            tbCodCliFor.Size = new Size(144, 23);
             tbCodCliFor.TabIndex = 7;
             // 
             // lbCodEmpresa
             // 
             lbCodEmpresa.AutoSize = true;
-            lbCodEmpresa.Location = new Point(10, 4);
-            lbCodEmpresa.Margin = new Padding(5, 0, 5, 0);
+            lbCodEmpresa.Location = new Point(9, 3);
+            lbCodEmpresa.Margin = new Padding(4, 0, 4, 0);
             lbCodEmpresa.Name = "lbCodEmpresa";
-            lbCodEmpresa.Size = new Size(100, 20);
+            lbCodEmpresa.Size = new Size(80, 15);
             lbCodEmpresa.TabIndex = 3;
             lbCodEmpresa.Text = "Cód. Empresa";
             // 
             // tbCodEmpresa
             // 
-            tbCodEmpresa.Location = new Point(10, 24);
-            tbCodEmpresa.Margin = new Padding(5, 4, 5, 4);
+            tbCodEmpresa.Location = new Point(9, 18);
+            tbCodEmpresa.Margin = new Padding(4, 3, 4, 3);
             tbCodEmpresa.Name = "tbCodEmpresa";
             tbCodEmpresa.ReadOnly = true;
-            tbCodEmpresa.Size = new Size(162, 27);
+            tbCodEmpresa.Size = new Size(142, 23);
             tbCodEmpresa.TabIndex = 4;
             // 
             // panelBottom
@@ -322,19 +319,19 @@ namespace ZenCodeERP.Forms.Cadastro
             panelBottom.Controls.Add(btnSalvar);
             panelBottom.Controls.Add(flowButtons);
             panelBottom.Dock = DockStyle.Bottom;
-            panelBottom.Location = new Point(0, 434);
-            panelBottom.Margin = new Padding(5, 4, 5, 4);
+            panelBottom.Location = new Point(0, 325);
+            panelBottom.Margin = new Padding(4, 3, 4, 3);
             panelBottom.Name = "panelBottom";
-            panelBottom.Size = new Size(839, 61);
+            panelBottom.Size = new Size(734, 46);
             panelBottom.TabIndex = 6;
             // 
             // btnOk
             // 
             btnOk.AutoSize = true;
-            btnOk.Location = new Point(624, 8);
-            btnOk.Margin = new Padding(5, 4, 5, 4);
+            btnOk.Location = new Point(546, 6);
+            btnOk.Margin = new Padding(4, 3, 4, 3);
             btnOk.Name = "btnOk";
-            btnOk.Size = new Size(101, 40);
+            btnOk.Size = new Size(88, 30);
             btnOk.TabIndex = 2;
             btnOk.Text = "OK";
             btnOk.Click += btnOk_Click;
@@ -342,10 +339,10 @@ namespace ZenCodeERP.Forms.Cadastro
             // btnCancelar
             // 
             btnCancelar.AutoSize = true;
-            btnCancelar.Location = new Point(734, 8);
-            btnCancelar.Margin = new Padding(5, 4, 5, 4);
+            btnCancelar.Location = new Point(642, 6);
+            btnCancelar.Margin = new Padding(4, 3, 4, 3);
             btnCancelar.Name = "btnCancelar";
-            btnCancelar.Size = new Size(101, 40);
+            btnCancelar.Size = new Size(88, 30);
             btnCancelar.TabIndex = 1;
             btnCancelar.Text = "Cancelar";
             btnCancelar.Click += btnCancelar_Click;
@@ -353,10 +350,10 @@ namespace ZenCodeERP.Forms.Cadastro
             // btnSalvar
             // 
             btnSalvar.AutoSize = true;
-            btnSalvar.Location = new Point(514, 8);
-            btnSalvar.Margin = new Padding(5, 4, 5, 4);
+            btnSalvar.Location = new Point(450, 6);
+            btnSalvar.Margin = new Padding(4, 3, 4, 3);
             btnSalvar.Name = "btnSalvar";
-            btnSalvar.Size = new Size(101, 40);
+            btnSalvar.Size = new Size(88, 30);
             btnSalvar.TabIndex = 0;
             btnSalvar.Text = "Salvar";
             btnSalvar.Click += btnSalvar_Click;
@@ -366,11 +363,11 @@ namespace ZenCodeERP.Forms.Cadastro
             flowButtons.AutoSize = true;
             flowButtons.Dock = DockStyle.Right;
             flowButtons.FlowDirection = FlowDirection.RightToLeft;
-            flowButtons.Location = new Point(825, 0);
-            flowButtons.Margin = new Padding(5, 4, 5, 4);
+            flowButtons.Location = new Point(722, 0);
+            flowButtons.Margin = new Padding(4, 3, 4, 3);
             flowButtons.Name = "flowButtons";
-            flowButtons.Padding = new Padding(7, 8, 7, 8);
-            flowButtons.Size = new Size(14, 61);
+            flowButtons.Padding = new Padding(6, 6, 6, 6);
+            flowButtons.Size = new Size(12, 46);
             flowButtons.TabIndex = 0;
             // 
             // openFileDialog1
@@ -384,15 +381,32 @@ namespace ZenCodeERP.Forms.Cadastro
             contextMenuStrip1.Name = "contextMenuStrip1";
             contextMenuStrip1.Size = new Size(61, 4);
             // 
+            // lbTipoCadastro
+            // 
+            lbTipoCadastro.AutoSize = true;
+            lbTipoCadastro.Location = new Point(437, 138);
+            lbTipoCadastro.Name = "lbTipoCadastro";
+            lbTipoCadastro.Size = new Size(81, 15);
+            lbTipoCadastro.TabIndex = 20;
+            lbTipoCadastro.Text = "Tipo Cadastro";
+            // 
+            // lbTipoPessoa
+            // 
+            lbTipoPessoa.AutoSize = true;
+            lbTipoPessoa.Location = new Point(575, 138);
+            lbTipoPessoa.Name = "lbTipoPessoa";
+            lbTipoPessoa.Size = new Size(70, 15);
+            lbTipoPessoa.TabIndex = 21;
+            lbTipoPessoa.Text = "Tipo Pessoa";
+            // 
             // FormCadastroClienteFornecedor
             // 
-            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(839, 495);
+            ClientSize = new Size(734, 371);
             Controls.Add(tabControl1);
             Controls.Add(panelBottom);
             Icon = Properties.Resources.iconZenCode;
-            Margin = new Padding(3, 4, 3, 4);
             Name = "FormCadastroClienteFornecedor";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Cadastro de Cliente Fornecedor";
@@ -400,7 +414,6 @@ namespace ZenCodeERP.Forms.Cadastro
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
             tabPage1.PerformLayout();
-            groupBox2.ResumeLayout(false);
             gpContato.ResumeLayout(false);
             gpContato.PerformLayout();
             panelBottom.ResumeLayout(false);
@@ -435,11 +448,12 @@ namespace ZenCodeERP.Forms.Cadastro
         private TextBox tbCodigoEndereco;
         private Label lbNomeFantasia;
         private TextBox tbNomeFantasia;
-        private GroupBox groupBox2;
         private ComboBox cbTipoPessoa;
         private ComboBox cbTipoCadastro;
         private Label lbEmail;
         private TextBox tbEmail;
         private MaskedTextBox tbTelefone;
+        private Label lbTipoCadastro;
+        private Label lbTipoPessoa;
     }
 }
