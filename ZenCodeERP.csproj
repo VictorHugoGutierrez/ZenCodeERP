@@ -27,6 +27,9 @@
     <Compile Update="Forms\Cadastro\FormCadastroEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Cadastro\FormCadastroClassificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\MDISelecaoEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -39,6 +42,10 @@
     <Compile Update="Forms\Visao\FormVisaoEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Visao\FormVisaoClassificacao.cs" />
+    <Compile Update="Forms\Visao\FormVisaoClienteFornecedor.cs" />
+    <Compile Update="Forms\Visao\FormVisaoEndereco.cs" />
+    <Compile Update="Forms\Visao\FormVisaoEmpresa.cs" />
     <Compile Update="Properties\Resources.Designer.cs">
       <DesignTime>True</DesignTime>
       <AutoGen>True</AutoGen>

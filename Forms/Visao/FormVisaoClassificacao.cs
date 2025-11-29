@@ -5,16 +5,16 @@ using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
 {
-    public partial class FormVisaoClienteFornecedor : Form
+    public partial class FormVisaoClassificacao : Form
     {
-        private ClienteFornecedorRepository ClienteFornecedorRepository = new ClienteFornecedorRepository();
+        private ClassificacaoRepository ClassificacaoRepository = new ClassificacaoRepository();
 
-        public FormVisaoClienteFornecedor()
+        public FormVisaoClassificacao()
         {
             InitializeComponent();
         }
 
-        private void FormVisaoClienteFornecedor_Load(object sender, EventArgs e)
+        private void FormVisaoClassificacao_Load(object sender, EventArgs e)
         {
             CarregaGrid();
         }
@@ -23,13 +23,13 @@ namespace ZenCodeERP.Forms.Visao
         {
             try
             {
-                string coluna = "CODEMPRESA, CODCLIFOR, NOME, NOMEFANTASIA, CNPJCPF, TELEFONE, TIPOCADASTRO, TIPOPESSOA, EMAIL, CODENDERECO";
-                string tabela = "CLIENTEFORNECEDOR";
+                string coluna = "CODEMPRESA, CODCLASSIFICACAO, NOME, DESCRICAO";
+                string tabela = "CLASSIFICACAO";
                 string relacionamento = string.Empty; 
 
                 string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
-                new Utilidades().GetVisao(gvClienteFornecedor, coluna, tabela, relacionamento, where);
+                new Utilidades().GetVisao(gvClassificacao, coluna, tabela, relacionamento, where);
             }
             catch(Exception ex)
             {
@@ -39,35 +39,35 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnNovo_Click(object sender, EventArgs e)
         {
-            FormCadastroClienteFornecedor frm = new FormCadastroClienteFornecedor();
+            FormCadastroClassificacao frm = new FormCadastroClassificacao();
             frm.ShowDialog();
-            CarregaGrid();
+            CarregaGrid(); 
         }
 
         private void iBtnEditar_Click(object sender, EventArgs e)
         {
-            if(gvClienteFornecedor.SelectedRows.Count > 0)
+            if(gvClassificacao.SelectedRows.Count > 0)
             {
-                int index = gvClienteFornecedor.SelectedRows[0].Index;
-                DataRow row1 = ((DataRowView)gvClienteFornecedor.Rows[index].DataBoundItem).Row;
-                FormCadastroClienteFornecedor frm = new FormCadastroClienteFornecedor();
+                int index = gvClassificacao.SelectedRows[0].Index;
+                DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
+                FormCadastroClassificacao frm = new FormCadastroClassificacao();
                 frm.edita = true;
-                frm.codCliFor = Convert.ToInt32(row1["Cliente/Fornecedor"]);
+                frm.codClassificacao = Convert.ToInt32(row1["CODCLASSIFICACAO"]);
                 frm.ShowDialog();
                 CarregaGrid();
-            }
+        }
         }
 
         private void iBtnExcluir_Click(object sender, EventArgs e)
         {
             if (MessageBox.Show("Deseja realmente excluir este registro?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                for (int i = 0; i < gvClienteFornecedor.SelectedRows.Count; i++)
+                for (int i = 0; i < gvClassificacao.SelectedRows.Count; i++)
                 {
-                    int index = gvClienteFornecedor.SelectedRows[i].Index;
-                    DataRow row1 = ((DataRowView)gvClienteFornecedor.Rows[index].DataBoundItem).Row;
+                    int index = gvClassificacao.SelectedRows[i].Index;
+                    DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
 
-                    ClienteFornecedorRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["Cliente/Fornecedor"]));
+                    ClassificacaoRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["CODCLASSIFICACAO"]));
                 }
 
                 CarregaGrid();
@@ -82,9 +82,9 @@ namespace ZenCodeERP.Forms.Visao
                 return;
         }
 
-        private void gvClienteFornecedor_DoubleClick(object sender, EventArgs e)
+        private void gvClassificacao_DoubleClick(object sender, EventArgs e)
         {
-            if (gvClienteFornecedor.SelectedRows.Count > 0)
+            if (gvClassificacao.SelectedRows.Count > 0)
             {
                 iBtnEditar_Click(sender, e);
             }

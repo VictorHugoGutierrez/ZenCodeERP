@@ -39,6 +39,7 @@
             iconToolStripButtonCliFor = new IconToolStripButton();
             panel1 = new System.Windows.Forms.Panel();
             panel2 = new System.Windows.Forms.Panel();
+            iconToolStripButtonClassificacao = new IconToolStripButton();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -47,7 +48,7 @@
             // 
             toolStrip1.Font = new Font("Tahoma", 9.25F);
             toolStrip1.ImageScalingSize = new Size(30, 30);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonEndereco, toolStripButtonEmpresa, toolStripButtonUsuario, iconToolStripButtonCliFor });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonEndereco, toolStripButtonEmpresa, toolStripButtonUsuario, iconToolStripButtonCliFor, iconToolStripButtonClassificacao });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1000, 56);
@@ -121,6 +122,18 @@
             panel2.Size = new Size(1000, 679);
             panel2.TabIndex = 8;
             // 
+            // iconToolStripButtonClassificacao
+            // 
+            iconToolStripButtonClassificacao.IconChar = IconChar.Tags;
+            iconToolStripButtonClassificacao.IconColor = Color.DodgerBlue;
+            iconToolStripButtonClassificacao.IconFont = IconFont.Auto;
+            iconToolStripButtonClassificacao.IconSize = 64;
+            iconToolStripButtonClassificacao.Name = "iconToolStripButtonClassificacao";
+            iconToolStripButtonClassificacao.Size = new Size(101, 53);
+            iconToolStripButtonClassificacao.Text = "Classificação";
+            iconToolStripButtonClassificacao.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonClassificacao.Click += iconToolStripButtonClassificacao_Click;
+            // 
             // MDIPrincipal
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
@@ -152,5 +165,6 @@
             private IconToolStripButton toolStripButtonEmpresa;
             private IconToolStripButton toolStripButtonUsuario;
         private IconToolStripButton iconToolStripButtonCliFor;
+        private IconToolStripButton iconToolStripButtonClassificacao;
     }
     }

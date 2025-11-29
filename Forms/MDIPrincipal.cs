@@ -82,5 +82,15 @@ namespace ZenCodeERP.Forms
             this.panel2.Controls.Add(form);
             form.Show();
         }
+
+        private void iconToolStripButtonClassificacao_Click(object sender, EventArgs e)
+        {
+            FormVisaoClassificacao form = new FormVisaoClassificacao();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(form);
+            form.Show();
+        }
     }
 }
