@@ -33,10 +33,11 @@
         private void InitializeComponent()
         {
             toolStrip1 = new ToolStrip();
-            toolStripButtonEndereco = new IconToolStripButton();
-            toolStripButtonEmpresa = new IconToolStripButton();
-            toolStripButtonUsuario = new IconToolStripButton();
+            iconToolStripButtonEndereco = new IconToolStripButton();
+            iconToolStripButtonEmpresa = new IconToolStripButton();
+            iconToolStripButtonUsuario = new IconToolStripButton();
             iconToolStripButtonCliFor = new IconToolStripButton();
+            iconToolStripButtonProduto = new IconToolStripButton();
             panel1 = new System.Windows.Forms.Panel();
             panel2 = new System.Windows.Forms.Panel();
             iconToolStripButtonClassificacao = new IconToolStripButton();
@@ -48,48 +49,48 @@
             // 
             toolStrip1.Font = new Font("Tahoma", 9.25F);
             toolStrip1.ImageScalingSize = new Size(30, 30);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButtonEndereco, toolStripButtonEmpresa, toolStripButtonUsuario, iconToolStripButtonCliFor, iconToolStripButtonClassificacao });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iconToolStripButtonEndereco, iconToolStripButtonEmpresa, iconToolStripButtonUsuario, iconToolStripButtonCliFor, iconToolStripButtonClassificacao, iconToolStripButtonProduto });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1000, 56);
             toolStrip1.TabIndex = 7;
             toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButtonEndereco
+            // iconToolStripButtonEndereco
             // 
-            toolStripButtonEndereco.IconChar = IconChar.MapLocationDot;
-            toolStripButtonEndereco.IconColor = Color.DodgerBlue;
-            toolStripButtonEndereco.IconFont = IconFont.Auto;
-            toolStripButtonEndereco.IconSize = 64;
-            toolStripButtonEndereco.Name = "toolStripButtonEndereco";
-            toolStripButtonEndereco.Size = new Size(78, 53);
-            toolStripButtonEndereco.Text = "Endereço";
-            toolStripButtonEndereco.TextImageRelation = TextImageRelation.ImageAboveText;
-            toolStripButtonEndereco.Click += toolStripButtonEndereco_Click;
+            iconToolStripButtonEndereco.IconChar = IconChar.MapLocationDot;
+            iconToolStripButtonEndereco.IconColor = Color.DodgerBlue;
+            iconToolStripButtonEndereco.IconFont = IconFont.Auto;
+            iconToolStripButtonEndereco.IconSize = 64;
+            iconToolStripButtonEndereco.Name = "iconToolStripButtonEndereco";
+            iconToolStripButtonEndereco.Size = new Size(78, 53);
+            iconToolStripButtonEndereco.Text = "Endereço";
+            iconToolStripButtonEndereco.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonEndereco.Click += iconToolStripButtonEndereco_Click;
             // 
-            // toolStripButtonEmpresa
+            // iconToolStripButtonEmpresa
             // 
-            toolStripButtonEmpresa.IconChar = IconChar.Building;
-            toolStripButtonEmpresa.IconColor = Color.DodgerBlue;
-            toolStripButtonEmpresa.IconFont = IconFont.Auto;
-            toolStripButtonEmpresa.IconSize = 64;
-            toolStripButtonEmpresa.Name = "toolStripButtonEmpresa";
-            toolStripButtonEmpresa.Size = new Size(74, 53);
-            toolStripButtonEmpresa.Text = "Empresa";
-            toolStripButtonEmpresa.TextImageRelation = TextImageRelation.ImageAboveText;
-            toolStripButtonEmpresa.Click += toolStripButtonEmpresa_Click;
+            iconToolStripButtonEmpresa.IconChar = IconChar.Building;
+            iconToolStripButtonEmpresa.IconColor = Color.DodgerBlue;
+            iconToolStripButtonEmpresa.IconFont = IconFont.Auto;
+            iconToolStripButtonEmpresa.IconSize = 64;
+            iconToolStripButtonEmpresa.Name = "iconToolStripButtonEmpresa";
+            iconToolStripButtonEmpresa.Size = new Size(74, 53);
+            iconToolStripButtonEmpresa.Text = "Empresa";
+            iconToolStripButtonEmpresa.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonEmpresa.Click += iconToolStripButtonEmpresa_Click;
             // 
-            // toolStripButtonUsuario
+            // iconToolStripButtonUsuario
             // 
-            toolStripButtonUsuario.IconChar = IconChar.User;
-            toolStripButtonUsuario.IconColor = Color.DodgerBlue;
-            toolStripButtonUsuario.IconFont = IconFont.Auto;
-            toolStripButtonUsuario.IconSize = 64;
-            toolStripButtonUsuario.Name = "toolStripButtonUsuario";
-            toolStripButtonUsuario.Size = new Size(74, 53);
-            toolStripButtonUsuario.Text = "Usuários";
-            toolStripButtonUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
-            toolStripButtonUsuario.Click += toolStripButtonUsuario_Click;
+            iconToolStripButtonUsuario.IconChar = IconChar.User;
+            iconToolStripButtonUsuario.IconColor = Color.DodgerBlue;
+            iconToolStripButtonUsuario.IconFont = IconFont.Auto;
+            iconToolStripButtonUsuario.IconSize = 64;
+            iconToolStripButtonUsuario.Name = "iconToolStripButtonUsuario";
+            iconToolStripButtonUsuario.Size = new Size(74, 53);
+            iconToolStripButtonUsuario.Text = "Usuários";
+            iconToolStripButtonUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonUsuario.Click += iconToolStripButtonUsuario_Click;
             // 
             // iconToolStripButtonCliFor
             // 
@@ -99,9 +100,21 @@
             iconToolStripButtonCliFor.IconSize = 64;
             iconToolStripButtonCliFor.Name = "iconToolStripButtonCliFor";
             iconToolStripButtonCliFor.Size = new Size(145, 53);
-            iconToolStripButtonCliFor.Text = "Cliente Fornecedor";
+            iconToolStripButtonCliFor.Text = "Cliente/Fornecedor";
             iconToolStripButtonCliFor.TextImageRelation = TextImageRelation.ImageAboveText;
             iconToolStripButtonCliFor.Click += iconToolStripButtonCliFor_Click;
+            // 
+            // iconToolStripButtonProduto
+            // 
+            iconToolStripButtonProduto.IconChar = IconChar.BoxesPacking;
+            iconToolStripButtonProduto.IconColor = Color.DodgerBlue;
+            iconToolStripButtonProduto.IconFont = IconFont.Auto;
+            iconToolStripButtonProduto.IconSize = 64;
+            iconToolStripButtonProduto.Name = "iconToolStripButtonProduto";
+            iconToolStripButtonProduto.Size = new Size(145, 53);
+            iconToolStripButtonProduto.Text = "Produto";
+            iconToolStripButtonProduto.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonProduto.Click += iconToolStripButtonProduto_Click;
             // 
             // panel1
             // 
@@ -136,6 +149,7 @@
             // 
             // MDIPrincipal
             // 
+            ShowInTaskbar = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
@@ -143,6 +157,7 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Icon = Properties.Resources.iconZenCode;
+            ShowIcon = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MDIPrincipal";
             Text = "ZenCode ERP";
@@ -159,12 +174,13 @@
         #endregion
 
         private ToolStrip toolStrip1;
-            private System.Windows.Forms.Panel panel1;
-            private System.Windows.Forms.Panel panel2;
-            private IconToolStripButton toolStripButtonEndereco;
-            private IconToolStripButton toolStripButtonEmpresa;
-            private IconToolStripButton toolStripButtonUsuario;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panel2;
+        private IconToolStripButton iconToolStripButtonEndereco;
+        private IconToolStripButton iconToolStripButtonEmpresa;
+        private IconToolStripButton iconToolStripButtonUsuario;
         private IconToolStripButton iconToolStripButtonCliFor;
         private IconToolStripButton iconToolStripButtonClassificacao;
+        private IconToolStripButton iconToolStripButtonProduto;
     }
     }

@@ -106,7 +106,6 @@ namespace ZenCodeERP.Forms.Visao
 
                     this.Dispose();
                 }
-
             }
         }
 

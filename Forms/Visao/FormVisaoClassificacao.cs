@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Cadastro;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
@@ -9,9 +10,17 @@ namespace ZenCodeERP.Forms.Visao
     {
         private ClassificacaoRepository ClassificacaoRepository = new ClassificacaoRepository();
 
+        private FormCadastroProduto lookup;
+
         public FormVisaoClassificacao()
         {
             InitializeComponent();
+        }
+
+        public FormVisaoClassificacao(FormCadastroProduto lookup)
+        {
+            InitializeComponent();
+            this.lookup = lookup;
         }
 
         private void FormVisaoClassificacao_Load(object sender, EventArgs e)
@@ -52,7 +61,7 @@ namespace ZenCodeERP.Forms.Visao
                 DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
                 FormCadastroClassificacao frm = new FormCadastroClassificacao();
                 frm.edita = true;
-                frm.codClassificacao = Convert.ToInt32(row1["CODCLASSIFICACAO"]);
+                frm.codClassificacao = Convert.ToInt32(row1["Classificação"]);
                 frm.ShowDialog();
                 CarregaGrid();
             }
@@ -67,7 +76,7 @@ namespace ZenCodeERP.Forms.Visao
                     int index = gvClassificacao.SelectedRows[i].Index;
                     DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
 
-                    ClassificacaoRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["CODCLASSIFICACAO"]));
+                    ClassificacaoRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["Classificação"]));
                 }
 
                 CarregaGrid();
@@ -86,7 +95,17 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvClassificacao.SelectedRows.Count > 0)
             {
-                iBtnEditar_Click(sender, e);
+                if(lookup == null)
+                {
+                    iBtnEditar_Click(sender, e);
+                }
+                else
+                {
+                    lookup.codClassificacao = ((DataRowView)gvClassificacao.SelectedRows[0].DataBoundItem).Row["Classificação"].ToString();
+                    lookup.nomeClassificacao = ((DataRowView)gvClassificacao.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
+
+                    this.Dispose();
+                }
             }
         }
 

@@ -86,6 +86,21 @@ namespace ZenCodeERP.Utils
               END) AS TIPOPESSOA");
             }
 
+            if(tabela == "PRODUTO")
+            {
+                regras.Add("PRODUTO.TIPO",
+                    @"(CASE PRODUTO.TIPO 
+                WHEN 0 THEN 'Produto' 
+                WHEN 1 THEN 'Serviço' 
+              END) AS TIPO");
+
+                regras.Add("PRODUTO.ATIVO",
+                    @"(CASE PRODUTO.ATIVO 
+                WHEN 0 THEN 'Não' 
+                WHEN 1 THEN 'Sim' 
+              END) AS ATIVO");
+            }
+
             return regras;
         }
 
