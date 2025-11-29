@@ -25,13 +25,13 @@ namespace ZenCodeERP.Forms.Visao
             {
                 string coluna = "CODEMPRESA, CODCLIFOR, NOME, NOMEFANTASIA, CNPJCPF, TELEFONE, TIPOCADASTRO, TIPOPESSOA, EMAIL, CODENDERECO";
                 string tabela = "CLIENTEFORNECEDOR";
-                string relacionamento = string.Empty; 
+                string relacionamento = string.Empty;
 
                 string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
                 new Utilidades().GetVisao(gvClienteFornecedor, coluna, tabela, relacionamento, where);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -46,7 +46,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnEditar_Click(object sender, EventArgs e)
         {
-            if(gvClienteFornecedor.SelectedRows.Count > 0)
+            if (gvClienteFornecedor.SelectedRows.Count > 0)
             {
                 int index = gvClienteFornecedor.SelectedRows[0].Index;
                 DataRow row1 = ((DataRowView)gvClienteFornecedor.Rows[index].DataBoundItem).Row;
@@ -88,6 +88,11 @@ namespace ZenCodeERP.Forms.Visao
             {
                 iBtnEditar_Click(sender, e);
             }
+        }
+
+        private void iBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }

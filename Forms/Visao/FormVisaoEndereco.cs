@@ -40,7 +40,7 @@ namespace ZenCodeERP.Forms.Visao
 
                 new Utilidades().GetVisao(gvEndereco, coluna, tabela, relacionamento, where);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -55,7 +55,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnEditar_Click(object sender, EventArgs e)
         {
-            if(gvEndereco.SelectedRows.Count > 0)
+            if (gvEndereco.SelectedRows.Count > 0)
             {
                 int index = gvEndereco.SelectedRows[0].Index;
                 DataRow row1 = ((DataRowView)gvEndereco.Rows[index].DataBoundItem).Row;
@@ -85,7 +85,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnFechar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Dispose();
             else
                 return;
@@ -95,9 +95,9 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvEndereco.SelectedRows.Count > 0)
             {
-                if(lookup == null)
+                if (lookup == null)
                 {
-                    iBtnEditar_Click(sender, e);   
+                    iBtnEditar_Click(sender, e);
                 }
                 else
                 {
@@ -108,6 +108,11 @@ namespace ZenCodeERP.Forms.Visao
                 }
 
             }
+        }
+
+        private void iBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }

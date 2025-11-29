@@ -36,7 +36,8 @@ namespace ZenCodeERP.Forms.Visao
             iBtnNovo = new IconToolStripButton();
             iBtnEditar = new IconToolStripButton();
             iBtnExcluir = new IconToolStripButton();
-            this.iBtnFechar = new IconToolStripButton();
+            iBtnAtualizar = new IconToolStripButton();
+            iBtnFechar = new IconToolStripButton();
             panel1 = new Panel();
             gvEmpresa = new DataGridView();
             toolStrip1.SuspendLayout();
@@ -49,7 +50,7 @@ namespace ZenCodeERP.Forms.Visao
             toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             toolStrip1.Font = new Font("Tahoma", 8.25F);
             toolStrip1.ImageScalingSize = new Size(30, 30);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnFechar });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnAtualizar, iBtnFechar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1067, 47);
@@ -88,6 +89,17 @@ namespace ZenCodeERP.Forms.Visao
             iBtnExcluir.Size = new Size(100, 44);
             iBtnExcluir.Text = "Excluir";
             iBtnExcluir.Click += iBtnExcluir_Click;
+            // 
+            // iBtnAtualizar
+            // 
+            iBtnAtualizar.IconChar = IconChar.ArrowRotateForward;
+            iBtnAtualizar.IconColor = Color.DodgerBlue;
+            iBtnAtualizar.IconFont = IconFont.Auto;
+            iBtnAtualizar.IconSize = 32;
+            iBtnAtualizar.Name = "iBtnAtualizar";
+            iBtnAtualizar.Size = new Size(92, 34);
+            iBtnAtualizar.Text = "Atualizar";
+            iBtnAtualizar.Click += iBtnAtualizar_Click;
             // 
             // iBtnFechar
             // 
@@ -163,5 +175,6 @@ namespace ZenCodeERP.Forms.Visao
         private IconToolStripButton iBtnEditar;
         private IconToolStripButton iBtnExcluir;
         private IconToolStripButton iBtnFechar;
+        private IconToolStripButton iBtnAtualizar;
     }
 }

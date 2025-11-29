@@ -25,13 +25,13 @@ namespace ZenCodeERP.Forms.Visao
             {
                 string coluna = "CODEMPRESA, CODCLASSIFICACAO, NOME, DESCRICAO";
                 string tabela = "CLASSIFICACAO";
-                string relacionamento = string.Empty; 
+                string relacionamento = string.Empty;
 
                 string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
                 new Utilidades().GetVisao(gvClassificacao, coluna, tabela, relacionamento, where);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -41,12 +41,12 @@ namespace ZenCodeERP.Forms.Visao
         {
             FormCadastroClassificacao frm = new FormCadastroClassificacao();
             frm.ShowDialog();
-            CarregaGrid(); 
+            CarregaGrid();
         }
 
         private void iBtnEditar_Click(object sender, EventArgs e)
         {
-            if(gvClassificacao.SelectedRows.Count > 0)
+            if (gvClassificacao.SelectedRows.Count > 0)
             {
                 int index = gvClassificacao.SelectedRows[0].Index;
                 DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
@@ -55,7 +55,7 @@ namespace ZenCodeERP.Forms.Visao
                 frm.codClassificacao = Convert.ToInt32(row1["CODCLASSIFICACAO"]);
                 frm.ShowDialog();
                 CarregaGrid();
-        }
+            }
         }
 
         private void iBtnExcluir_Click(object sender, EventArgs e)
@@ -88,6 +88,11 @@ namespace ZenCodeERP.Forms.Visao
             {
                 iBtnEditar_Click(sender, e);
             }
+        }
+
+        private void iBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }
