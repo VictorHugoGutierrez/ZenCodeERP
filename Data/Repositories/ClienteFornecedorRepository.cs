@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using Org.BouncyCastle.Asn1.Mozilla;
 using ZenCodeERP.Model;
@@ -25,7 +26,29 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(int codEmpresa, int codCliFor)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM CLIENTEFORNECEDOR WHERE CODEMPRESA = ? AND CODCLIFOR = ?", codEmpresa, codCliFor);
+
+            try
+            {
+                DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM CLIENTEFORNECEDOR WHERE CODEMPRESA = ? AND CODCLIFOR = ?", codEmpresa, codCliFor);
+                MessageBox.Show("Cliente/Fornecedor excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Não é possível excluir este Cliente/Fornecedor pois ele possui movimentações no sistema.\n",
+                                    "Ação Bloqueada",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public ClienteFornecedor GetByCodCliFor(int codEmpresa, int codCliFor)

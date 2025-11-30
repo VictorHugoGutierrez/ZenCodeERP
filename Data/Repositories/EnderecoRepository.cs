@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using ZenCodeERP.Model;
 
 namespace ZenCodeERP.Data.Repositories
@@ -22,7 +23,29 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(int codEndereco)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM ENDERECO WHERE CODENDERECO = ?", codEndereco);
+            try
+            {
+                DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM ENDERECO WHERE CODENDERECO = ?", codEndereco);
+
+                MessageBox.Show("Endereço excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Não é possível excluir este Endereço pois ele está vinculado ao cadastro de uma Empresa ou Filial.\n\n" +
+                                    "Desvincule o endereço no cadastro da Empresa antes de tentar excluir.",
+                                    "Endereço em Uso",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public Endereco GetByCodEndereco(int codEndereco)

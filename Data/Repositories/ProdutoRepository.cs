@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using MySql.Data.MySqlClient;
 using ZenCodeERP.Model;
 
 namespace ZenCodeERP.Data.Repositories
@@ -33,7 +34,30 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(int codEmpresa, int codProduto)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM PRODUTO WHERE CODEMPRESA = ? AND CODPRODUTO = ?", codEmpresa, codProduto);
+            try
+            {
+                string sql = "DELETE FROM PRODUTO WHERE CODPRODUTO = @p0 AND CODEMPRESA = @p1";
+
+                DataBaseConnection.Instance().ExecuteTransaction(sql, codProduto, codEmpresa);
+
+                MessageBox.Show("Produto excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Não é possível excluir este Produto pois ele já possui movimentações.\n",
+                                    "Produto em Uso",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public Produto GetByCodProduto(int codEmpresa, int codProduto)

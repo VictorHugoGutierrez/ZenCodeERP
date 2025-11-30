@@ -4,6 +4,7 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
 using MySqlX.XDevAPI;
 using Org.BouncyCastle.Asn1.Mozilla;
 using ZenCodeERP.Model;
@@ -25,7 +26,29 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(int codEmpresa, int codClassificacao)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM CLASSIFICACAO WHERE CODCLASSIFICACAO = ? AND CODEMPRESA = ?", codClassificacao, codEmpresa);
+            try
+            {
+                DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM CLASSIFICACAO WHERE CODCLASSIFICACAO = ? AND CODEMPRESA = ?", codClassificacao, codEmpresa);
+
+                MessageBox.Show("Classificação excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Não é possível excluir esta classificação pois ela já está sendo usada em outros cadastros.\n\n" +
+                                    "Exclua os itens vinculados antes de tentar excluir a classificação.",
+                                    "Ação Bloqueada",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public Classificacao GetByCodClassficacao(int codEmpresa, int codClassificacao)
