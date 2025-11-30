@@ -55,7 +55,17 @@ namespace ZenCodeERP.Forms
             form.Show();
         }
 
-        private void toolStripButtonRelatorio_Click(object sender, EventArgs e)
+        private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormVisaoRelatorioEstoque form = new FormVisaoRelatorioEstoque();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(form);
+            form.Show();
+        }
+
+        private void relatórioTicketMédioPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
             formVisaoRelatorioVendas form = new formVisaoRelatorioVendas();
             form.TopLevel = false;

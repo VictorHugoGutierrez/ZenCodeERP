@@ -36,9 +36,12 @@
             toolStripButtonEndereco = new IconToolStripButton();
             toolStripButtonEmpresa = new IconToolStripButton();
             toolStripButtonUsuario = new IconToolStripButton();
+            toolStripButtonRelatorio = new IconDropDownButton();
+            relatórioToolStripMenuItem = new ToolStripMenuItem();
+            relatórioTicketMédioPorClienteToolStripMenuItem = new ToolStripMenuItem();
             panel1 = new System.Windows.Forms.Panel();
             panel2 = new System.Windows.Forms.Panel();
-            toolStripButtonRelatorio = new IconToolStripButton();
+            iconDropDownButton1 = new IconDropDownButton();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -90,6 +93,31 @@
             toolStripButtonUsuario.TextImageRelation = TextImageRelation.ImageAboveText;
             toolStripButtonUsuario.Click += toolStripButtonUsuario_Click;
             // 
+            // toolStripButtonRelatorio
+            // 
+            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
+            toolStripButtonRelatorio.IconChar = IconChar.Newspaper;
+            toolStripButtonRelatorio.IconColor = Color.DodgerBlue;
+            toolStripButtonRelatorio.IconFont = IconFont.Auto;
+            toolStripButtonRelatorio.Name = "toolStripButtonRelatorio";
+            toolStripButtonRelatorio.Size = new Size(89, 53);
+            toolStripButtonRelatorio.Text = "relatorios";
+            toolStripButtonRelatorio.TextImageRelation = TextImageRelation.ImageAboveText;
+            // 
+            // relatórioToolStripMenuItem
+            // 
+            relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
+            relatórioToolStripMenuItem.Size = new Size(328, 26);
+            relatórioToolStripMenuItem.Text = "Relatório Estoque de produtos";
+            relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
+            // 
+            // relatórioTicketMédioPorClienteToolStripMenuItem
+            // 
+            relatórioTicketMédioPorClienteToolStripMenuItem.Name = "relatórioTicketMédioPorClienteToolStripMenuItem";
+            relatórioTicketMédioPorClienteToolStripMenuItem.Size = new Size(328, 26);
+            relatórioTicketMédioPorClienteToolStripMenuItem.Text = "Relatório Ticket Médio por cliente";
+            relatórioTicketMédioPorClienteToolStripMenuItem.Click += relatórioTicketMédioPorClienteToolStripMenuItem_Click;
+            // 
             // panel1
             // 
             panel1.BackColor = Color.White;
@@ -109,17 +137,14 @@
             panel2.Size = new Size(1000, 679);
             panel2.TabIndex = 8;
             // 
-            // toolStripButtonRelatorio
+            // iconDropDownButton1
             // 
-            toolStripButtonRelatorio.IconChar = IconChar.User;
-            toolStripButtonRelatorio.IconColor = Color.DodgerBlue;
-            toolStripButtonRelatorio.IconFont = IconFont.Auto;
-            toolStripButtonRelatorio.IconSize = 64;
-            toolStripButtonRelatorio.Name = "toolStripButtonRelatorio";
-            toolStripButtonRelatorio.Size = new Size(79, 53);
-            toolStripButtonRelatorio.Text = "relatorios";
-            toolStripButtonRelatorio.TextImageRelation = TextImageRelation.ImageAboveText;
-            toolStripButtonRelatorio.Click += toolStripButtonRelatorio_Click;
+            iconDropDownButton1.IconChar = IconChar.None;
+            iconDropDownButton1.IconColor = Color.Black;
+            iconDropDownButton1.IconFont = IconFont.Auto;
+            iconDropDownButton1.Name = "iconDropDownButton1";
+            iconDropDownButton1.Size = new Size(23, 23);
+            iconDropDownButton1.Text = "iconDropDownButton1";
             // 
             // MDIPrincipal
             // 
@@ -151,6 +176,9 @@
             private IconToolStripButton toolStripButtonEndereco;
             private IconToolStripButton toolStripButtonEmpresa;
             private IconToolStripButton toolStripButtonUsuario;
-        private IconToolStripButton toolStripButtonRelatorio;
+        private IconDropDownButton iconDropDownButton1;
+        private IconDropDownButton toolStripButtonRelatorio;
+        private ToolStripMenuItem relatórioToolStripMenuItem;
+        private ToolStripMenuItem relatórioTicketMédioPorClienteToolStripMenuItem;
     }
     }

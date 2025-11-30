@@ -31,15 +31,16 @@
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             dgvRelatorio = new DataGridView();
             dtFim = new DateTimePicker();
-            label1 = new Label();
             dtInicio = new DateTimePicker();
             toolStrip2 = new ToolStrip();
             iBtnGerarRelatorio = new FontAwesome.Sharp.IconToolStripButton();
-            iBtnNovo = new FontAwesome.Sharp.IconToolStripButton();
+            iBtnBaixarCsv = new FontAwesome.Sharp.IconToolStripButton();
+            iBtnBaixarPDF = new FontAwesome.Sharp.IconToolStripButton();
             iconToolStripButton1 = new FontAwesome.Sharp.IconToolStripButton();
             label2 = new Label();
             label3 = new Label();
-            iconToolStripButton2 = new FontAwesome.Sharp.IconToolStripButton();
+            label1 = new Label();
+            iconMenuItem1 = new FontAwesome.Sharp.IconMenuItem();
             ((System.ComponentModel.ISupportInitialize)dgvRelatorio).BeginInit();
             toolStrip2.SuspendLayout();
             SuspendLayout();
@@ -74,15 +75,6 @@
             dtFim.Size = new Size(129, 27);
             dtFim.TabIndex = 14;
             // 
-            // label1
-            // 
-            label1.AutoSize = true;
-            label1.Location = new Point(-44, 10);
-            label1.Name = "label1";
-            label1.Size = new Size(48, 20);
-            label1.TabIndex = 12;
-            label1.Text = "Inicio:";
-            // 
             // dtInicio
             // 
             dtInicio.Anchor = AnchorStyles.None;
@@ -97,7 +89,7 @@
             // 
             toolStrip2.Font = new Font("Tahoma", 8.25F);
             toolStrip2.ImageScalingSize = new Size(30, 30);
-            toolStrip2.Items.AddRange(new ToolStripItem[] { iBtnGerarRelatorio, iBtnNovo, iconToolStripButton2, iconToolStripButton1 });
+            toolStrip2.Items.AddRange(new ToolStripItem[] { iBtnGerarRelatorio, iBtnBaixarCsv, iBtnBaixarPDF, iconToolStripButton1 });
             toolStrip2.Location = new Point(0, 0);
             toolStrip2.Name = "toolStrip2";
             toolStrip2.Size = new Size(1410, 37);
@@ -116,16 +108,27 @@
             iBtnGerarRelatorio.TextAlign = ContentAlignment.MiddleRight;
             iBtnGerarRelatorio.Click += iBtnGerarRelatorio_Click_1;
             // 
-            // iBtnNovo
+            // iBtnBaixarCsv
             // 
-            iBtnNovo.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            iBtnNovo.IconColor = Color.DodgerBlue;
-            iBtnNovo.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iBtnNovo.IconSize = 32;
-            iBtnNovo.Name = "iBtnNovo";
-            iBtnNovo.Size = new Size(108, 34);
-            iBtnNovo.Text = "Baixar CSV";
-            iBtnNovo.Click += iBtnNovo_Click;
+            iBtnBaixarCsv.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            iBtnBaixarCsv.IconColor = Color.DodgerBlue;
+            iBtnBaixarCsv.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iBtnBaixarCsv.IconSize = 32;
+            iBtnBaixarCsv.Name = "iBtnBaixarCsv";
+            iBtnBaixarCsv.Size = new Size(108, 34);
+            iBtnBaixarCsv.Text = "Baixar CSV";
+            iBtnBaixarCsv.Click += iBtnBaixarCsv_Click;
+            // 
+            // iBtnBaixarPDF
+            // 
+            iBtnBaixarPDF.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
+            iBtnBaixarPDF.IconColor = Color.DodgerBlue;
+            iBtnBaixarPDF.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iBtnBaixarPDF.IconSize = 32;
+            iBtnBaixarPDF.Name = "iBtnBaixarPDF";
+            iBtnBaixarPDF.Size = new Size(108, 34);
+            iBtnBaixarPDF.Text = "Baixar PDF";
+            iBtnBaixarPDF.Click += iBtnBaixarPDF_Click;
             // 
             // iconToolStripButton1
             // 
@@ -155,16 +158,23 @@
             label3.TabIndex = 17;
             label3.Text = "Fim:";
             // 
-            // iconToolStripButton2
+            // label1
             // 
-            iconToolStripButton2.IconChar = FontAwesome.Sharp.IconChar.FileCirclePlus;
-            iconToolStripButton2.IconColor = Color.DodgerBlue;
-            iconToolStripButton2.IconFont = FontAwesome.Sharp.IconFont.Auto;
-            iconToolStripButton2.IconSize = 32;
-            iconToolStripButton2.Name = "iconToolStripButton2";
-            iconToolStripButton2.Size = new Size(108, 34);
-            iconToolStripButton2.Text = "Baixar PDF";
-            iconToolStripButton2.Click += iconToolStripButton2_Click;
+            label1.AutoSize = true;
+            label1.Location = new Point(-44, 10);
+            label1.Name = "label1";
+            label1.Size = new Size(48, 20);
+            label1.TabIndex = 12;
+            label1.Text = "Inicio:";
+            // 
+            // iconMenuItem1
+            // 
+            iconMenuItem1.IconChar = FontAwesome.Sharp.IconChar.None;
+            iconMenuItem1.IconColor = Color.Black;
+            iconMenuItem1.IconFont = FontAwesome.Sharp.IconFont.Auto;
+            iconMenuItem1.Name = "iconMenuItem1";
+            iconMenuItem1.Size = new Size(32, 19);
+            iconMenuItem1.Text = "iconMenuItem1";
             // 
             // formVisaoRelatorioVendas
             // 
@@ -191,14 +201,15 @@
 
         private DataGridView dgvRelatorio;
         private DateTimePicker dtFim;
-        private Label label1;
         private DateTimePicker dtInicio;
         private ToolStrip toolStrip2;
-        private FontAwesome.Sharp.IconToolStripButton iBtnNovo;
+        private FontAwesome.Sharp.IconToolStripButton iBtnBaixarCsv;
         private FontAwesome.Sharp.IconToolStripButton iconToolStripButton1;
         private FontAwesome.Sharp.IconToolStripButton iBtnGerarRelatorio;
         private Label label2;
         private Label label3;
-        private FontAwesome.Sharp.IconToolStripButton iconToolStripButton2;
+        private FontAwesome.Sharp.IconToolStripButton iBtnBaixarPDF;
+        private Label label1;
+        private FontAwesome.Sharp.IconMenuItem iconMenuItem1;
     }
 }

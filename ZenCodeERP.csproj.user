@@ -19,6 +19,9 @@
     <Compile Update="Forms\Visao\FormVisaoEndereco.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="Forms\Visao\FormVisaoRelatorioEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Visao\formVisaoRelatorioVendas.cs">
       <SubType>Form</SubType>
     </Compile>

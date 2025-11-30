@@ -20,19 +20,17 @@ namespace ZenCodeERP.Forms.Visao
         public formVisaoRelatorioVendas()
         {
             InitializeComponent();
-            // Ajuste a sua connection string aqui
             _repositorio = new RelatorioVendasRepositorio();
 
-            // Datas padrão: hoje e 30 dias atrás
             dtInicio.Value = DateTime.Today.AddDays(-30);
             dtFim.Value = DateTime.Today;
         }
         private void CarregarRelatorio()
         {
-            var dataInicial = dtInicio.Value;
-            var dataFinal = dtFim.Value;
+            DateTime dataInicial = dtInicio.Value;
+            DateTime dataFinal = dtFim.Value;
 
-            var tabela = _repositorio.ObterRelatorioVendasPorPeriodo(dataInicial, dataFinal);
+            DataTable tabela = _repositorio.ObterRelatorioVendasPorPeriodo(dataInicial, dataFinal);
 
             dgvRelatorio.AutoGenerateColumns = true;
             dgvRelatorio.DataSource = tabela;
@@ -44,11 +42,15 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (dgvRelatorio.Columns.Count == 0) return;
 
-            dgvRelatorio.Columns["CODEMPRESA"].HeaderText = "Cód. Empresa";
+            //dgvRelatorio.Columns["CODEMPRESA"].HeaderText = "Cód. Empresa";
+            dgvRelatorio.Columns["CODEMPRESA"].Visible = false;
             dgvRelatorio.Columns["empresa"].HeaderText = "Empresa";
-            dgvRelatorio.Columns["CODCLIFOR"].HeaderText = "Cód. Cliente";
+
+            //dgvRelatorio.Columns["CODCLIFOR"].HeaderText = "Cód. Cliente";
+            dgvRelatorio.Columns["CODCLIFOR"].Visible = false;
+            
             dgvRelatorio.Columns["nome_cliente"].HeaderText = "Cliente";
-            dgvRelatorio.Columns["quantidade_pedidos"].HeaderText = "Qtde Pedidos";
+            dgvRelatorio.Columns["quantidade_pedidos"].HeaderText = "Qtde. Pedidos";
             dgvRelatorio.Columns["total_vendas"].HeaderText = "Total Vendas";
             dgvRelatorio.Columns["ticket_medio"].HeaderText = "Ticket Médio";
 
@@ -66,16 +68,16 @@ namespace ZenCodeERP.Forms.Visao
             CarregarRelatorio();
         }
 
-        private void iBtnNovo_Click(object sender, EventArgs e)
+        private void iBtnBaixarCsv_Click(object sender, EventArgs e)
         {
             ExportadorRelatorio.ExportarDataGridViewParaCsv(dgvRelatorio);
         }
 
-        private void iconToolStripButton2_Click(object sender, EventArgs e)
+        private void iBtnBaixarPDF_Click(object sender, EventArgs e)
         {
-            ExportadorRelatorio.ExportarDataGridViewParaPdf(dgvRelatorio, "Relatório de Vendas por Cliente");
-
+            ExportadorRelatorio.ExportarDataGridViewParaPdf(dgvRelatorio, "Relatório Ticket médio por cliente e empresa");
         }
+
     }
 
     public class RelatorioVendasRepositorio
@@ -93,7 +95,7 @@ namespace ZenCodeERP.Forms.Visao
                                 CF.NOME AS nome_cliente, 
                                 COUNT(M.CODMOVIMENTACAO) AS quantidade_pedidos, 
                                 SUM(M.VALORTOTAL) AS total_vendas, 
-                                AVG(M.VALORTOTAL) AS ticket_medio 
+                                ROUND(AVG(M.VALORTOTAL), 2) AS ticket_medio 
                             FROM MOVIMENTACAO AS M 
                             JOIN CLIENTEFORNECEDOR AS CF 
                                 ON CF.CODEMPRESA = M.CODEMPRESA 

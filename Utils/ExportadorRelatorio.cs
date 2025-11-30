@@ -41,10 +41,9 @@ namespace ZenCodeERP.Utils
                 }
                 sb.AppendLine();
 
-                // Linhas
                 foreach (DataGridViewRow row in grid.Rows)
                 {
-                    if (row.IsNewRow) continue; // ignora linha em branco do grid
+                    if (row.IsNewRow) continue;
 
                     for (int i = 0; i < grid.Columns.Count; i++)
                     {
@@ -92,19 +91,16 @@ namespace ZenCodeERP.Utils
 
                 using (FileStream stream = new FileStream(sfd.FileName, FileMode.Create))
                 {
-                    // Documento A4 com margens
                     Document doc = new Document(PageSize.A4, 25, 25, 25, 25);
                     PdfWriter writer = PdfWriter.GetInstance(doc, stream);
 
                     doc.Open();
 
-                    // Título
                     var fonteTitulo = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 14);
                     Paragraph titulo = new Paragraph(tituloRelatorio + "\n\n", fonteTitulo);
                     titulo.Alignment = Element.ALIGN_CENTER;
                     doc.Add(titulo);
 
-                    // Tabela PDF com o mesmo número de colunas visíveis do grid
                     int colunasVisiveis = 0;
                     foreach (DataGridViewColumn col in grid.Columns)
                     {
@@ -114,7 +110,6 @@ namespace ZenCodeERP.Utils
                     PdfPTable tabela = new PdfPTable(colunasVisiveis);
                     tabela.WidthPercentage = 100;
 
-                    // Cabeçalho
                     var fonteCabecalho = FontFactory.GetFont(FontFactory.HELVETICA_BOLD, 9);
                     foreach (DataGridViewColumn col in grid.Columns)
                     {
@@ -127,7 +122,6 @@ namespace ZenCodeERP.Utils
                         tabela.AddCell(cell);
                     }
 
-                    // Dados
                     var fonteCelula = FontFactory.GetFont(FontFactory.HELVETICA, 8);
                     foreach (DataGridViewRow row in grid.Rows)
                     {
