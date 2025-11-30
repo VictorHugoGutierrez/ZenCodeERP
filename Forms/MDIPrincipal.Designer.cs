@@ -42,6 +42,7 @@
             panel1 = new System.Windows.Forms.Panel();
             panel2 = new System.Windows.Forms.Panel();
             iconDropDownButton1 = new IconDropDownButton();
+            estoqueGeralDeProdutosToolStripMenuItem = new ToolStripMenuItem();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -95,7 +96,7 @@
             // 
             // toolStripButtonRelatorio
             // 
-            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
+            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { estoqueGeralDeProdutosToolStripMenuItem, relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
             toolStripButtonRelatorio.IconChar = IconChar.Newspaper;
             toolStripButtonRelatorio.IconColor = Color.DodgerBlue;
             toolStripButtonRelatorio.IconFont = IconFont.Auto;
@@ -107,15 +108,15 @@
             // relatórioToolStripMenuItem
             // 
             relatórioToolStripMenuItem.Name = "relatórioToolStripMenuItem";
-            relatórioToolStripMenuItem.Size = new Size(328, 26);
-            relatórioToolStripMenuItem.Text = "Relatório Estoque de produtos";
+            relatórioToolStripMenuItem.Size = new Size(357, 26);
+            relatórioToolStripMenuItem.Text = "Estoque de produtos por classificação";
             relatórioToolStripMenuItem.Click += relatórioToolStripMenuItem_Click;
             // 
             // relatórioTicketMédioPorClienteToolStripMenuItem
             // 
             relatórioTicketMédioPorClienteToolStripMenuItem.Name = "relatórioTicketMédioPorClienteToolStripMenuItem";
-            relatórioTicketMédioPorClienteToolStripMenuItem.Size = new Size(328, 26);
-            relatórioTicketMédioPorClienteToolStripMenuItem.Text = "Relatório Ticket Médio por cliente";
+            relatórioTicketMédioPorClienteToolStripMenuItem.Size = new Size(357, 26);
+            relatórioTicketMédioPorClienteToolStripMenuItem.Text = "Ticket Médio por cliente";
             relatórioTicketMédioPorClienteToolStripMenuItem.Click += relatórioTicketMédioPorClienteToolStripMenuItem_Click;
             // 
             // panel1
@@ -145,6 +146,13 @@
             iconDropDownButton1.Name = "iconDropDownButton1";
             iconDropDownButton1.Size = new Size(23, 23);
             iconDropDownButton1.Text = "iconDropDownButton1";
+            // 
+            // estoqueGeralDeProdutosToolStripMenuItem
+            // 
+            estoqueGeralDeProdutosToolStripMenuItem.Name = "estoqueGeralDeProdutosToolStripMenuItem";
+            estoqueGeralDeProdutosToolStripMenuItem.Size = new Size(357, 26);
+            estoqueGeralDeProdutosToolStripMenuItem.Text = "Estoque geral de Produtos";
+            estoqueGeralDeProdutosToolStripMenuItem.Click += estoqueGeralDeProdutosToolStripMenuItem_Click;
             // 
             // MDIPrincipal
             // 
@@ -180,5 +188,6 @@
         private IconDropDownButton toolStripButtonRelatorio;
         private ToolStripMenuItem relatórioToolStripMenuItem;
         private ToolStripMenuItem relatórioTicketMédioPorClienteToolStripMenuItem;
+        private ToolStripMenuItem estoqueGeralDeProdutosToolStripMenuItem;
     }
     }

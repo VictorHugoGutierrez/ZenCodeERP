@@ -48,7 +48,7 @@ namespace ZenCodeERP.Forms.Visao
 
             //dgvRelatorio.Columns["CODCLIFOR"].HeaderText = "Cód. Cliente";
             dgvRelatorio.Columns["CODCLIFOR"].Visible = false;
-            
+
             dgvRelatorio.Columns["nome_cliente"].HeaderText = "Cliente";
             dgvRelatorio.Columns["quantidade_pedidos"].HeaderText = "Qtde. Pedidos";
             dgvRelatorio.Columns["total_vendas"].HeaderText = "Total Vendas";
@@ -78,6 +78,13 @@ namespace ZenCodeERP.Forms.Visao
             ExportadorRelatorio.ExportarDataGridViewParaPdf(dgvRelatorio, "Relatório Ticket médio por cliente e empresa");
         }
 
+        private void iconToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Dispose();
+            else
+                return;
+        }
     }
 
     public class RelatorioVendasRepositorio

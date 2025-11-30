@@ -74,5 +74,15 @@ namespace ZenCodeERP.Forms
             this.panel2.Controls.Add(form);
             form.Show();
         }
+
+        private void estoqueGeralDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            FormRelatorioEstoqueProdutos form = new FormRelatorioEstoqueProdutos();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(form);
+            form.Show();
+        }
     }
 }

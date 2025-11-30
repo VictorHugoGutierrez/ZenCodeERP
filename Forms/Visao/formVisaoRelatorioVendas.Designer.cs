@@ -139,6 +139,7 @@
             iconToolStripButton1.Name = "iconToolStripButton1";
             iconToolStripButton1.Size = new Size(83, 34);
             iconToolStripButton1.Text = "Fechar";
+            iconToolStripButton1.Click += iconToolStripButton1_Click;
             // 
             // label2
             // 

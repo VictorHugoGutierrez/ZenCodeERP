@@ -79,3 +79,4 @@ C:\Users\supor\Documents\github\ZenCodeERP\obj\Debug\net9.0-windows\ref\ZenCodeE
 C:\Users\supor\Documents\github\ZenCodeERP\obj\Debug\net9.0-windows\ZenCodeERP.Forms.Visao.formVisaoRelatorioVendas.resources
 C:\Users\supor\Documents\github\ZenCodeERP\bin\Debug\net9.0-windows\itextsharp.dll
 C:\Users\supor\Documents\github\ZenCodeERP\obj\Debug\net9.0-windows\ZenCodeERP.Forms.Visao.FormVisaoRelatorioEstoque.resources
+C:\Users\supor\Documents\github\ZenCodeERP\obj\Debug\net9.0-windows\ZenCodeERP.Forms.Visao.FormRelatorioEstoqueProdutos.resources

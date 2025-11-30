@@ -1,6 +1,6 @@
 ﻿namespace ZenCodeERP.Forms.Visao
 {
-    partial class FormVisaoRelatorioEstoque
+    partial class FormRelatorioEstoqueProdutos
     {
         /// <summary>
         /// Required designer variable.
@@ -28,15 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
             toolStrip2 = new ToolStrip();
             iBtnGerarRelatorio = new FontAwesome.Sharp.IconToolStripButton();
             iBtnBaixarCsv = new FontAwesome.Sharp.IconToolStripButton();
             iBtnBaixarPDF = new FontAwesome.Sharp.IconToolStripButton();
             iconToolStripButton1 = new FontAwesome.Sharp.IconToolStripButton();
-            dgvEstoqueClassificacao = new DataGridView();
+            dgvEstoqueProdutos = new DataGridView();
             toolStrip2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEstoqueClassificacao).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).BeginInit();
             SuspendLayout();
             // 
             // toolStrip2
@@ -47,7 +47,7 @@
             toolStrip2.Location = new Point(0, 0);
             toolStrip2.Name = "toolStrip2";
             toolStrip2.Size = new Size(1410, 37);
-            toolStrip2.TabIndex = 22;
+            toolStrip2.TabIndex = 24;
             toolStrip2.Text = "toolStrip2";
             // 
             // iBtnGerarRelatorio
@@ -95,39 +95,39 @@
             iconToolStripButton1.Text = "Fechar";
             iconToolStripButton1.Click += iconToolStripButton1_Click;
             // 
-            // dgvEstoqueClassificacao
+            // dgvEstoqueProdutos
             // 
-            dgvEstoqueClassificacao.AllowUserToAddRows = false;
-            dgvEstoqueClassificacao.AllowUserToDeleteRows = false;
-            dataGridViewCellStyle3.BackColor = Color.FromArgb(240, 240, 240);
-            dgvEstoqueClassificacao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvEstoqueClassificacao.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
-            dgvEstoqueClassificacao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            dgvEstoqueClassificacao.BackgroundColor = Color.WhiteSmoke;
-            dgvEstoqueClassificacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgvEstoqueClassificacao.EnableHeadersVisualStyles = false;
-            dgvEstoqueClassificacao.Location = new Point(0, 41);
-            dgvEstoqueClassificacao.Margin = new Padding(5, 4, 5, 4);
-            dgvEstoqueClassificacao.Name = "dgvEstoqueClassificacao";
-            dgvEstoqueClassificacao.ReadOnly = true;
-            dgvEstoqueClassificacao.RowHeadersVisible = false;
-            dgvEstoqueClassificacao.RowHeadersWidth = 51;
-            dgvEstoqueClassificacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgvEstoqueClassificacao.Size = new Size(1432, 526);
-            dgvEstoqueClassificacao.TabIndex = 18;
+            dgvEstoqueProdutos.AllowUserToAddRows = false;
+            dgvEstoqueProdutos.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(240, 240, 240);
+            dgvEstoqueProdutos.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle5;
+            dgvEstoqueProdutos.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
+            dgvEstoqueProdutos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvEstoqueProdutos.BackgroundColor = Color.WhiteSmoke;
+            dgvEstoqueProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvEstoqueProdutos.EnableHeadersVisualStyles = false;
+            dgvEstoqueProdutos.Location = new Point(0, 37);
+            dgvEstoqueProdutos.Margin = new Padding(5, 4, 5, 4);
+            dgvEstoqueProdutos.Name = "dgvEstoqueProdutos";
+            dgvEstoqueProdutos.ReadOnly = true;
+            dgvEstoqueProdutos.RowHeadersVisible = false;
+            dgvEstoqueProdutos.RowHeadersWidth = 51;
+            dgvEstoqueProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgvEstoqueProdutos.Size = new Size(1410, 532);
+            dgvEstoqueProdutos.TabIndex = 23;
             // 
-            // FormVisaoRelatorioEstoque
+            // FormRelatorioEstoqueProdutos
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1410, 569);
             Controls.Add(toolStrip2);
-            Controls.Add(dgvEstoqueClassificacao);
-            Name = "FormVisaoRelatorioEstoque";
-            Text = "FormVisaoRelatorioEstoque";
+            Controls.Add(dgvEstoqueProdutos);
+            Name = "FormRelatorioEstoqueProdutos";
+            Text = "FormRelatorioEstoqueProdutos";
             toolStrip2.ResumeLayout(false);
             toolStrip2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dgvEstoqueClassificacao).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgvEstoqueProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -139,6 +139,6 @@
         private FontAwesome.Sharp.IconToolStripButton iBtnBaixarCsv;
         private FontAwesome.Sharp.IconToolStripButton iBtnBaixarPDF;
         private FontAwesome.Sharp.IconToolStripButton iconToolStripButton1;
-        private DataGridView dgvEstoqueClassificacao;
+        private DataGridView dgvEstoqueProdutos;
     }
 }

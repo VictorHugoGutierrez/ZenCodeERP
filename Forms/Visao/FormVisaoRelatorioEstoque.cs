@@ -26,7 +26,7 @@ namespace ZenCodeERP.Forms.Visao
         }
         private void CarregarRelatorio()
         {
-            DataTable tabela = _repositorio.ObterRelatorioEstoquePorPeriodo();
+            DataTable tabela = _repositorio.ObterRelatorioEstoque();
 
             dgvEstoqueClassificacao.AutoGenerateColumns = true;
             dgvEstoqueClassificacao.DataSource = tabela;
@@ -66,6 +66,14 @@ namespace ZenCodeERP.Forms.Visao
         {
             CarregarRelatorio();
         }
+
+        private void iconToolStripButton1_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                this.Dispose();
+            else
+                return;
+        }
     }
 
     public class RelatorioEstoqueRepositorio
@@ -75,7 +83,7 @@ namespace ZenCodeERP.Forms.Visao
       
         }
 
-        public DataTable ObterRelatorioEstoquePorPeriodo()
+        public DataTable ObterRelatorioEstoque()
         {
             const string sql = @"
                                 SELECT
