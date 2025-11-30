@@ -54,8 +54,20 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 2,
           "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "FormVisaoEmpresa.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoEmpresa.cs",
+              "RelativeDocumentMoniker": "Forms\\Visao\\FormVisaoEmpresa.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoEmpresa.cs [Projeto]",
+              "RelativeToolTip": "Forms\\Visao\\FormVisaoEmpresa.cs [Projeto]",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T00:32:04.008Z",
+              "EditorCaption": " [Projeto]"
+            },
             {
               "$type": "Document",
               "DocumentIndex": 2,
@@ -76,22 +88,10 @@
               "RelativeDocumentMoniker": "Forms\\Visao\\formVisaoRelatorioVendas.cs",
               "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\formVisaoRelatorioVendas.cs",
               "RelativeToolTip": "Forms\\Visao\\formVisaoRelatorioVendas.cs",
-              "ViewState": "AgIAAD0AAAAAAAAAAAAuwEwAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAD0AAAAAAAAAAAAuwEsAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-11-30T00:30:26.338Z",
               "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "FormVisaoEmpresa.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoEmpresa.cs",
-              "RelativeDocumentMoniker": "Forms\\Visao\\FormVisaoEmpresa.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoEmpresa.cs [Projeto]",
-              "RelativeToolTip": "Forms\\Visao\\FormVisaoEmpresa.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T00:32:04.008Z",
-              "EditorCaption": " [Projeto]"
             },
             {
               "$type": "Document",

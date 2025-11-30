@@ -31,123 +31,124 @@ namespace ZenCodeERP.Forms.Visao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisaoEndereco));
-            this.toolStrip1 = new ToolStrip();
-            this.iBtnNovo = new IconToolStripButton();
-            this.iBtnEditar = new IconToolStripButton();
-            this.panel1 = new Panel();
-            this.gvEndereco = new DataGridView();
-            this.iBtnExcluir = new IconToolStripButton();
-            this.iBtnFechar = new IconToolStripButton();
-            this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvEndereco)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            toolStrip1 = new ToolStrip();
+            iBtnNovo = new IconToolStripButton();
+            iBtnEditar = new IconToolStripButton();
+            iBtnExcluir = new IconToolStripButton();
+            iBtnFechar = new IconToolStripButton();
+            panel1 = new Panel();
+            gvEndereco = new DataGridView();
+            toolStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gvEndereco).BeginInit();
+            SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toolStrip1.ImageScalingSize = new Size(30, 30);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iBtnNovo,
-            this.iBtnEditar,
-            this.iBtnExcluir,
-            this.iBtnFechar});
-            this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 47);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            toolStrip1.Font = new Font("Tahoma", 8.25F);
+            toolStrip1.ImageScalingSize = new Size(30, 30);
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnFechar });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1410, 37);
+            toolStrip1.TabIndex = 0;
+            toolStrip1.Text = "toolStrip1";
             // 
             // iBtnNovo
             // 
-            this.iBtnNovo.IconChar = IconChar.FileCirclePlus;
-            this.iBtnNovo.IconColor = Color.DodgerBlue;
-            this.iBtnNovo.IconFont = IconFont.Auto;
-            this.iBtnNovo.IconSize = 32;
-            this.iBtnNovo.Name = "iBtnNovo";
-            this.iBtnNovo.Size = new Size(90, 44);
-            this.iBtnNovo.Text = "Novo";
-            this.iBtnNovo.Click += iBtnNovo_Click;
+            iBtnNovo.IconChar = IconChar.FileCirclePlus;
+            iBtnNovo.IconColor = Color.DodgerBlue;
+            iBtnNovo.IconFont = IconFont.Auto;
+            iBtnNovo.IconSize = 32;
+            iBtnNovo.Name = "iBtnNovo";
+            iBtnNovo.Size = new Size(75, 34);
+            iBtnNovo.Text = "Novo";
+            iBtnNovo.Click += iBtnNovo_Click;
             // 
             // iBtnEditar
             // 
-            this.iBtnEditar.IconChar = IconChar.Edit;
-            this.iBtnEditar.IconColor = Color.DodgerBlue;
-            this.iBtnEditar.IconFont = IconFont.Auto;
-            this.iBtnEditar.IconSize = 32;
-            this.iBtnEditar.Name = "iBtnNovo";
-            this.iBtnEditar.Size = new Size(90, 44);
-            this.iBtnEditar.Text = "Editar";
-            this.iBtnEditar.Click += iBtnEditar_Click;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.gvEndereco);
-            this.panel1.Location = new System.Drawing.Point(0, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.TabIndex = 1;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // gvEndereco
-            // 
-            this.gvEndereco.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvEndereco.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvEndereco.MultiSelect = true;
-            this.gvEndereco.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.gvEndereco.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvEndereco.AllowUserToAddRows = false;
-            this.gvEndereco.AllowUserToDeleteRows = false;
-            this.gvEndereco.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240))))); // Linhas zebradas
-            this.gvEndereco.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvEndereco.RowHeadersVisible = false;
-            this.gvEndereco.ReadOnly = true;
-            this.gvEndereco.Name = "gvEndereco";
-            this.gvEndereco.TabIndex = 0;
-            this.gvEndereco.DoubleClick += new System.EventHandler(this.gvEndereco_DoubleClick);
+            iBtnEditar.IconChar = IconChar.Edit;
+            iBtnEditar.IconColor = Color.DodgerBlue;
+            iBtnEditar.IconFont = IconFont.Auto;
+            iBtnEditar.IconSize = 32;
+            iBtnEditar.Name = "iBtnEditar";
+            iBtnEditar.Size = new Size(77, 34);
+            iBtnEditar.Text = "Editar";
+            iBtnEditar.Click += iBtnEditar_Click;
             // 
             // iBtnExcluir
             // 
-            this.iBtnExcluir.IconChar = IconChar.Trash;
-            this.iBtnExcluir.IconColor = Color.DodgerBlue;
-            this.iBtnExcluir.IconFont = IconFont.Auto;
-            this.iBtnExcluir.IconSize = 32;
-            this.iBtnExcluir.Name = "iBtnNovo";
-            this.iBtnExcluir.Size = new Size(90, 44);
-            this.iBtnExcluir.Text = "Excluir";
-            this.iBtnExcluir.Click += iBtnExcluir_Click;
+            iBtnExcluir.IconChar = IconChar.Trash;
+            iBtnExcluir.IconColor = Color.DodgerBlue;
+            iBtnExcluir.IconFont = IconFont.Auto;
+            iBtnExcluir.IconSize = 32;
+            iBtnExcluir.Name = "iBtnExcluir";
+            iBtnExcluir.Size = new Size(82, 34);
+            iBtnExcluir.Text = "Excluir";
+            iBtnExcluir.Click += iBtnExcluir_Click;
             // 
             // iBtnFechar
             // 
-            this.iBtnFechar.IconChar = IconChar.Close;
-            this.iBtnFechar.IconColor = Color.DodgerBlue;
-            this.iBtnFechar.IconFont = IconFont.Auto;
-            this.iBtnFechar.IconSize = 32;
-            this.iBtnFechar.Name = "iBtnNovo";
-            this.iBtnFechar.Size = new Size(90, 44);
-            this.iBtnFechar.Text = "Fechar";
-            this.iBtnFechar.Click += iBtnFechar_Click;
+            iBtnFechar.IconChar = IconChar.Close;
+            iBtnFechar.IconColor = Color.DodgerBlue;
+            iBtnFechar.IconFont = IconFont.Auto;
+            iBtnFechar.IconSize = 32;
+            iBtnFechar.Name = "iBtnFechar";
+            iBtnFechar.Size = new Size(83, 34);
+            iBtnFechar.Text = "Fechar";
+            iBtnFechar.Click += iBtnFechar_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(gvEndereco);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 37);
+            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1410, 532);
+            panel1.TabIndex = 1;
+            // 
+            // gvEndereco
+            // 
+            gvEndereco.AllowUserToAddRows = false;
+            gvEndereco.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
+            gvEndereco.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gvEndereco.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gvEndereco.BackgroundColor = Color.WhiteSmoke;
+            gvEndereco.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvEndereco.Dock = DockStyle.Fill;
+            gvEndereco.Location = new Point(0, 0);
+            gvEndereco.Margin = new Padding(4, 5, 4, 5);
+            gvEndereco.Name = "gvEndereco";
+            gvEndereco.ReadOnly = true;
+            gvEndereco.RowHeadersVisible = false;
+            gvEndereco.RowHeadersWidth = 51;
+            gvEndereco.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvEndereco.Size = new Size(1410, 532);
+            gvEndereco.TabIndex = 0;
+            gvEndereco.DoubleClick += gvEndereco_DoubleClick;
             // 
             // FormVisaoEndereco
             // 
-            this.Dock = DockStyle.Fill;
-            this.Icon = global::ZenCodeERP.Properties.Resources.iconZenCode;
-            this.Load += new System.EventHandler(this.FormVisaoEndereco_Load);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ClientSize = new System.Drawing.Size(840, 395);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
-            this.Name = "FormVisaoEndereco";
-            this.Text = "Visão Endereço";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvEndereco)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            AutoScaleDimensions = new SizeF(8F, 20F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1410, 569);
+            Controls.Add(panel1);
+            Controls.Add(toolStrip1);
+            Icon = Properties.Resources.iconZenCode;
+            Margin = new Padding(4, 5, 4, 5);
+            Name = "FormVisaoEndereco";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Visão Endereço";
+            Load += FormVisaoEndereco_Load;
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gvEndereco).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 

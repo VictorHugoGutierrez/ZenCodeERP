@@ -36,7 +36,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnNovo = new IconToolStripButton();
             iBtnEditar = new IconToolStripButton();
             iBtnExcluir = new IconToolStripButton();
-            this.iBtnFechar = new IconToolStripButton();
+            iBtnFechar = new IconToolStripButton();
             panel1 = new Panel();
             gvEmpresa = new DataGridView();
             toolStrip1.SuspendLayout();
@@ -46,13 +46,12 @@ namespace ZenCodeERP.Forms.Visao
             // 
             // toolStrip1
             // 
-            toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             toolStrip1.Font = new Font("Tahoma", 8.25F);
             toolStrip1.ImageScalingSize = new Size(30, 30);
             toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnFechar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1067, 47);
+            toolStrip1.Size = new Size(1410, 37);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -63,7 +62,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnNovo.IconFont = IconFont.Auto;
             iBtnNovo.IconSize = 32;
             iBtnNovo.Name = "iBtnNovo";
-            iBtnNovo.Size = new Size(90, 44);
+            iBtnNovo.Size = new Size(75, 34);
             iBtnNovo.Text = "Novo";
             iBtnNovo.Click += iBtnNovo_Click;
             // 
@@ -74,7 +73,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnEditar.IconFont = IconFont.Auto;
             iBtnEditar.IconSize = 32;
             iBtnEditar.Name = "iBtnEditar";
-            iBtnEditar.Size = new Size(94, 44);
+            iBtnEditar.Size = new Size(77, 34);
             iBtnEditar.Text = "Editar";
             iBtnEditar.Click += iBtnEditar_Click;
             // 
@@ -85,29 +84,29 @@ namespace ZenCodeERP.Forms.Visao
             iBtnExcluir.IconFont = IconFont.Auto;
             iBtnExcluir.IconSize = 32;
             iBtnExcluir.Name = "iBtnExcluir";
-            iBtnExcluir.Size = new Size(100, 44);
+            iBtnExcluir.Size = new Size(82, 34);
             iBtnExcluir.Text = "Excluir";
             iBtnExcluir.Click += iBtnExcluir_Click;
             // 
             // iBtnFechar
             // 
-            this.iBtnFechar.IconChar = IconChar.Close;
-            this.iBtnFechar.IconColor = Color.DodgerBlue;
-            this.iBtnFechar.IconFont = IconFont.Auto;
-            this.iBtnFechar.IconSize = 32;
-            this.iBtnFechar.Name = "iBtnNovo";
-            this.iBtnFechar.Size = new Size(90, 44);
-            this.iBtnFechar.Text = "Fechar";
-            this.iBtnFechar.Click += iBtnFechar_Click;
+            iBtnFechar.IconChar = IconChar.Close;
+            iBtnFechar.IconColor = Color.DodgerBlue;
+            iBtnFechar.IconFont = IconFont.Auto;
+            iBtnFechar.IconSize = 32;
+            iBtnFechar.Name = "iBtnFechar";
+            iBtnFechar.Size = new Size(83, 34);
+            iBtnFechar.Text = "Fechar";
+            iBtnFechar.Click += iBtnFechar_Click;
             // 
             // panel1
             // 
             panel1.Controls.Add(gvEmpresa);
             panel1.Dock = DockStyle.Fill;
-            panel1.Location = new Point(0, 47);
+            panel1.Location = new Point(0, 37);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1067, 645);
+            panel1.Size = new Size(1410, 532);
             panel1.TabIndex = 1;
             // 
             // gvEmpresa
@@ -127,19 +126,18 @@ namespace ZenCodeERP.Forms.Visao
             gvEmpresa.RowHeadersVisible = false;
             gvEmpresa.RowHeadersWidth = 51;
             gvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gvEmpresa.Size = new Size(1067, 645);
+            gvEmpresa.Size = new Size(1410, 532);
             gvEmpresa.TabIndex = 0;
             gvEmpresa.DoubleClick += gvEmpresa_DoubleClick;
             // 
             // FormVisaoEmpresa
-            //
-            Dock = DockStyle.Fill;
-            Icon = global::ZenCodeERP.Properties.Resources.iconZenCode; 
+            // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1067, 692);
+            ClientSize = new Size(1410, 569);
             Controls.Add(panel1);
             Controls.Add(toolStrip1);
+            Icon = Properties.Resources.iconZenCode;
             Margin = new Padding(4, 5, 4, 5);
             Name = "FormVisaoEmpresa";
             StartPosition = FormStartPosition.CenterScreen;
