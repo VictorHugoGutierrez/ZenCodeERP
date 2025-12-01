@@ -38,6 +38,7 @@ namespace ZenCodeERP.Forms.Visao
             this.panel1 = new Panel();
             this.gvProduto = new DataGridView();
             this.iBtnExcluir = new IconToolStripButton();
+            this.iBtnAtualizar = new IconToolStripButton();
             this.iBtnFechar = new IconToolStripButton();
             this.toolStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -52,6 +53,7 @@ namespace ZenCodeERP.Forms.Visao
             this.iBtnNovo,
             this.iBtnEditar,
             this.iBtnExcluir,
+            this.iBtnAtualizar,
             this.iBtnFechar});
             this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
@@ -118,6 +120,17 @@ namespace ZenCodeERP.Forms.Visao
             this.iBtnExcluir.Text = "Excluir";
             this.iBtnExcluir.Click += iBtnExcluir_Click;
             // 
+            // iBtnAtualizar
+            // 
+            iBtnAtualizar.IconChar = IconChar.ArrowRotateForward;
+            iBtnAtualizar.IconColor = Color.DodgerBlue;
+            iBtnAtualizar.IconFont = IconFont.Auto;
+            iBtnAtualizar.IconSize = 32;
+            iBtnAtualizar.Name = "iBtnAtualizar";
+            iBtnAtualizar.Size = new Size(92, 34);
+            iBtnAtualizar.Text = "Atualizar";
+            iBtnAtualizar.Click += iBtnAtualizar_Click;
+            // 
             // iBtnFechar
             // 
             this.iBtnFechar.IconChar = IconChar.Close;
@@ -159,6 +172,7 @@ namespace ZenCodeERP.Forms.Visao
         private IconToolStripButton iBtnNovo;
         private IconToolStripButton iBtnEditar;
         private IconToolStripButton iBtnExcluir;
+        private IconToolStripButton iBtnAtualizar;
         private IconToolStripButton iBtnFechar;
     }
 }

@@ -101,6 +101,16 @@ namespace ZenCodeERP.Utils
               END) AS ATIVO");
             }
 
+            if(tabela == "MOVIMENTACAO")
+            {
+                regras.Add("STATUS",
+                    @"(CASE STATUS 
+                WHEN 0 THEN 'Aberto' 
+                WHEN 1 THEN 'Faturado' 
+                WHEN 2 THEN 'Cancelado' 
+              END) AS STATUS");
+            }
+
             return regras;
         }
 

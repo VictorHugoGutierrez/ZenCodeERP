@@ -110,5 +110,10 @@ namespace ZenCodeERP.Forms.Visao
             }
 
         }
+
+        private void iBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
+        }
     }
 }

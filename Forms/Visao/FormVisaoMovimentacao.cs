@@ -24,7 +24,7 @@ namespace ZenCodeERP.Forms.Visao
         {
             try
             {
-                string coluna = "*";
+                string coluna = "CODEMPRESA, CODMOVIMENTACAO, STATUS, VALORTOTAL, CODUSUARIO, CODCLIFOR, TIPOMOVIMENTO, DATA, OBSERVACAO";
                 string tabela = "MOVIMENTACAO";
                 string relacionamento = @"";
                 
