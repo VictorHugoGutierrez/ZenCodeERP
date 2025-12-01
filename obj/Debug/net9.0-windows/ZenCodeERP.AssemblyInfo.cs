@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("ZenCodeERP")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+ea0a33df773112c2898a96d105d85e0d3ec713ed")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+a9975f859a58bab5d07fcf9680e3a1e8532e60ca")]
 [assembly: System.Reflection.AssemblyProductAttribute("ZenCodeERP")]
 [assembly: System.Reflection.AssemblyTitleAttribute("ZenCodeERP")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]

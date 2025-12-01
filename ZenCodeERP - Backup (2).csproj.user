@@ -1,0 +1,45 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="Current" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Compile Update="Forms\Cadastro\FormCadastroEmpresa.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Cadastro\FormCadastroEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Cadastro\FormCadastroUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MDILogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\MDIPrincipal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+<<<<<<< HEAD
+    <Compile Update="Forms\Visao\FormVisaoRelatorioEstoqueProdutos.cs">
+=======
+    <Compile Update="Forms\Visao\FormVisaoClassificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoClienteFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoEmpresa.cs">
+>>>>>>> 5308dc824fafd3834291a703892b49eb87517eb0
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoEndereco.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoRelatorioEstoque.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\formVisaoRelatorioVendas.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+</Project>

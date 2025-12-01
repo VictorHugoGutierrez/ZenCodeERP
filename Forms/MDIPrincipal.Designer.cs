@@ -122,7 +122,7 @@
             // 
             // toolStripButtonRelatorio
             // 
-            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { estoqueGeralDeProdutosToolStripMenuItem, relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
+            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
             toolStripButtonRelatorio.IconChar = IconChar.Newspaper;
             toolStripButtonRelatorio.IconColor = Color.DodgerBlue;
             toolStripButtonRelatorio.IconFont = IconFont.Auto;
@@ -190,10 +190,10 @@
             // 
             // estoqueGeralDeProdutosToolStripMenuItem
             // 
-            estoqueGeralDeProdutosToolStripMenuItem.Name = "estoqueGeralDeProdutosToolStripMenuItem";
-            estoqueGeralDeProdutosToolStripMenuItem.Size = new Size(357, 26);
-            estoqueGeralDeProdutosToolStripMenuItem.Text = "Estoque geral de Produtos";
-            estoqueGeralDeProdutosToolStripMenuItem.Click += estoqueGeralDeProdutosToolStripMenuItem_Click;
+            //estoqueGeralDeProdutosToolStripMenuItem.Name = "estoqueGeralDeProdutosToolStripMenuItem";
+            //estoqueGeralDeProdutosToolStripMenuItem.Size = new Size(357, 26);
+            //estoqueGeralDeProdutosToolStripMenuItem.Text = "Estoque geral de Produtos";
+            //estoqueGeralDeProdutosToolStripMenuItem.Click += estoqueGeralDeProdutosToolStripMenuItem_Click;
             // 
             // MDIPrincipal
             // 
