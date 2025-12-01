@@ -31,156 +31,172 @@ namespace ZenCodeERP.Forms.Visao
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisaoMovimentacao));
-            this.toolStrip1 = new ToolStrip();
-            this.iBtnNovo = new IconToolStripButton();
-            this.iBtnEditar = new IconToolStripButton();
-            this.panel1 = new Panel();
-            this.gvMovimentacao = new DataGridView();
-            this.iBtnExcluir = new IconToolStripButton();
-            this.iBtnFechar = new IconToolStripButton();
-            this.iBtnProcessos = new IconDropDownButton();
-            this.iBtnFaturar = new IconToolStripButton();
-            this.iBtnCancelar = new IconToolStripButton();
-            this.toolStrip1.SuspendLayout();
-            this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.gvMovimentacao)).BeginInit();
-            this.SuspendLayout();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            toolStrip1 = new ToolStrip();
+            iBtnNovo = new IconToolStripButton();
+            iBtnEditar = new IconToolStripButton();
+            iBtnExcluir = new IconToolStripButton();
             iBtnAtualizar = new IconToolStripButton();
+            iBtnFechar = new IconToolStripButton();
+            iBtnProcessos = new IconDropDownButton();
+            iBtnFaturar = new IconToolStripButton();
+            iBtnCancelar = new IconToolStripButton();
+            panel1 = new Panel();
+            gvMovimentacao = new DataGridView();
+            toolStrip1.SuspendLayout();
+            panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)gvMovimentacao).BeginInit();
+            SuspendLayout();
             // 
             // toolStrip1
             // 
-            this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.toolStrip1.ImageScalingSize = new Size(30, 30);
-            this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
-            this.toolStrip1.Location = new System.Drawing.Point(0, 0);
-            this.toolStrip1.Name = "toolStrip1";
-            this.toolStrip1.Size = new System.Drawing.Size(800, 47);
-            this.toolStrip1.TabIndex = 0;
-            this.toolStrip1.Text = "toolStrip1";
+            toolStrip1.Font = new Font("Tahoma", 8.25F);
+            toolStrip1.ImageScalingSize = new Size(30, 30);
             toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnAtualizar, iBtnFechar, iBtnProcessos });
+            toolStrip1.Location = new Point(0, 0);
+            toolStrip1.Name = "toolStrip1";
+            toolStrip1.Size = new Size(1486, 37);
+            toolStrip1.TabIndex = 0;
+            toolStrip1.Text = "toolStrip1";
             // 
             // iBtnNovo
             // 
-            this.iBtnNovo.IconChar = IconChar.FileCirclePlus;
-            this.iBtnNovo.IconColor = Color.DodgerBlue;
-            this.iBtnNovo.IconFont = IconFont.Auto;
-            this.iBtnNovo.IconSize = 32;
-            this.iBtnNovo.Name = "iBtnNovo";
-            this.iBtnNovo.Size = new Size(90, 44);
-            this.iBtnNovo.Text = "Novo";
-            this.iBtnNovo.Click += iBtnNovo_Click;
+            iBtnNovo.IconChar = IconChar.FileCirclePlus;
+            iBtnNovo.IconColor = Color.DodgerBlue;
+            iBtnNovo.IconFont = IconFont.Auto;
+            iBtnNovo.IconSize = 32;
+            iBtnNovo.Name = "iBtnNovo";
+            iBtnNovo.Size = new Size(66, 34);
+            iBtnNovo.Text = "Novo";
+            iBtnNovo.Click += iBtnNovo_Click;
             // 
             // iBtnEditar
             // 
-            this.iBtnEditar.IconChar = IconChar.Edit;
-            this.iBtnEditar.IconColor = Color.DodgerBlue;
-            this.iBtnEditar.IconFont = IconFont.Auto;
-            this.iBtnEditar.IconSize = 32;
-            this.iBtnEditar.Name = "iBtnEditar";
-            this.iBtnEditar.Size = new Size(90, 44);
-            this.iBtnEditar.Text = "Editar";
-            this.iBtnEditar.Click += iBtnEditar_Click;
-            // 
-            // panel1
-            // 
-            this.panel1.Controls.Add(this.gvMovimentacao);
-            this.panel1.Location = new System.Drawing.Point(0, 47);
-            this.panel1.Name = "panel1";
-            this.panel1.TabIndex = 1;
-            this.panel1.Dock = System.Windows.Forms.DockStyle.Fill;
-            // 
-            // gvMovimentacao
-            // 
-            this.gvMovimentacao.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gvMovimentacao.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.gvMovimentacao.MultiSelect = true;
-            this.gvMovimentacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            this.gvMovimentacao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            this.gvMovimentacao.AllowUserToAddRows = false;
-            this.gvMovimentacao.AllowUserToDeleteRows = false;
-            this.gvMovimentacao.AlternatingRowsDefaultCellStyle.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(240)))), ((int)(((byte)(240)))), ((int)(((byte)(240)))));
-            this.gvMovimentacao.BackgroundColor = System.Drawing.Color.WhiteSmoke;
-            this.gvMovimentacao.RowHeadersVisible = false;
-            this.gvMovimentacao.ReadOnly = true;
-            this.gvMovimentacao.Name = "gvMovimentacao";
-            this.gvMovimentacao.TabIndex = 0;
-            this.gvMovimentacao.DoubleClick += new System.EventHandler(this.gvMovimentacao_DoubleClick);
+            iBtnEditar.IconChar = IconChar.Edit;
+            iBtnEditar.IconColor = Color.DodgerBlue;
+            iBtnEditar.IconFont = IconFont.Auto;
+            iBtnEditar.IconSize = 32;
+            iBtnEditar.Name = "iBtnEditar";
+            iBtnEditar.Size = new Size(69, 34);
+            iBtnEditar.Text = "Editar";
+            iBtnEditar.Click += iBtnEditar_Click;
             // 
             // iBtnExcluir
             // 
-            this.iBtnExcluir.IconChar = IconChar.Trash;
-            this.iBtnExcluir.IconColor = Color.DodgerBlue;
-            this.iBtnExcluir.IconFont = IconFont.Auto;
-            this.iBtnExcluir.IconSize = 32;
-            this.iBtnExcluir.Name = "iBtnExcluir";
-            this.iBtnExcluir.Size = new Size(90, 44);
-            this.iBtnExcluir.Text = "Excluir";
-            this.iBtnExcluir.Click += iBtnExcluir_Click;
+            iBtnExcluir.IconChar = IconChar.Trash;
+            iBtnExcluir.IconColor = Color.DodgerBlue;
+            iBtnExcluir.IconFont = IconFont.Auto;
+            iBtnExcluir.IconSize = 32;
+            iBtnExcluir.Name = "iBtnExcluir";
+            iBtnExcluir.Size = new Size(72, 34);
+            iBtnExcluir.Text = "Excluir";
+            iBtnExcluir.Click += iBtnExcluir_Click;
+            // 
+            // iBtnAtualizar
+            // 
+            iBtnAtualizar.IconChar = IconChar.ArrowRotateForward;
+            iBtnAtualizar.IconColor = Color.DodgerBlue;
+            iBtnAtualizar.IconFont = IconFont.Auto;
+            iBtnAtualizar.IconSize = 32;
+            iBtnAtualizar.Name = "iBtnAtualizar";
+            iBtnAtualizar.Size = new Size(92, 34);
+            iBtnAtualizar.Text = "Atualizar";
+            iBtnAtualizar.Click += iBtnAtualizar_Click;
             // 
             // iBtnFechar
             // 
-            this.iBtnFechar.IconChar = IconChar.Close;
-            this.iBtnFechar.IconColor = Color.DodgerBlue;
-            this.iBtnFechar.IconFont = IconFont.Auto;
-            this.iBtnFechar.IconSize = 32;
-            this.iBtnFechar.Name = "iBtnFechar";
-            this.iBtnFechar.Size = new Size(90, 44);
-            this.iBtnFechar.Text = "Fechar";
-            this.iBtnFechar.Click += iBtnFechar_Click;
+            iBtnFechar.IconChar = IconChar.Close;
+            iBtnFechar.IconColor = Color.DodgerBlue;
+            iBtnFechar.IconFont = IconFont.Auto;
+            iBtnFechar.IconSize = 32;
+            iBtnFechar.Name = "iBtnFechar";
+            iBtnFechar.Size = new Size(74, 34);
+            iBtnFechar.Text = "Fechar";
+            iBtnFechar.Click += iBtnFechar_Click;
             // 
             // iBtnProcessos
             // 
-            this.iBtnProcessos.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] { this.iBtnFaturar, this.iBtnCancelar});
-            this.iBtnProcessos.IconChar = IconChar.Cogs;
-            this.iBtnProcessos.IconColor = Color.DodgerBlue;
-            this.iBtnProcessos.IconFont = IconFont.Auto;
-            this.iBtnProcessos.IconSize = 32;
-            this.iBtnProcessos.Name = "iBtnProcessos";
-            this.iBtnProcessos.Size = new Size(90, 44);
-            this.iBtnProcessos.Text = "Processos";
+            iBtnProcessos.DropDownItems.AddRange(new ToolStripItem[] { iBtnFaturar, iBtnCancelar });
+            iBtnProcessos.IconChar = IconChar.Cogs;
+            iBtnProcessos.IconColor = Color.DodgerBlue;
+            iBtnProcessos.IconFont = IconFont.Auto;
+            iBtnProcessos.IconSize = 32;
+            iBtnProcessos.Name = "iBtnProcessos";
+            iBtnProcessos.Size = new Size(98, 34);
+            iBtnProcessos.Text = "Processos";
             // 
             // iBtnFaturar
             // 
-            this.iBtnFaturar.IconChar = IconChar.CheckCircle;
-            this.iBtnFaturar.IconColor = Color.DodgerBlue;
-            this.iBtnFaturar.IconFont = IconFont.Auto;
-            this.iBtnFaturar.IconSize = 24;
-            this.iBtnFaturar.Name = "iBtnFaturar";
-            this.iBtnFaturar.Size = new Size(90, 44);
-            this.iBtnFaturar.Text = "Faturar";
-            this.iBtnFaturar.Click += iBtnFaturar_Click;
+            iBtnFaturar.IconChar = IconChar.CheckCircle;
+            iBtnFaturar.IconColor = Color.DodgerBlue;
+            iBtnFaturar.IconFont = IconFont.Auto;
+            iBtnFaturar.IconSize = 24;
+            iBtnFaturar.Name = "iBtnFaturar";
+            iBtnFaturar.Size = new Size(77, 34);
+            iBtnFaturar.Text = "Faturar";
+            iBtnFaturar.Click += iBtnFaturar_Click;
             // 
             // iBtnCancelar
             // 
-            this.iBtnCancelar.IconChar = IconChar.Ban;
-            this.iBtnCancelar.IconColor = Color.DodgerBlue;
-            this.iBtnCancelar.IconFont = IconFont.Auto;
-            this.iBtnCancelar.IconSize = 24;
-            this.iBtnCancelar.Name = "iBtnCancelar";
-            this.iBtnCancelar.Size = new Size(90, 44);
-            this.iBtnCancelar.Text = "Cancelar";
-            this.iBtnCancelar.Click += iBtnCancelar_Click;
+            iBtnCancelar.IconChar = IconChar.Cancel;
+            iBtnCancelar.IconColor = Color.DodgerBlue;
+            iBtnCancelar.IconFont = IconFont.Auto;
+            iBtnCancelar.IconSize = 24;
+            iBtnCancelar.Name = "iBtnCancelar";
+            iBtnCancelar.Size = new Size(83, 34);
+            iBtnCancelar.Text = "Cancelar";
+            iBtnCancelar.Click += iBtnCancelar_Click;
+            // 
+            // panel1
+            // 
+            panel1.Controls.Add(gvMovimentacao);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 37);
+            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1486, 720);
+            panel1.TabIndex = 1;
+            // 
+            // gvMovimentacao
+            // 
+            gvMovimentacao.AllowUserToAddRows = false;
+            gvMovimentacao.AllowUserToDeleteRows = false;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
+            gvMovimentacao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gvMovimentacao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gvMovimentacao.BackgroundColor = Color.WhiteSmoke;
+            gvMovimentacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvMovimentacao.Dock = DockStyle.Fill;
+            gvMovimentacao.Location = new Point(0, 0);
+            gvMovimentacao.Margin = new Padding(4, 3, 4, 3);
+            gvMovimentacao.Name = "gvMovimentacao";
+            gvMovimentacao.ReadOnly = true;
+            gvMovimentacao.RowHeadersVisible = false;
+            gvMovimentacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvMovimentacao.Size = new Size(1486, 720);
+            gvMovimentacao.TabIndex = 0;
+            gvMovimentacao.DoubleClick += gvMovimentacao_DoubleClick;
             // 
             // FormVisaoMovimentacao
             // 
-            this.Dock = DockStyle.Fill;
-            this.Icon = global::ZenCodeERP.Properties.Resources.iconZenCode;
-            this.Load += new System.EventHandler(this.FormVisaoMovimentacao_Load);
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.ClientSize = new System.Drawing.Size(840, 395);
-            this.Controls.Add(this.panel1);
-            this.Controls.Add(this.toolStrip1);
-            this.Name = "FormVisaoMovimentacao";
-            this.Text = "Visão Movimentação";
-            this.toolStrip1.ResumeLayout(false);
-            this.toolStrip1.PerformLayout();
-            this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.gvMovimentacao)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
+            Dock = DockStyle.Fill;
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(1486, 757);
+            Controls.Add(panel1);
+            Controls.Add(toolStrip1);
+            Icon = Properties.Resources.iconZenCode;
+            Margin = new Padding(4, 3, 4, 3);
+            Name = "FormVisaoMovimentacao";
+            StartPosition = FormStartPosition.CenterScreen;
+            Text = "Visão Movimentação";
+            Load += FormVisaoMovimentacao_Load;
+            toolStrip1.ResumeLayout(false);
+            toolStrip1.PerformLayout();
+            panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)gvMovimentacao).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
 
         }
 
