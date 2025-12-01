@@ -1,4 +1,5 @@
 ﻿using System.Data;
+using MySql.Data.MySqlClient;
 using ZenCodeERP.Model;
 
 namespace ZenCodeERP.Data.Repositories
@@ -35,7 +36,30 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(int codEmpresa, int codMovimentacao)
         { 
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM MOVIMENTACAO WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ?", codEmpresa, codMovimentacao);
+            try
+            {
+                DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM MOVIMENTACAO WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ?", codEmpresa, codMovimentacao);
+
+                MessageBox.Show("Movimentação excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Não é possível excluir esta movimentação pois existem registros vinculados a ela.",
+                                    "Atenção",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Warning);
+                }
+                else
+                {
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public Movimentacao GetByCodMovimentacao(int codEmpresa, int codMovimentacao)

@@ -46,23 +46,19 @@ namespace ZenCodeERP.Forms.Visao
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvMovimentacao)).BeginInit();
             this.SuspendLayout();
+            iBtnAtualizar = new IconToolStripButton();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStrip1.ImageScalingSize = new Size(30, 30);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iBtnNovo,
-            this.iBtnEditar,
-            this.iBtnExcluir,
-            this.iBtnFechar,
-            this.iBtnProcessos});
             this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 47);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnAtualizar, iBtnFechar, iBtnProcessos });
             // 
             // iBtnNovo
             // 
@@ -200,5 +196,6 @@ namespace ZenCodeERP.Forms.Visao
         private IconDropDownButton iBtnProcessos;
         private IconToolStripButton iBtnFaturar;
         private IconToolStripButton iBtnCancelar;
+        private IconToolStripButton iBtnAtualizar;
     }
 }
