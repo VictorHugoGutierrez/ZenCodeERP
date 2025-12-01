@@ -1,4 +1,5 @@
-﻿using System.Diagnostics.CodeAnalysis;
+﻿using FontAwesome.Sharp;
+using System.Diagnostics.CodeAnalysis;
 using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Visao;
 using ZenCodeERP.Model;
@@ -11,6 +12,12 @@ namespace ZenCodeERP.Forms
         public MDIPrincipal()
         {
             InitializeComponent();
+            iconToolStripButtonUsuario.Visible = Utilidades.Permissoes.permissao_gerente();
+
+            iconToolStripButtonClassificacao.Visible = Utilidades.Permissoes.permissao_gerente() || Utilidades.Permissoes.permissao_vendedor();
+
+            iconToolStripButtonEmpresa.Visible = Utilidades.Permissoes.permissao_gerente() || Utilidades.Permissoes.permissao_estoquista();
+            iconToolStripButtonProduto.Visible = Utilidades.Permissoes.permissao_gerente() || Utilidades.Permissoes.permissao_estoquista();
         }
 
         private void MDIPrincipal_Load(object sender, EventArgs e)
@@ -75,6 +82,11 @@ namespace ZenCodeERP.Forms
 
         private void relatórioToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!Utilidades.Permissoes.permissao_gerente() && !Utilidades.Permissoes.permissao_estoquista())
+            {
+                MessageBox.Show("Não possui permissão pra gerar esse relatório", "Mensagem.");
+                return;
+            }
             FormVisaoRelatorioEstoque form = new FormVisaoRelatorioEstoque();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -95,6 +107,11 @@ namespace ZenCodeERP.Forms
 
         private void relatórioTicketMédioPorClienteToolStripMenuItem_Click(object sender, EventArgs e)
         {
+            if (!Utilidades.Permissoes.permissao_gerente() && !Utilidades.Permissoes.permissao_vendedor())
+            {
+                MessageBox.Show("Não possui permissão pra gerar esse relatório", "Mensagem.");
+                return;
+            }
             formVisaoRelatorioVendas form = new formVisaoRelatorioVendas();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
@@ -135,12 +152,22 @@ namespace ZenCodeERP.Forms
 
         private void toolStripMenuItem2_Click(object sender, EventArgs e)
         {
+            if (!Utilidades.Permissoes.permissao_gerente() && !Utilidades.Permissoes.permissao_estoquista())
+            {
+                MessageBox.Show("Não possui permissão pra gerar esse relatório", "Mensagem.");
+                return;
+            }
             FormRelatorioEstoqueProdutos form = new FormRelatorioEstoqueProdutos();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             this.panel2.Controls.Clear();
             this.panel2.Controls.Add(form);
             form.Show();
+        }
+
+        private void toolStripButtonRelatorio_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

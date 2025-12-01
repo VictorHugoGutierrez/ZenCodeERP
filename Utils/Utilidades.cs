@@ -183,5 +183,27 @@ namespace ZenCodeERP.Utils
                 AtualizarOuCriarEstoque(codEmpresa, codProduto, 0, qtdEstornada,-qtdEstornada);
             }
         }
+
+        public static class Permissoes
+        {
+            public const int PerfilGerente = 1;
+            public const int PerfilVendedor = 2;
+            public const int PerfilEstoquista = 3;
+
+            public static bool permissao_gerente()
+            {
+                return (AppZenCodeContext.CodUsuario == PerfilGerente);
+            }
+            public static bool permissao_vendedor()
+            {
+                return (AppZenCodeContext.CodUsuario == PerfilVendedor);
+            }
+
+            public static bool permissao_estoquista()
+            {
+                return (AppZenCodeContext.CodUsuario == PerfilEstoquista);
+            }
+        }
     }
+    
 }

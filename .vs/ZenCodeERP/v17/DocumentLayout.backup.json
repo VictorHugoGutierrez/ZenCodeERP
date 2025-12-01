@@ -3,12 +3,32 @@
   "WorkspaceRootPath": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\",
   "Documents": [
     {
+      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\utils\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:utils\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\visao\\formvisaomovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\visao\\formvisaomovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\forms\\visao\\formvisaomovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\visao\\formvisaomovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
+      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\visao\\formvisaorelatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -23,28 +43,8 @@
       "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\cadastro\\formcadastromovimentacao.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\cadastro\\formcadastromovimentacaoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\utils\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:utils\\utilidades.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\forms\\visao\\formvisaorelatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
       "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\visao\\formvisaorelatoriovendas.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form",
-      "RelativeMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|solutionrelative:forms\\mdiprincipal.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}|Form"
     },
     {
       "AbsoluteMoniker": "D:0:0:{1CD3A31F-50DA-7E30-57BC-0E52FC084B88}|ZenCodeERP.csproj|c:\\users\\supor\\documents\\github\\zencodeerp\\forms\\mdiprincipal.designer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -110,34 +110,36 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 6,
           "Children": [
             {
               "$type": "Document",
               "DocumentIndex": 3,
-              "Title": "FormCadastroMovimentacao.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs",
-              "RelativeDocumentMoniker": "Forms\\Cadastro\\FormCadastroMovimentacao.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs [Projeto]",
-              "RelativeToolTip": "Forms\\Cadastro\\FormCadastroMovimentacao.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T18:54:51.308Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "FormVisaoMovimentacao.cs [Design]",
+              "Title": "FormVisaoMovimentacao.cs",
               "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs",
               "RelativeDocumentMoniker": "Forms\\Visao\\FormVisaoMovimentacao.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs [Design]",
-              "RelativeToolTip": "Forms\\Visao\\FormVisaoMovimentacao.cs [Design]",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs",
+              "RelativeToolTip": "Forms\\Visao\\FormVisaoMovimentacao.cs",
+              "ViewState": "AgIAAHwAAAAAAAAAAADwv5MAAAAVAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:11:25.496Z",
-              "EditorCaption": " [Design]"
+              "WhenOpened": "2025-12-01T18:03:56.244Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 5,
+              "Title": "FormCadastroMovimentacaoItem.cs",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
+              "RelativeDocumentMoniker": "Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
+              "RelativeToolTip": "Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
+              "ViewState": "AgIAAKEAAAAAAAAAAAAQwHYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T16:11:37.142Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
               "Title": "formVisaoRelatorioVendas.cs",
               "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\formVisaoRelatorioVendas.cs",
               "RelativeDocumentMoniker": "Forms\\Visao\\formVisaoRelatorioVendas.cs",
@@ -150,28 +152,52 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "FormVisaoMovimentacao.cs",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs",
-              "RelativeDocumentMoniker": "Forms\\Visao\\FormVisaoMovimentacao.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs",
-              "RelativeToolTip": "Forms\\Visao\\FormVisaoMovimentacao.cs",
-              "ViewState": "AgIAAHsAAAAAAAAAAAAAAIcAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 8,
+              "Title": "FormCadastroMovimentacao.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs",
+              "RelativeDocumentMoniker": "Forms\\Cadastro\\FormCadastroMovimentacao.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs [Projeto]",
+              "RelativeToolTip": "Forms\\Cadastro\\FormCadastroMovimentacao.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T18:03:56.244Z",
+              "WhenOpened": "2025-12-01T18:54:51.308Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "Utilidades.cs",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Utils\\Utilidades.cs",
+              "RelativeDocumentMoniker": "Utils\\Utilidades.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Utils\\Utilidades.cs",
+              "RelativeToolTip": "Utils\\Utilidades.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAAAM0AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T18:05:56.729Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "FormCadastroMovimentacao.cs",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs",
-              "RelativeDocumentMoniker": "Forms\\Cadastro\\FormCadastroMovimentacao.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs",
-              "RelativeToolTip": "Forms\\Cadastro\\FormCadastroMovimentacao.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABpAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "MDIPrincipal.cs [Projeto]",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
+              "RelativeDocumentMoniker": "Forms\\MDIPrincipal.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs [Projeto]",
+              "RelativeToolTip": "Forms\\MDIPrincipal.cs [Projeto]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T18:54:53.769Z"
+              "WhenOpened": "2025-11-30T15:48:39.003Z",
+              "EditorCaption": " [Projeto]"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MDIPrincipal.cs",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
+              "RelativeDocumentMoniker": "Forms\\MDIPrincipal.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
+              "RelativeToolTip": "Forms\\MDIPrincipal.cs",
+              "ViewState": "AgIAAJQAAAAAAAAAAAAuwKAAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-11-30T00:46:40.652Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
@@ -186,44 +212,31 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "FormCadastroMovimentacaoItem.cs",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
-              "RelativeDocumentMoniker": "Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
-              "RelativeToolTip": "Forms\\Cadastro\\FormCadastroMovimentacaoItem.cs",
-              "ViewState": "AgIAAK8AAAAAAAAAAAAYwHYAAAAAAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "FormVisaoMovimentacao.cs [Design]",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs",
+              "RelativeDocumentMoniker": "Forms\\Visao\\FormVisaoMovimentacao.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\FormVisaoMovimentacao.cs [Design]",
+              "RelativeToolTip": "Forms\\Visao\\FormVisaoMovimentacao.cs [Design]",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T16:11:37.142Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "Utilidades.cs",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Utils\\Utilidades.cs",
-              "RelativeDocumentMoniker": "Utils\\Utilidades.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Utils\\Utilidades.cs",
-              "RelativeToolTip": "Utils\\Utilidades.cs",
-              "ViewState": "AgIAAIMAAAAAAAAAAAAiwJYAAAA/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T18:05:56.729Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "MDIPrincipal.cs",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
-              "RelativeDocumentMoniker": "Forms\\MDIPrincipal.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
-              "RelativeToolTip": "Forms\\MDIPrincipal.cs",
-              "ViewState": "AgIAAA0AAAAAAAAAAAAQwCEAAABsAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T00:46:40.652Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-12-01T16:11:25.496Z",
+              "EditorCaption": " [Design]"
             },
             {
               "$type": "Document",
               "DocumentIndex": 9,
+              "Title": "FormCadastroMovimentacao.cs",
+              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs",
+              "RelativeDocumentMoniker": "Forms\\Cadastro\\FormCadastroMovimentacao.cs",
+              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Cadastro\\FormCadastroMovimentacao.cs",
+              "RelativeToolTip": "Forms\\Cadastro\\FormCadastroMovimentacao.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAABpAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-12-01T18:54:53.769Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
               "Title": "formVisaoRelatorioVendas.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\Visao\\formVisaoRelatorioVendas.cs",
               "RelativeDocumentMoniker": "Forms\\Visao\\formVisaoRelatorioVendas.cs",
@@ -247,17 +260,6 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "MDIPrincipal.cs [Projeto]",
-              "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs",
-              "RelativeDocumentMoniker": "Forms\\MDIPrincipal.cs",
-              "ToolTip": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDIPrincipal.cs [Projeto]",
-              "RelativeToolTip": "Forms\\MDIPrincipal.cs [Projeto]",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-11-30T15:48:39.003Z"
-            },
-            {
-              "$type": "Document",
               "DocumentIndex": 12,
               "Title": "MDILogin.cs [Projeto]",
               "DocumentMoniker": "C:\\Users\\supor\\Documents\\github\\ZenCodeERP\\Forms\\MDILogin.cs",
@@ -277,7 +279,8 @@
               "RelativeToolTip": "Forms\\MDIPrincipal.Designer.cs",
               "ViewState": "AgIAAMQAAAAAAAAAAAAYwMQAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-12-01T01:30:49.993Z"
+              "WhenOpened": "2025-12-01T01:30:49.993Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
