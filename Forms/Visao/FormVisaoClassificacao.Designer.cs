@@ -3,7 +3,7 @@ using System.Windows.Forms;
 
 namespace ZenCodeERP.Forms.Visao
 {
-    partial class FormVisaoEmpresa
+    partial class FormVisaoClassificacao
     {
         /// <summary>
         /// Required designer variable.
@@ -39,10 +39,10 @@ namespace ZenCodeERP.Forms.Visao
             iBtnAtualizar = new IconToolStripButton();
             iBtnFechar = new IconToolStripButton();
             panel1 = new Panel();
-            gvEmpresa = new DataGridView();
+            gvClassificacao = new DataGridView();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)gvEmpresa).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)gvClassificacao).BeginInit();
             SuspendLayout();
             // 
             // toolStrip1
@@ -52,7 +52,7 @@ namespace ZenCodeERP.Forms.Visao
             toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnAtualizar, iBtnFechar });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1410, 37);
+            toolStrip1.Size = new Size(1202, 37);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -113,52 +113,53 @@ namespace ZenCodeERP.Forms.Visao
             // 
             // panel1
             // 
-            panel1.Controls.Add(gvEmpresa);
+            panel1.Controls.Add(gvClassificacao);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 37);
             panel1.Margin = new Padding(4, 5, 4, 5);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1410, 532);
+            panel1.Size = new Size(1202, 398);
             panel1.TabIndex = 1;
             // 
-            // gvEmpresa
+            // gvClassificacao
             // 
-            gvEmpresa.AllowUserToAddRows = false;
-            gvEmpresa.AllowUserToDeleteRows = false;
+            gvClassificacao.AllowUserToAddRows = false;
+            gvClassificacao.AllowUserToDeleteRows = false;
             dataGridViewCellStyle1.BackColor = Color.FromArgb(240, 240, 240);
-            gvEmpresa.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
-            gvEmpresa.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-            gvEmpresa.BackgroundColor = Color.WhiteSmoke;
-            gvEmpresa.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            gvEmpresa.Dock = DockStyle.Fill;
-            gvEmpresa.Location = new Point(0, 0);
-            gvEmpresa.Margin = new Padding(4, 5, 4, 5);
-            gvEmpresa.Name = "gvEmpresa";
-            gvEmpresa.ReadOnly = true;
-            gvEmpresa.RowHeadersVisible = false;
-            gvEmpresa.RowHeadersWidth = 51;
-            gvEmpresa.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gvEmpresa.Size = new Size(1410, 532);
-            gvEmpresa.TabIndex = 0;
-            gvEmpresa.DoubleClick += gvEmpresa_DoubleClick;
+            gvClassificacao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
+            gvClassificacao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            gvClassificacao.BackgroundColor = Color.WhiteSmoke;
+            gvClassificacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            gvClassificacao.Dock = DockStyle.Fill;
+            gvClassificacao.Location = new Point(0, 0);
+            gvClassificacao.Margin = new Padding(4, 5, 4, 5);
+            gvClassificacao.Name = "gvClassificacao";
+            gvClassificacao.ReadOnly = true;
+            gvClassificacao.RowHeadersVisible = false;
+            gvClassificacao.RowHeadersWidth = 51;
+            gvClassificacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            gvClassificacao.Size = new Size(1202, 398);
+            gvClassificacao.TabIndex = 0;
+            gvClassificacao.DoubleClick += gvClassificacao_DoubleClick;
             // 
-            // FormVisaoEmpresa
+            // FormVisaoClassificacao
             // 
+            Dock = DockStyle.Fill;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1410, 569);
+            ClientSize = new Size(1202, 435);
             Controls.Add(panel1);
             Controls.Add(toolStrip1);
             Icon = Properties.Resources.iconZenCode;
             Margin = new Padding(4, 5, 4, 5);
-            Name = "FormVisaoEmpresa";
+            Name = "FormVisaoClassificacao";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Visão Empresa";
-            Load += FormVisaoEmpresa_Load;
+            Text = "Visão Cliente Fornecedor";
+            Load += FormVisaoClassificacao_Load;
             toolStrip1.ResumeLayout(false);
             toolStrip1.PerformLayout();
             panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)gvEmpresa).EndInit();
+            ((System.ComponentModel.ISupportInitialize)gvClassificacao).EndInit();
             ResumeLayout(false);
             PerformLayout();
 
@@ -168,7 +169,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private System.Windows.Forms.ToolStrip toolStrip1;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView gvEmpresa;
+        private System.Windows.Forms.DataGridView gvClassificacao;
         private IconToolStripButton iBtnNovo;
         private IconToolStripButton iBtnEditar;
         private IconToolStripButton iBtnExcluir;

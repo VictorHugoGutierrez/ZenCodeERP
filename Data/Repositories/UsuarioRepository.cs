@@ -4,8 +4,9 @@ using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using ZenCodeERP.Model;
 using BCrypt.Net;
+using MySql.Data.MySqlClient;
+using ZenCodeERP.Model;
 
 namespace ZenCodeERP.Data.Repositories
 {
@@ -27,7 +28,7 @@ namespace ZenCodeERP.Data.Repositories
             DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET NOME = ?, USUARIO = ?, SENHA = ?, ATIVO = ?, ULTIMOLOGIN = ? WHERE CODUSUARIO = ?",
                 usuario.NOME,
                 usuario.USUARIO,
-                usuario.SENHA,
+                CriarHashBCrypt(usuario.SENHA),
                 usuario.ATIVO,
                 usuario.ULTIMOLOGIN,
                 usuario.CODUSUARIO);
@@ -35,7 +36,30 @@ namespace ZenCodeERP.Data.Repositories
 
         public void Delete(int codUsuario)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM USUARIO WHERE CODUSUARIO = ?", codUsuario);
+            
+
+            try
+            {
+                DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM USUARIO WHERE CODUSUARIO = ?", codUsuario);
+
+                MessageBox.Show("Usuário excluído com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("Não é possível excluir este usuário pois existem movimentações associadas a ele.",
+                            "Atenção",
+                            MessageBoxButtons.OK,
+                            MessageBoxIcon.Warning);
+                }
+                else
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public Usuario GetByCodUsuario(int codUsuario)
@@ -106,6 +130,11 @@ namespace ZenCodeERP.Data.Repositories
         public bool VerificarSenhaBCrypt(string senhaDigitada, string hashArmazenado)
         {
             return BCrypt.Net.BCrypt.Verify(senhaDigitada, hashArmazenado);
+        }
+
+        public void AtualizaUltimoLogin(int codUsuario)
+        {
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE USUARIO SET ULTIMOLOGIN = ? WHERE CODUSUARIO = ?", DateTime.Now, codUsuario);
         }
     }
 }

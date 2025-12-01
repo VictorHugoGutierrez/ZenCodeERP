@@ -1,29 +1,29 @@
 ﻿using System.Data;
 using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Cadastro;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
 {
-    public partial class FormVisaoEndereco : Form
+    public partial class FormVisaoClassificacao : Form
     {
-        private EnderecoRepository enderecoRepository = new EnderecoRepository();
+        private ClassificacaoRepository ClassificacaoRepository = new ClassificacaoRepository();
 
-        private FormCadastroEmpresa lookup;
+        private FormCadastroProduto lookup;
 
-        public FormVisaoEndereco()
+        public FormVisaoClassificacao()
         {
             InitializeComponent();
         }
 
-        public FormVisaoEndereco(FormCadastroEmpresa lookup)
+        public FormVisaoClassificacao(FormCadastroProduto lookup)
         {
             InitializeComponent();
             this.lookup = lookup;
         }
 
-
-        private void FormVisaoEndereco_Load(object sender, EventArgs e)
+        private void FormVisaoClassificacao_Load(object sender, EventArgs e)
         {
             CarregaGrid();
         }
@@ -32,13 +32,13 @@ namespace ZenCodeERP.Forms.Visao
         {
             try
             {
-                string coluna = "*";
-                string tabela = "ENDERECO";
+                string coluna = "CODEMPRESA, CODCLASSIFICACAO, NOME, DESCRICAO";
+                string tabela = "CLASSIFICACAO";
                 string relacionamento = string.Empty;
 
-                string where = "1 = 1";
+                string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
-                new Utilidades().GetVisao(gvEndereco, coluna, tabela, relacionamento, where);
+                new Utilidades().GetVisao(gvClassificacao, coluna, tabela, relacionamento, where);
             }
             catch (Exception ex)
             {
@@ -48,20 +48,20 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnNovo_Click(object sender, EventArgs e)
         {
-            FormCadastroEndereco frm = new FormCadastroEndereco();
+            FormCadastroClassificacao frm = new FormCadastroClassificacao();
             frm.ShowDialog();
             CarregaGrid();
         }
 
         private void iBtnEditar_Click(object sender, EventArgs e)
         {
-            if (gvEndereco.SelectedRows.Count > 0)
+            if (gvClassificacao.SelectedRows.Count > 0)
             {
-                int index = gvEndereco.SelectedRows[0].Index;
-                DataRow row1 = ((DataRowView)gvEndereco.Rows[index].DataBoundItem).Row;
-                FormCadastroEndereco frm = new FormCadastroEndereco();
+                int index = gvClassificacao.SelectedRows[0].Index;
+                DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
+                FormCadastroClassificacao frm = new FormCadastroClassificacao();
                 frm.edita = true;
-                frm.codEndereco = Convert.ToInt32(row1["Cód. Endereço"]);
+                frm.codClassificacao = Convert.ToInt32(row1["Classificação"]);
                 frm.ShowDialog();
                 CarregaGrid();
             }
@@ -71,12 +71,12 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (MessageBox.Show("Deseja realmente excluir este registro?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                for (int i = 0; i < gvEndereco.SelectedRows.Count; i++)
+                for (int i = 0; i < gvClassificacao.SelectedRows.Count; i++)
                 {
-                    int index = gvEndereco.SelectedRows[i].Index;
-                    DataRow row1 = ((DataRowView)gvEndereco.Rows[index].DataBoundItem).Row;
+                    int index = gvClassificacao.SelectedRows[i].Index;
+                    DataRow row1 = ((DataRowView)gvClassificacao.Rows[index].DataBoundItem).Row;
 
-                    enderecoRepository.Delete(Convert.ToInt32(row1["CODENDERECO"]));
+                    ClassificacaoRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["Classificação"]));
                 }
 
                 CarregaGrid();
@@ -91,18 +91,18 @@ namespace ZenCodeERP.Forms.Visao
                 return;
         }
 
-        private void gvEndereco_DoubleClick(object sender, EventArgs e)
+        private void gvClassificacao_DoubleClick(object sender, EventArgs e)
         {
-            if (gvEndereco.SelectedRows.Count > 0)
+            if (gvClassificacao.SelectedRows.Count > 0)
             {
-                if (lookup == null)
+                if(lookup == null)
                 {
                     iBtnEditar_Click(sender, e);
                 }
                 else
                 {
-                    lookup.codEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Cód. Endereço"].ToString();
-                    lookup.nomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome Endereço"].ToString();
+                    lookup.codClassificacao = ((DataRowView)gvClassificacao.SelectedRows[0].DataBoundItem).Row["Classificação"].ToString();
+                    lookup.nomeClassificacao = ((DataRowView)gvClassificacao.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
 
                     this.Dispose();
                 }
