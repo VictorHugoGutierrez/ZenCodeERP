@@ -21,8 +21,8 @@ namespace ZenCodeERP.Forms.Cadastro
         public int codEmpresa;
         public bool edita = false;
 
-        public string codEndereco;
-        public string nomeEndereco;
+        public string CodigoEndereco;
+        public string NomeEndereco;
 
         public FormCadastroEmpresa()
         {
@@ -142,8 +142,8 @@ namespace ZenCodeERP.Forms.Cadastro
             FormVisaoEndereco formVisaoEndereco = new FormVisaoEndereco(this);
             formVisaoEndereco.ShowDialog();
 
-            tbCodigoEndereco.Text = string.IsNullOrEmpty(codEndereco) ? string.Empty : codEndereco;
-            tbNomeEndereco.Text = string.IsNullOrEmpty(nomeEndereco) ? string.Empty : nomeEndereco;
+            tbCodigoEndereco.Text = string.IsNullOrEmpty(CodigoEndereco) ? string.Empty : CodigoEndereco;
+            tbNomeEndereco.Text = string.IsNullOrEmpty(NomeEndereco) ? string.Empty : NomeEndereco;
         }
 
         private void tbCodigoEndereco_Leave(object sender, EventArgs e)

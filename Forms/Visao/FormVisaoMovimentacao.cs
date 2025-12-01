@@ -137,7 +137,7 @@ namespace ZenCodeERP.Forms.Visao
                     {
                         AtualizarOuCriarEstoque(codEmpresa, codProduto, qtd, qtd, 0);
 
-                        string sqlCusto = $"UPDATE PRODUTO SET CUSTO = {valorUnitarioSQL}, DATAULTIMACOMPRA = GETDATE() WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
+                        string sqlCusto = $"UPDATE PRODUTO SET CUSTO = {valorUnitarioSQL} WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
                         DataBaseConnection.Instance().ExecuteTransaction(sqlCusto);
                     }
                 }
@@ -240,7 +240,7 @@ namespace ZenCodeERP.Forms.Visao
                 QUANTIDADEATUAL = QUANTIDADEATUAL + ({sAtual}),
                 QUANTIDADESALDO = QUANTIDADESALDO + ({sSaldo}),
                 QUANTIDADERESERVADA = QUANTIDADERESERVADA + ({sReservada}),
-                DATA = GETDATE()
+                DATA = NOW()
             WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
                 DataBaseConnection.Instance().ExecuteTransaction(sqlUpdate);
             }
@@ -249,7 +249,7 @@ namespace ZenCodeERP.Forms.Visao
                 // INSERT
                 string sqlInsert = $@"
             INSERT INTO CONTROLEESTOQUE (CODEMPRESA, CODPRODUTO, QUANTIDADEATUAL, QUANTIDADESALDO, QUANTIDADERESERVADA, DATA)
-            VALUES ({codEmpresa}, {codProduto}, {sAtual}, {sSaldo}, {sReservada}, GETDATE())";
+            VALUES ({codEmpresa}, {codProduto}, {sAtual}, {sSaldo}, {sReservada}, NOW())";
                 DataBaseConnection.Instance().ExecuteTransaction(sqlInsert);
             }
         }

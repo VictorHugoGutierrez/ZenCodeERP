@@ -260,7 +260,7 @@ namespace ZenCodeERP.Forms.Cadastro
         {
             FormCadastroMovimentacaoItem frm = new FormCadastroMovimentacaoItem();
             frm.codMovimentacao = codMovimentacao;
-            frm.TipoMovimento = cbTipoMovimento.SelectedText;
+            frm.TipoMovimento = cbTipoMovimento.Text;
             frm.status = cbStatus.SelectedIndex;
             frm.ShowDialog();
             CarregaGridMovimentacaoItens();
@@ -277,7 +277,7 @@ namespace ZenCodeERP.Forms.Cadastro
                 frm.edita = true;
                 frm.codMovimentacao = Convert.ToInt32(row1["Cód. Movimentação"]);
                 frm.codMovimentacaoItem = Convert.ToInt32(row1["Cód. Item Movimentação"]);
-                frm.TipoMovimento = cbTipoMovimento.SelectedText;
+                frm.TipoMovimento = cbTipoMovimento.Text;
                 frm.status = cbStatus.SelectedIndex;
                 frm.ShowDialog();
                 CarregaGridMovimentacaoItens();

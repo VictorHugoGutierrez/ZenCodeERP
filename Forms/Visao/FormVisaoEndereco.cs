@@ -9,19 +9,25 @@ namespace ZenCodeERP.Forms.Visao
     {
         private EnderecoRepository enderecoRepository = new EnderecoRepository();
 
-        private FormCadastroEmpresa lookup;
+        private FormCadastroClienteFornecedor lookupClienteFornecedor;
+        private FormCadastroEmpresa lookupEmpresa;
 
         public FormVisaoEndereco()
         {
             InitializeComponent();
         }
 
-        public FormVisaoEndereco(FormCadastroEmpresa lookup)
+        public FormVisaoEndereco(FormCadastroClienteFornecedor lookupClienteFornecedor)
         {
             InitializeComponent();
-            this.lookup = lookup;
+            this.lookupClienteFornecedor = lookupClienteFornecedor;
         }
 
+        public FormVisaoEndereco(FormCadastroEmpresa lookupEmpresa)
+        {
+            InitializeComponent();
+            this.lookupEmpresa = lookupEmpresa;
+        }
 
         private void FormVisaoEndereco_Load(object sender, EventArgs e)
         {
@@ -95,16 +101,21 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvEndereco.SelectedRows.Count > 0)
             {
-                if (lookup == null)
+                if(lookupClienteFornecedor != null)
                 {
-                    iBtnEditar_Click(sender, e);
+                    lookupClienteFornecedor.CodigoEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Cód. Endereço"].ToString();
+                    lookupClienteFornecedor.NomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome Endereço"].ToString();
+                    this.Dispose();
+                }
+                else if(lookupEmpresa != null)
+                {
+                    lookupEmpresa.CodigoEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Cód. Endereço"].ToString();
+                    lookupEmpresa.NomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome Endereço"].ToString();
+                    this.Dispose();
                 }
                 else
                 {
-                    lookup.codEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Cód. Endereço"].ToString();
-                    lookup.nomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome Endereço"].ToString();
-
-                    this.Dispose();
+                    iBtnEditar_Click(sender, e);
                 }
             }
         }
