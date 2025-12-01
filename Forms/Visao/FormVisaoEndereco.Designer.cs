@@ -31,6 +31,7 @@ namespace ZenCodeERP.Forms.Visao
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormVisaoEndereco));
             this.toolStrip1 = new ToolStrip();
             this.iBtnNovo = new IconToolStripButton();

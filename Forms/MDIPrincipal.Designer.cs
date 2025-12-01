@@ -128,7 +128,7 @@
             toolStripButtonRelatorio.IconFont = IconFont.Auto;
             toolStripButtonRelatorio.Name = "toolStripButtonRelatorio";
             toolStripButtonRelatorio.Size = new Size(89, 53);
-            toolStripButtonRelatorio.Text = "relatorios";
+            toolStripButtonRelatorio.Text = "Relatórios";
             toolStripButtonRelatorio.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
             // relatórioToolStripMenuItem
