@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZenCodeERP.Data;
 using ZenCodeERP.Data.Repositories;
+using ZenCodeERP.Forms.Cadastro;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
@@ -18,9 +20,17 @@ namespace ZenCodeERP.Forms.Visao
     {
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
 
+        private FormCadastroMovimentacao lookup;
+
         public FormVisaoUsuarios()
         {
             InitializeComponent();
+        }
+
+        public FormVisaoUsuarios(FormCadastroMovimentacao lookup)
+        {
+            InitializeComponent();
+            this.lookup = lookup;
         }
 
         private void FormVisaoUsuarios_Load(object sender, EventArgs e)
@@ -40,7 +50,7 @@ namespace ZenCodeERP.Forms.Visao
 
                 new Utilidades().GetVisao(gvUsuarios, coluna, tabela, relacionamento, where);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -55,7 +65,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnEditar_Click(object sender, EventArgs e)
         {
-            if(gvUsuarios.SelectedRows.Count > 0)
+            if (gvUsuarios.SelectedRows.Count > 0)
             {
                 int index = gvUsuarios.SelectedRows[0].Index;
                 DataRow row1 = ((DataRowView)gvUsuarios.Rows[index].DataBoundItem).Row;
@@ -95,8 +105,23 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvUsuarios.SelectedRows.Count > 0)
             {
-                iBtnEditar_Click(sender, e);
+                if(lookup == null)
+                {
+                    iBtnEditar_Click(sender, e);
+                }
+                else
+                {
+                    lookup.codUsuario = ((DataRowView)gvUsuarios.SelectedRows[0].DataBoundItem).Row["Cód. Usuário"].ToString();
+                    lookup.nomeUsuario = ((DataRowView)gvUsuarios.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
+
+                    this.Dispose();
+                }
             }
+        }
+
+        private void iBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
         }
     }
 }

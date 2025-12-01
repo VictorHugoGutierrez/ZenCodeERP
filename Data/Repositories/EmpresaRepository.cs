@@ -1,10 +1,11 @@
-﻿using Org.BouncyCastle.Asn1.Mozilla;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using MySql.Data.MySqlClient;
+using Org.BouncyCastle.Asn1.Mozilla;
 using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
@@ -28,7 +29,28 @@ namespace ZenCodeERP.Data.Repositories
         
         public void Delete(int codEmpresa)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM EMPRESA WHERE CODEMPRESA = ?", codEmpresa);
+            try
+            {
+                DataBaseConnection.Instance().ExecuteTransaction("DELETE FROM EMPRESA WHERE CODEMPRESA = ?", codEmpresa);
+
+                MessageBox.Show("Empresa excluída com sucesso!", "Sucesso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (MySqlException ex)
+            {
+                if (ex.Number == 1451)
+                {
+                    MessageBox.Show("CRÍTICO: Não é possível excluir esta Empresa pois existem dados vinculados a ela.\n",
+                                    "Ação Proibida",
+                                    MessageBoxButtons.OK,
+                                    MessageBoxIcon.Stop); 
+                }
+                else
+                    MessageBox.Show($"Erro ao excluir: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show($"Ocorreu um erro inesperado: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
         }
 
         public Empresa GetByCodEmpresa(int codEmpresa)
@@ -56,7 +78,7 @@ namespace ZenCodeERP.Data.Repositories
 
         public List<Empresa> GetAll()
         {
-            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM Empresa");
+            DataTable dataTable = DataBaseConnection.Instance().ExecuteQuery("SELECT * FROM EMPRESA");
             List<Empresa> empresa = new List<Empresa>();
             foreach (DataRow row in dataTable.Rows)
             {
@@ -69,7 +91,6 @@ namespace ZenCodeERP.Data.Repositories
                     TELEFONE = row["TELEFONE"].ToString(),
                     EMAIL = row["EMAIL"].ToString(),
                     CODENDERECO = Convert.ToInt32(row["CODENDERECO"]),
-                    IMAGEM = (Image)row["IMAGEM"]
                 });
             }
             return empresa;

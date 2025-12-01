@@ -43,22 +43,19 @@ namespace ZenCodeERP.Forms.Visao
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.gvUsuarios)).BeginInit();
             this.SuspendLayout();
+            iBtnAtualizar = new IconToolStripButton();
             // 
             // toolStrip1
             // 
             this.toolStrip1.Dock = System.Windows.Forms.DockStyle.Top;
             this.toolStrip1.ImageScalingSize = new Size(30, 30);
-            this.toolStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.iBtnNovo,
-            this.iBtnEditar,
-            this.iBtnExcluir,
-            this.iBtnFechar});
             this.toolStrip1.Font = new System.Drawing.Font("Tahoma", 8.25F);
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(800, 29);
             this.toolStrip1.TabIndex = 0;
             this.toolStrip1.Text = "toolStrip1";
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnAtualizar, iBtnFechar });
             // 
             // iBtnNovo
             // 
@@ -81,6 +78,17 @@ namespace ZenCodeERP.Forms.Visao
             this.iBtnEditar.Size = new System.Drawing.Size(41, 26);
             this.iBtnEditar.Text = "Editar";
             this.iBtnEditar.Click += new System.EventHandler(this.iBtnEditar_Click);
+            // 
+            // iBtnAtualizar
+            // 
+            iBtnAtualizar.IconChar = IconChar.ArrowRotateForward;
+            iBtnAtualizar.IconColor = Color.DodgerBlue;
+            iBtnAtualizar.IconFont = IconFont.Auto;
+            iBtnAtualizar.IconSize = 32;
+            iBtnAtualizar.Name = "iBtnAtualizar";
+            iBtnAtualizar.Size = new Size(92, 34);
+            iBtnAtualizar.Text = "Atualizar";
+            iBtnAtualizar.Click += iBtnAtualizar_Click;
             // 
             // iBtnFechar
             // 
@@ -161,5 +169,6 @@ namespace ZenCodeERP.Forms.Visao
         private FontAwesome.Sharp.IconToolStripButton iBtnExcluir;
         private IconToolStripButton iBtnFechar;
 
+        private IconToolStripButton iBtnAtualizar;
     }
 }

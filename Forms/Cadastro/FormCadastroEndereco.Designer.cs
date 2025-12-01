@@ -177,7 +177,6 @@
             lbNumero.Size = new Size(51, 15);
             lbNumero.TabIndex = 17;
             lbNumero.Text = "Número";
-            lbNumero.Click += lbNumero_Click;
             // 
             // tbNumero
             // 

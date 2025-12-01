@@ -16,7 +16,13 @@
     <Compile Update="Forms\MDIPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="Forms\Visao\FormVisaoRelatorioEstoqueProdutos.cs">
+    <Compile Update="Forms\Visao\FormVisaoClassificacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoClienteFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoEmpresa.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Visao\FormVisaoEndereco.cs">

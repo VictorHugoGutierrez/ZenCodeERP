@@ -134,10 +134,5 @@ namespace ZenCodeERP.Forms.Cadastro
                 MessageBox.Show("CEP não encontrado.", "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Information);
             }
         }
-
-        private void lbNumero_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }
