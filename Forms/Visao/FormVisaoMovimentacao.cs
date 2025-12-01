@@ -253,5 +253,10 @@ namespace ZenCodeERP.Forms.Visao
                 DataBaseConnection.Instance().ExecuteTransaction(sqlInsert);
             }
         }
+
+        private void iBtnAtualizar_Click(object sender, EventArgs e)
+        {
+            CarregaGrid();
+        }
     }
 }
