@@ -104,13 +104,13 @@ namespace ZenCodeERP.Forms.Visao
                 if(lookupClienteFornecedor != null)
                 {
                     lookupClienteFornecedor.CodigoEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Cód. Endereço"].ToString();
-                    lookupClienteFornecedor.NomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome Endereço"].ToString();
+                    lookupClienteFornecedor.NomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
                     this.Dispose();
                 }
                 else if(lookupEmpresa != null)
                 {
                     lookupEmpresa.CodigoEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Cód. Endereço"].ToString();
-                    lookupEmpresa.NomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome Endereço"].ToString();
+                    lookupEmpresa.NomeEndereco = ((DataRowView)gvEndereco.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
                     this.Dispose();
                 }
                 else

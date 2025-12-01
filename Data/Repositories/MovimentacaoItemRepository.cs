@@ -7,23 +7,25 @@ namespace ZenCodeERP.Data.Repositories
     {
         public void Add(MovimentacaoItem movimentacaoItem)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO MOVIMENTACAOITEM (CODEMPRESA, CODMOVIMENTACAO, CODMOVIMENTACAOITEM, CODPRODUTO, QUANTIDADE, VALORUNITARIO, VALORTOTAL) VALUES (?, ?, ?, ?, ?, ?, ?)",
+            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO MOVIMENTACAOITEM (CODEMPRESA, CODMOVIMENTACAO, CODMOVIMENTACAOITEM, CODPRODUTO, QUANTIDADE, VALORUNITARIO, VALORTOTAL, CUSTOUNITARIO) VALUES (?, ?, ?, ?, ?, ?, ?, ?)",
                 movimentacaoItem.CODEMPRESA,
                 movimentacaoItem.CODMOVIMENTACAO,
                 movimentacaoItem.CODMOVIMENTACAOITEM,
                 movimentacaoItem.CODPRODUTO,
                 movimentacaoItem.QUANTIDADE,
                 movimentacaoItem.VALORUNITARIO,
-                movimentacaoItem.VALORTOTAL);
+                movimentacaoItem.VALORTOTAL,
+                movimentacaoItem.CUSTOUNITARIO);
         }
 
         public void Update(MovimentacaoItem movimentacaoItem)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("UPDATE MOVIMENTACAOITEM SET CODPRODUTO = ?, QUANTIDADE = ?, VALORUNITARIO = ?, VALORTOTAL = ? WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ? AND CODMOVIMENTACAOITEM = ?",
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE MOVIMENTACAOITEM SET CODPRODUTO = ?, QUANTIDADE = ?, VALORUNITARIO = ?, VALORTOTAL = ?, CUSTOUNITARIO = ? WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ? AND CODMOVIMENTACAOITEM = ?",
                 movimentacaoItem.CODPRODUTO,
                 movimentacaoItem.QUANTIDADE,
                 movimentacaoItem.VALORUNITARIO,
                 movimentacaoItem.VALORTOTAL,
+                movimentacaoItem.CUSTOUNITARIO,
                 movimentacaoItem.CODEMPRESA,
                 movimentacaoItem.CODMOVIMENTACAO,
                 movimentacaoItem.CODMOVIMENTACAOITEM);

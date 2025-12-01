@@ -30,6 +30,8 @@ namespace ZenCodeERP.Forms.Cadastro
         public string codUsuario;
         public string nomeUsuario;
 
+        private Utilidades utilidades = new Utilidades();
+
         public class OpcaoComboTipoMovimento
         {
             public int Id { get; set; }
@@ -91,6 +93,8 @@ namespace ZenCodeERP.Forms.Cadastro
                 tbValorTotal.Text = "R$ 0,00";
                 dtData.Value = DateTime.Now;
                 tabMovimentacaoItem.Enabled = false;
+                tbCodUsuario.Text = AppZenCodeContext.CodUsuario.ToString();
+                tbCodUsuario_Leave(null, null);
             }
         }
 
@@ -313,11 +317,32 @@ namespace ZenCodeERP.Forms.Cadastro
             AtualizaValorTotal();
         }
 
+        private void AtualizaEstoque()
+        {
+            if(cbStatus.SelectedIndex == 0)
+            {
+                if (cbTipoMovimento.Text.ToUpper() == "SAÍDA")
+                {
+                    string sqlItens = $"SELECT CODPRODUTO, SUM(QUANTIDADE) AS QUANTIDADE FROM MOVIMENTACAOITEM WHERE CODEMPRESA = {AppZenCodeContext.CodEmpresa} AND CODMOVIMENTACAO = {codMovimentacao} GROUP BY CODPRODUTO";
+                    DataTable dtItens = DataBaseConnection.Instance().ExecuteQuery(sqlItens);
+
+                    foreach (DataRow item in dtItens.Rows)
+                    {
+                        int codProduto = Convert.ToInt32(item["CODPRODUTO"]);
+                        decimal qtd = Convert.ToDecimal(item["QUANTIDADE"]);
+                        utilidades.AtualizarOuCriarEstoque(AppZenCodeContext.CodEmpresa, codProduto, 0, -qtd, qtd);
+                    }
+                }
+            }
+        }
+
         private void AtualizaValorTotal()
         {
             if (gvMovimentacaoItem.RowCount > 0)
             {
+                AtualizaEstoque();
                 decimal valorTotal = Convert.ToDecimal(DataBaseConnection.Instance().ExecuteGetField("SELECT SUM(VALORTOTAL) FROM MOVIMENTACAOITEM WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ?", AppZenCodeContext.CodEmpresa, tbCodMovimentacao.Text));
+                DataBaseConnection.Instance().ExecuteTransaction("UPDATE MOVIMENTACAO SET VALORTOTAL = ? WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ?", valorTotal, AppZenCodeContext.CodEmpresa, tbCodMovimentacao.Text);
                 tbValorTotal.Text = valorTotal.ToString("C2");
             }
         }

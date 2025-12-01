@@ -133,5 +133,36 @@ namespace ZenCodeERP.Utils
             return Image.FromStream(ms);
         }
 
+        public void AtualizarOuCriarEstoque(int codEmpresa, int codProduto, decimal deltaAtual, decimal deltaSaldo, decimal deltaReservada)
+        {
+            string sqlCheck = $"SELECT 1 FROM CONTROLEESTOQUE WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
+            DataTable dt = DataBaseConnection.Instance().ExecuteQuery(sqlCheck);
+
+            string sAtual = deltaAtual.ToString().Replace(",", ".");
+            string sSaldo = deltaSaldo.ToString().Replace(",", ".");
+            string sReservada = deltaReservada.ToString().Replace(",", ".");
+
+            if (dt.Rows.Count > 0)
+            {
+                // UPDATE
+                string sqlUpdate = $@"
+            UPDATE CONTROLEESTOQUE 
+            SET 
+                QUANTIDADEATUAL = QUANTIDADEATUAL + ({sAtual}),
+                QUANTIDADESALDO = QUANTIDADESALDO + ({sSaldo}),
+                QUANTIDADERESERVADA = QUANTIDADERESERVADA + ({sReservada}),
+                DATA = NOW()
+            WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
+                DataBaseConnection.Instance().ExecuteTransaction(sqlUpdate);
+            }
+            else
+            {
+                // INSERT
+                string sqlInsert = $@"
+            INSERT INTO CONTROLEESTOQUE (CODEMPRESA, CODPRODUTO, QUANTIDADEATUAL, QUANTIDADESALDO, QUANTIDADERESERVADA, DATA)
+            VALUES ({codEmpresa}, {codProduto}, {sAtual}, {sSaldo}, {sReservada}, NOW())";
+                DataBaseConnection.Instance().ExecuteTransaction(sqlInsert);
+            }
+        }
     }
 }

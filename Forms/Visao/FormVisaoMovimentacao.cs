@@ -10,6 +10,8 @@ namespace ZenCodeERP.Forms.Visao
     {
         private MovimentacaoRepository movimentacaoRepository = new MovimentacaoRepository();
 
+        private Utilidades utilidades = new Utilidades();
+
         public FormVisaoMovimentacao()
         {
             InitializeComponent();
@@ -30,7 +32,7 @@ namespace ZenCodeERP.Forms.Visao
                 
                 string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
-                new Utilidades().GetVisao(gvMovimentacao, coluna, tabela, relacionamento, where);
+                utilidades.GetVisao(gvMovimentacao, coluna, tabela, relacionamento, where);
             }
             catch(Exception ex)
             {
@@ -129,13 +131,13 @@ namespace ZenCodeERP.Forms.Visao
                     decimal qtd = Convert.ToDecimal(item["QUANTIDADE"]);
                     string valorUnitarioSQL = item["VALORUNITARIO"].ToString().Replace(",", ".");
 
-                    if (tipoMovimento == "SAIDA")
+                    if (tipoMovimento == "SAÍDA")
                     {
-                        AtualizarOuCriarEstoque(codEmpresa, codProduto, -qtd, 0, -qtd);
+                        utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, -qtd, 0, -qtd);
                     }
                     else if (tipoMovimento == "ENTRADA")
                     {
-                        AtualizarOuCriarEstoque(codEmpresa, codProduto, qtd, qtd, 0);
+                        utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, qtd, qtd, 0);
 
                         string sqlCusto = $"UPDATE PRODUTO SET CUSTO = {valorUnitarioSQL} WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
                         DataBaseConnection.Instance().ExecuteTransaction(sqlCusto);
@@ -192,22 +194,22 @@ namespace ZenCodeERP.Forms.Visao
                     int codProduto = Convert.ToInt32(item["CODPRODUTO"]);
                     decimal qtd = Convert.ToDecimal(item["QUANTIDADE"]);
 
-                    if (tipoMovimento == "SAIDA")
+                    if (tipoMovimento == "SAÍDA")
                     {
-                        if (statusAtual == 0)
+                        if(statusAtual == 0)
                         {
-                            AtualizarOuCriarEstoque(codEmpresa, codProduto, 0, qtd, -qtd);
+                            utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, 0, qtd, -qtd);
                         }
-                        else if (statusAtual == 1)
+                        else if(statusAtual == 1)
                         {
-                            AtualizarOuCriarEstoque(codEmpresa, codProduto, qtd, qtd, 0);
+                            utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, qtd, qtd, 0);
                         }
                     }
                     else if (tipoMovimento == "ENTRADA")
                     {
                         if (statusAtual == 1)
                         {
-                            AtualizarOuCriarEstoque(codEmpresa, codProduto, -qtd, -qtd, 0);
+                            utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, -qtd, -qtd, 0);
                         }
                     }
                 }
@@ -219,38 +221,6 @@ namespace ZenCodeERP.Forms.Visao
             catch (Exception ex)
             {
                 throw new Exception("Erro ao cancelar: " + ex.Message);
-            }
-        }
-
-        private void AtualizarOuCriarEstoque(int codEmpresa, int codProduto, decimal deltaAtual, decimal deltaSaldo, decimal deltaReservada)
-        {
-            string sqlCheck = $"SELECT 1 FROM CONTROLEESTOQUE WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
-            DataTable dt = DataBaseConnection.Instance().ExecuteQuery(sqlCheck);
-
-            string sAtual = deltaAtual.ToString().Replace(",", ".");
-            string sSaldo = deltaSaldo.ToString().Replace(",", ".");
-            string sReservada = deltaReservada.ToString().Replace(",", ".");
-
-            if (dt.Rows.Count > 0)
-            {
-                // UPDATE
-                string sqlUpdate = $@"
-            UPDATE CONTROLEESTOQUE 
-            SET 
-                QUANTIDADEATUAL = QUANTIDADEATUAL + ({sAtual}),
-                QUANTIDADESALDO = QUANTIDADESALDO + ({sSaldo}),
-                QUANTIDADERESERVADA = QUANTIDADERESERVADA + ({sReservada}),
-                DATA = NOW()
-            WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
-                DataBaseConnection.Instance().ExecuteTransaction(sqlUpdate);
-            }
-            else
-            {
-                // INSERT
-                string sqlInsert = $@"
-            INSERT INTO CONTROLEESTOQUE (CODEMPRESA, CODPRODUTO, QUANTIDADEATUAL, QUANTIDADESALDO, QUANTIDADERESERVADA, DATA)
-            VALUES ({codEmpresa}, {codProduto}, {sAtual}, {sSaldo}, {sReservada}, NOW())";
-                DataBaseConnection.Instance().ExecuteTransaction(sqlInsert);
             }
         }
 

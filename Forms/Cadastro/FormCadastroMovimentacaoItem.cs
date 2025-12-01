@@ -86,7 +86,8 @@ namespace ZenCodeERP.Forms.Cadastro
                         CODPRODUTO = Convert.ToInt32(tbCodProduto.Text),
                         QUANTIDADE = decimal.Parse(tbQuantidade.Text, NumberStyles.Currency),
                         VALORUNITARIO = decimal.Parse(tbValorUnitario.Text, NumberStyles.Currency),
-                        VALORTOTAL = decimal.Parse(tbValorTotal.Text, NumberStyles.Currency)
+                        VALORTOTAL = decimal.Parse(tbValorTotal.Text, NumberStyles.Currency),
+                        CUSTOUNITARIO = decimal.Parse(tbCustoUnitario.Text, NumberStyles.Currency)
                     });
 
                     codMovimentacaoItem = Convert.ToInt32(tbCodMovimentacaoItem.Text);
@@ -101,7 +102,8 @@ namespace ZenCodeERP.Forms.Cadastro
                         CODPRODUTO = Convert.ToInt32(tbCodProduto.Text),
                         QUANTIDADE = decimal.Parse(tbQuantidade.Text, NumberStyles.Currency),
                         VALORUNITARIO = decimal.Parse(tbValorUnitario.Text, NumberStyles.Currency),
-                        VALORTOTAL = decimal.Parse(tbValorTotal.Text, NumberStyles.Currency)
+                        VALORTOTAL = decimal.Parse(tbValorTotal.Text, NumberStyles.Currency),
+                        CUSTOUNITARIO = decimal.Parse(tbCustoUnitario.Text, NumberStyles.Currency)
                     });
                 }
 
