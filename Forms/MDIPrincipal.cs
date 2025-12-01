@@ -20,12 +20,12 @@ namespace ZenCodeERP.Forms
             if (empresas.Count > 1)
             {
                 MDISelecaoEmpresa form = new MDISelecaoEmpresa();
-                if(form.ShowDialog() != DialogResult.OK)
+                if (form.ShowDialog() != DialogResult.OK)
                 {
                     this.Close();
                 }
             }
-            else if(empresas.Count == 1)
+            else if (empresas.Count == 1)
             {
                 AppZenCodeContext.CodEmpresa = empresas[0].CODEMPRESA;
             }
@@ -103,16 +103,6 @@ namespace ZenCodeERP.Forms
             form.Show();
         }
 
-        private void estoqueGeralDeProdutosToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            FormRelatorioEstoqueProdutos form = new FormRelatorioEstoqueProdutos();
-            form.TopLevel = false;
-            form.FormBorderStyle = FormBorderStyle.None;
-            this.panel2.Controls.Clear();
-            this.panel2.Controls.Add(form);
-            form.Show();
-        }
-        
         private void iconToolStripButtonClassificacao_Click(object sender, EventArgs e)
         {
             FormVisaoClassificacao form = new FormVisaoClassificacao();
@@ -136,6 +126,16 @@ namespace ZenCodeERP.Forms
         private void iconToolStripButtonMovimentacao_Click(object sender, EventArgs e)
         {
             FormVisaoMovimentacao form = new FormVisaoMovimentacao();
+            form.TopLevel = false;
+            form.FormBorderStyle = FormBorderStyle.None;
+            this.panel2.Controls.Clear();
+            this.panel2.Controls.Add(form);
+            form.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            FormRelatorioEstoqueProdutos form = new FormRelatorioEstoqueProdutos();
             form.TopLevel = false;
             form.FormBorderStyle = FormBorderStyle.None;
             this.panel2.Controls.Clear();

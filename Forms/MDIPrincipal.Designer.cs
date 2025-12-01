@@ -36,15 +36,16 @@
             iconToolStripButtonEndereco = new IconToolStripButton();
             iconToolStripButtonEmpresa = new IconToolStripButton();
             iconToolStripButtonUsuario = new IconToolStripButton();
+            iconToolStripButtonCliFor = new IconToolStripButton();
+            iconToolStripButtonClassificacao = new IconToolStripButton();
+            iconToolStripButtonProduto = new IconToolStripButton();
+            iconToolStripButtonMovimentacao = new IconToolStripButton();
             toolStripButtonRelatorio = new IconDropDownButton();
             relatórioToolStripMenuItem = new ToolStripMenuItem();
             relatórioTicketMédioPorClienteToolStripMenuItem = new ToolStripMenuItem();
-            iconToolStripButtonCliFor = new IconToolStripButton();
-            iconToolStripButtonProduto = new IconToolStripButton();
-            iconToolStripButtonMovimentacao = new IconToolStripButton();
+            toolStripMenuItem2 = new ToolStripMenuItem();
             panel1 = new System.Windows.Forms.Panel();
             panel2 = new System.Windows.Forms.Panel();
-            iconToolStripButtonClassificacao = new IconToolStripButton();
             toolStrip1.SuspendLayout();
             panel1.SuspendLayout();
             SuspendLayout();
@@ -103,10 +104,22 @@
             iconToolStripButtonCliFor.IconFont = IconFont.Auto;
             iconToolStripButtonCliFor.IconSize = 64;
             iconToolStripButtonCliFor.Name = "iconToolStripButtonCliFor";
-            iconToolStripButtonCliFor.Size = new Size(145, 53);
+            iconToolStripButtonCliFor.Size = new Size(146, 53);
             iconToolStripButtonCliFor.Text = "Cliente/Fornecedor";
             iconToolStripButtonCliFor.TextImageRelation = TextImageRelation.ImageAboveText;
             iconToolStripButtonCliFor.Click += iconToolStripButtonCliFor_Click;
+            // 
+            // iconToolStripButtonClassificacao
+            // 
+            iconToolStripButtonClassificacao.IconChar = IconChar.Tags;
+            iconToolStripButtonClassificacao.IconColor = Color.DodgerBlue;
+            iconToolStripButtonClassificacao.IconFont = IconFont.Auto;
+            iconToolStripButtonClassificacao.IconSize = 64;
+            iconToolStripButtonClassificacao.Name = "iconToolStripButtonClassificacao";
+            iconToolStripButtonClassificacao.Size = new Size(101, 53);
+            iconToolStripButtonClassificacao.Text = "Classificação";
+            iconToolStripButtonClassificacao.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonClassificacao.Click += iconToolStripButtonClassificacao_Click;
             // 
             // iconToolStripButtonProduto
             // 
@@ -115,19 +128,31 @@
             iconToolStripButtonProduto.IconFont = IconFont.Auto;
             iconToolStripButtonProduto.IconSize = 64;
             iconToolStripButtonProduto.Name = "iconToolStripButtonProduto";
-            iconToolStripButtonProduto.Size = new Size(145, 53);
+            iconToolStripButtonProduto.Size = new Size(69, 53);
             iconToolStripButtonProduto.Text = "Produto";
             iconToolStripButtonProduto.TextImageRelation = TextImageRelation.ImageAboveText;
             iconToolStripButtonProduto.Click += iconToolStripButtonProduto_Click;
             // 
+            // iconToolStripButtonMovimentacao
+            // 
+            iconToolStripButtonMovimentacao.IconChar = IconChar.Archive;
+            iconToolStripButtonMovimentacao.IconColor = Color.DodgerBlue;
+            iconToolStripButtonMovimentacao.IconFont = IconFont.Auto;
+            iconToolStripButtonMovimentacao.IconSize = 64;
+            iconToolStripButtonMovimentacao.Name = "iconToolStripButtonMovimentacao";
+            iconToolStripButtonMovimentacao.Size = new Size(114, 53);
+            iconToolStripButtonMovimentacao.Text = "Movimentação";
+            iconToolStripButtonMovimentacao.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonMovimentacao.Click += iconToolStripButtonMovimentacao_Click;
+            // 
             // toolStripButtonRelatorio
             // 
-            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
+            toolStripButtonRelatorio.DropDownItems.AddRange(new ToolStripItem[] { toolStripMenuItem2, relatórioToolStripMenuItem, relatórioTicketMédioPorClienteToolStripMenuItem });
             toolStripButtonRelatorio.IconChar = IconChar.Newspaper;
             toolStripButtonRelatorio.IconColor = Color.DodgerBlue;
             toolStripButtonRelatorio.IconFont = IconFont.Auto;
             toolStripButtonRelatorio.Name = "toolStripButtonRelatorio";
-            toolStripButtonRelatorio.Size = new Size(89, 53);
+            toolStripButtonRelatorio.Size = new Size(93, 53);
             toolStripButtonRelatorio.Text = "Relatórios";
             toolStripButtonRelatorio.TextImageRelation = TextImageRelation.ImageAboveText;
             // 
@@ -144,6 +169,13 @@
             relatórioTicketMédioPorClienteToolStripMenuItem.Size = new Size(357, 26);
             relatórioTicketMédioPorClienteToolStripMenuItem.Text = "Ticket Médio por cliente";
             relatórioTicketMédioPorClienteToolStripMenuItem.Click += relatórioTicketMédioPorClienteToolStripMenuItem_Click;
+            // 
+            // toolStripMenuItem2
+            // 
+            toolStripMenuItem2.Name = "toolStripMenuItem2";
+            toolStripMenuItem2.Size = new Size(357, 26);
+            toolStripMenuItem2.Text = "Estoque geral de Produtos";
+            toolStripMenuItem2.Click += toolStripMenuItem2_Click;
             // 
             // panel1
             // 
@@ -164,40 +196,8 @@
             panel2.Size = new Size(1000, 679);
             panel2.TabIndex = 8;
             // 
-            // iconToolStripButtonClassificacao
-            // 
-            iconToolStripButtonClassificacao.IconChar = IconChar.Tags;
-            iconToolStripButtonClassificacao.IconColor = Color.DodgerBlue;
-            iconToolStripButtonClassificacao.IconFont = IconFont.Auto;
-            iconToolStripButtonClassificacao.IconSize = 64;
-            iconToolStripButtonClassificacao.Name = "iconToolStripButtonClassificacao";
-            iconToolStripButtonClassificacao.Size = new Size(101, 53);
-            iconToolStripButtonClassificacao.Text = "Classificação";
-            iconToolStripButtonClassificacao.TextImageRelation = TextImageRelation.ImageAboveText;
-            iconToolStripButtonClassificacao.Click += iconToolStripButtonClassificacao_Click;
-            // 
-            // iconToolStripButtonMovimentacao
-            // 
-            iconToolStripButtonMovimentacao.IconChar = IconChar.BoxArchive;
-            iconToolStripButtonMovimentacao.IconColor = Color.DodgerBlue;
-            iconToolStripButtonMovimentacao.IconFont = IconFont.Auto;
-            iconToolStripButtonMovimentacao.IconSize = 64;
-            iconToolStripButtonMovimentacao.Name = "iconToolStripButtonMovimentacao";
-            iconToolStripButtonMovimentacao.Size = new Size(101, 53);
-            iconToolStripButtonMovimentacao.Text = "Movimentação";
-            iconToolStripButtonMovimentacao.TextImageRelation = TextImageRelation.ImageAboveText;
-            iconToolStripButtonMovimentacao.Click += iconToolStripButtonMovimentacao_Click;
-            // 
-            // estoqueGeralDeProdutosToolStripMenuItem
-            // 
-            //estoqueGeralDeProdutosToolStripMenuItem.Name = "estoqueGeralDeProdutosToolStripMenuItem";
-            //estoqueGeralDeProdutosToolStripMenuItem.Size = new Size(357, 26);
-            //estoqueGeralDeProdutosToolStripMenuItem.Text = "Estoque geral de Produtos";
-            //estoqueGeralDeProdutosToolStripMenuItem.Click += estoqueGeralDeProdutosToolStripMenuItem_Click;
-            // 
             // MDIPrincipal
             // 
-            ShowInTaskbar = true;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.WhiteSmoke;
@@ -205,7 +205,6 @@
             Controls.Add(panel2);
             Controls.Add(panel1);
             Icon = Properties.Resources.iconZenCode;
-            ShowIcon = true;
             Margin = new Padding(3, 4, 3, 4);
             Name = "MDIPrincipal";
             Text = "ZenCode ERP";
@@ -235,5 +234,6 @@
         private ToolStripMenuItem relatórioToolStripMenuItem;
         private ToolStripMenuItem relatórioTicketMédioPorClienteToolStripMenuItem;
         private ToolStripMenuItem estoqueGeralDeProdutosToolStripMenuItem;
+        private ToolStripMenuItem toolStripMenuItem2;
     }
     }
