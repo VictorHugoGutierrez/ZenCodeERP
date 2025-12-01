@@ -35,6 +35,7 @@
             iBtnBaixarPDF = new FontAwesome.Sharp.IconToolStripButton();
             iconToolStripButton1 = new FontAwesome.Sharp.IconToolStripButton();
             dgvEstoqueClassificacao = new DataGridView();
+            panel1 = new Panel();
             toolStrip2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvEstoqueClassificacao).BeginInit();
             SuspendLayout();
@@ -95,13 +96,24 @@
             iconToolStripButton1.Text = "Fechar";
             iconToolStripButton1.Click += iconToolStripButton1_Click;
             // 
+            // panel1
+            // 
+            panel1.Controls.Add(dgvEstoqueClassificacao);
+            panel1.Dock = DockStyle.Fill;
+            panel1.Location = new Point(0, 37);
+            panel1.Margin = new Padding(4, 5, 4, 5);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(1202, 398);
+            panel1.TabIndex = 1;
+            // 
+            // 
             // dgvEstoqueClassificacao
             // 
+            dgvEstoqueClassificacao.Dock = DockStyle.Fill;
             dgvEstoqueClassificacao.AllowUserToAddRows = false;
             dgvEstoqueClassificacao.AllowUserToDeleteRows = false;
             dataGridViewCellStyle3.BackColor = Color.FromArgb(240, 240, 240);
             dgvEstoqueClassificacao.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle3;
-            dgvEstoqueClassificacao.Anchor = AnchorStyles.Bottom | AnchorStyles.Left | AnchorStyles.Right;
             dgvEstoqueClassificacao.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvEstoqueClassificacao.BackgroundColor = Color.WhiteSmoke;
             dgvEstoqueClassificacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -118,11 +130,12 @@
             // 
             // FormVisaoRelatorioEstoque
             // 
+            Dock = DockStyle.Fill;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1410, 569);
+            ClientSize = new Size(1202, 435);
+            Controls.Add(panel1);
             Controls.Add(toolStrip2);
-            Controls.Add(dgvEstoqueClassificacao);
             Name = "FormVisaoRelatorioEstoque";
             Text = "FormVisaoRelatorioEstoque";
             toolStrip2.ResumeLayout(false);
@@ -135,6 +148,7 @@
         #endregion
 
         private ToolStrip toolStrip2;
+        private System.Windows.Forms.Panel panel1;
         private FontAwesome.Sharp.IconToolStripButton iBtnGerarRelatorio;
         private FontAwesome.Sharp.IconToolStripButton iBtnBaixarCsv;
         private FontAwesome.Sharp.IconToolStripButton iBtnBaixarPDF;
