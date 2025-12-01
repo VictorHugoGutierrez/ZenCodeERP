@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Cadastro;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
@@ -9,9 +10,16 @@ namespace ZenCodeERP.Forms.Visao
     {
         private ProdutoRepository produtoRepository = new ProdutoRepository();
 
+        FormCadastroMovimentacaoItem lookup;
+
         public FormVisaoProduto()
         {
             InitializeComponent();
+        }
+        public FormVisaoProduto(FormCadastroMovimentacaoItem lookup)
+        {
+            InitializeComponent();
+            this.lookup = lookup;
         }
 
         private void FormVisaoProduto_Load(object sender, EventArgs e)
@@ -86,7 +94,21 @@ namespace ZenCodeERP.Forms.Visao
 
         private void gvProduto_DoubleClick(object sender, EventArgs e)
         {
-            iBtnEditar_Click(sender, e);
+            if (gvProduto.SelectedRows.Count > 0)
+            {
+                if(lookup == null)
+                {
+                    iBtnEditar_Click(sender, e);
+                }
+                else
+                {
+                    lookup.codProduto = ((DataRowView)gvProduto.SelectedRows[0].DataBoundItem).Row["Cód. Produto"].ToString();
+                    lookup.nomeProduto = ((DataRowView)gvProduto.SelectedRows[0].DataBoundItem).Row["Nome do Produto"].ToString();
+
+                    this.Dispose();
+                }
+            }
+
         }
     }
 }

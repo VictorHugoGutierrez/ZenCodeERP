@@ -21,6 +21,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Forms\Cadastro\FormCadastroMovimentacaoItem.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Cadastro\FormCadastroMovimentacao.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="Forms\Cadastro\FormCadastroProduto.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -37,6 +43,9 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Visao\FormVisaoClienteFornecedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Update="Forms\Visao\FormVisaoMovimentacao.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Update="Forms\Visao\FormVisaoProduto.cs">

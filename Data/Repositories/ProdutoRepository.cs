@@ -1,4 +1,5 @@
-﻿using System.Data;
+﻿using Org.BouncyCastle.X509;
+using System.Data;
 using MySql.Data.MySqlClient;
 using ZenCodeERP.Model;
 
@@ -8,7 +9,7 @@ namespace ZenCodeERP.Data.Repositories
     {
         public void Add(Produto produto)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO PRODUTO (CODEMPRESA, CODPRODUTO, TIPO, ATIVO, NOME, DESCRICAO, PRECOUNITARIO, CODCLASSIFICACAO) VALUES (?, ? ,? ,? ,? ,? ,? ,?)",
+            DataBaseConnection.Instance().ExecuteTransaction("INSERT INTO PRODUTO (CODEMPRESA, CODPRODUTO, TIPO, ATIVO, NOME, DESCRICAO, PRECOUNITARIO, CODCLASSIFICACAO, CUSTO, MARGEM) VALUES (?, ? ,? ,? ,? ,? ,? ,?, ?, ?)",
                 produto.CODEMPRESA,
                 produto.CODPRODUTO,
                 produto.TIPO,
@@ -16,18 +17,22 @@ namespace ZenCodeERP.Data.Repositories
                 produto.NOME,
                 produto.DESCRICAO,
                 produto.PRECOUNITARIO,
-                produto.CODCLASSIFICACAO);
+                produto.CODCLASSIFICACAO,
+                produto.CUSTO,
+                produto.MARGEM);
         }
 
         public void Update(Produto produto)
         {
-            DataBaseConnection.Instance().ExecuteTransaction("UPDATE PRODUTO SET TIPO = ?, ATIVO = ?, NOME = ?, DESCRICAO = ?, PRECOUNITARIO = ?, CODCLASSIFICACAO = ? WHERE CODEMPRESA = ? AND CODPRODUTO = ?",
+            DataBaseConnection.Instance().ExecuteTransaction("UPDATE PRODUTO SET TIPO = ?, ATIVO = ?, NOME = ?, DESCRICAO = ?, PRECOUNITARIO = ?, CODCLASSIFICACAO = ?, CUSTO = ?, MARGEM = ? WHERE CODEMPRESA = ? AND CODPRODUTO = ?",
                 produto.TIPO,
                 produto.ATIVO,
                 produto.NOME,
                 produto.DESCRICAO,
                 produto.PRECOUNITARIO,
                 produto.CODCLASSIFICACAO,
+                produto.CUSTO,
+                produto.MARGEM,
                 produto.CODEMPRESA,
                 produto.CODPRODUTO);
         }
@@ -75,7 +80,9 @@ namespace ZenCodeERP.Data.Repositories
                 NOME = row["NOME"].ToString(),
                 DESCRICAO = row["DESCRICAO"].ToString(),
                 PRECOUNITARIO = Convert.ToDecimal(row["PRECOUNITARIO"]),
-                CODCLASSIFICACAO = Convert.ToInt32(row["CODCLASSIFICACAO"])
+                CODCLASSIFICACAO = Convert.ToInt32(row["CODCLASSIFICACAO"]),
+                CUSTO = Convert.ToDecimal(row["CUSTO"]),
+                MARGEM = Convert.ToDecimal(row["MARGEM"])
             };
         }
 
@@ -94,7 +101,9 @@ namespace ZenCodeERP.Data.Repositories
                     NOME = row["NOME"].ToString(),
                     DESCRICAO = row["DESCRICAO"].ToString(),
                     PRECOUNITARIO = Convert.ToDecimal(row["PRECOUNITARIO"]),
-                    CODCLASSIFICACAO = Convert.ToInt32(row["CODCLASSIFICACAO"])
+                    CODCLASSIFICACAO = Convert.ToInt32(row["CODCLASSIFICACAO"]),
+                    CUSTO = Convert.ToDecimal(row["CUSTO"]),
+                    MARGEM = Convert.ToDecimal(row["MARGEM"])
                 });
             }
             return produtos;

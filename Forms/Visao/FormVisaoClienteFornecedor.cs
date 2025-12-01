@@ -1,6 +1,7 @@
 ﻿using System.Data;
 using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Cadastro;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
@@ -9,9 +10,17 @@ namespace ZenCodeERP.Forms.Visao
     {
         private ClienteFornecedorRepository ClienteFornecedorRepository = new ClienteFornecedorRepository();
 
+        FormCadastroMovimentacao lookup;
+
         public FormVisaoClienteFornecedor()
         {
             InitializeComponent();
+        }
+
+        public FormVisaoClienteFornecedor(FormCadastroMovimentacao lookup)
+        {
+            InitializeComponent();
+            this.lookup = lookup;
         }
 
         private void FormVisaoClienteFornecedor_Load(object sender, EventArgs e)
@@ -86,7 +95,17 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvClienteFornecedor.SelectedRows.Count > 0)
             {
-                iBtnEditar_Click(sender, e);
+                if(lookup == null)
+                {
+                    iBtnEditar_Click(sender, e);
+                }
+                else
+                {
+                    lookup.codCliFor = ((DataRowView)gvClienteFornecedor.SelectedRows[0].DataBoundItem).Row["Cliente/Fornecedor"].ToString();
+                    lookup.nomeCliFor = ((DataRowView)gvClienteFornecedor.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
+
+                    this.Dispose();
+                }
             }
         }
 

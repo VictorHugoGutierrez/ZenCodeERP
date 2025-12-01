@@ -38,6 +38,7 @@
             iconToolStripButtonUsuario = new IconToolStripButton();
             iconToolStripButtonCliFor = new IconToolStripButton();
             iconToolStripButtonProduto = new IconToolStripButton();
+            iconToolStripButtonMovimentacao = new IconToolStripButton();
             panel1 = new System.Windows.Forms.Panel();
             panel2 = new System.Windows.Forms.Panel();
             iconToolStripButtonClassificacao = new IconToolStripButton();
@@ -49,7 +50,7 @@
             // 
             toolStrip1.Font = new Font("Tahoma", 9.25F);
             toolStrip1.ImageScalingSize = new Size(30, 30);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { iconToolStripButtonEndereco, iconToolStripButtonEmpresa, iconToolStripButtonUsuario, iconToolStripButtonCliFor, iconToolStripButtonClassificacao, iconToolStripButtonProduto });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { iconToolStripButtonEndereco, iconToolStripButtonEmpresa, iconToolStripButtonUsuario, iconToolStripButtonCliFor, iconToolStripButtonClassificacao, iconToolStripButtonProduto, iconToolStripButtonMovimentacao });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1000, 56);
@@ -147,6 +148,18 @@
             iconToolStripButtonClassificacao.TextImageRelation = TextImageRelation.ImageAboveText;
             iconToolStripButtonClassificacao.Click += iconToolStripButtonClassificacao_Click;
             // 
+            // iconToolStripButtonMovimentacao
+            // 
+            iconToolStripButtonMovimentacao.IconChar = IconChar.BoxArchive;
+            iconToolStripButtonMovimentacao.IconColor = Color.DodgerBlue;
+            iconToolStripButtonMovimentacao.IconFont = IconFont.Auto;
+            iconToolStripButtonMovimentacao.IconSize = 64;
+            iconToolStripButtonMovimentacao.Name = "iconToolStripButtonMovimentacao";
+            iconToolStripButtonMovimentacao.Size = new Size(101, 53);
+            iconToolStripButtonMovimentacao.Text = "Movimentação";
+            iconToolStripButtonMovimentacao.TextImageRelation = TextImageRelation.ImageAboveText;
+            iconToolStripButtonMovimentacao.Click += iconToolStripButtonMovimentacao_Click;
+            // 
             // MDIPrincipal
             // 
             ShowInTaskbar = true;
@@ -182,5 +195,6 @@
         private IconToolStripButton iconToolStripButtonCliFor;
         private IconToolStripButton iconToolStripButtonClassificacao;
         private IconToolStripButton iconToolStripButtonProduto;
+        private IconToolStripButton iconToolStripButtonMovimentacao;
     }
     }

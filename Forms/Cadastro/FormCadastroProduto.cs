@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Org.BouncyCastle.Asn1.X509;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -55,7 +56,9 @@ namespace ZenCodeERP.Forms.Cadastro
             {
                 tbCodProduto.Text = produtoRepository.GetNextCodProduto(AppZenCodeContext.CodEmpresa).ToString();
                 tbCodEmpresa.Text = AppZenCodeContext.CodEmpresa.ToString();
+                tbCusto.Text = "R$ 0,00";
                 tbPrecoUnitario.Text = "R$ 0,00";
+                tbMargem.Text = "0,00%";
             }
         }
 
@@ -71,6 +74,8 @@ namespace ZenCodeERP.Forms.Cadastro
             rtbDescricao.Text = produto.DESCRICAO;
             tbCodClassificacao.Text = produto.CODCLASSIFICACAO.ToString();
             tbPrecoUnitario.Text = produto.PRECOUNITARIO.ToString();
+            tbCusto.Text = produto.CUSTO.ToString("C2");
+            tbMargem.Text = produto.MARGEM.ToString();
             tbCodClassificacao_Leave(null, null);
         }
 
@@ -80,6 +85,7 @@ namespace ZenCodeERP.Forms.Cadastro
             {
                 if (!DataBaseConnection.Instance().ExecuteHasRows($"SELECT * FROM PRODUTO WHERE CODEMPRESA = {AppZenCodeContext.CodEmpresa} AND CODPRODUTO = {codProduto}"))
                 {
+                    string margem = tbMargem.Text.Replace("%", "").Trim();
                     produtoRepository.Add(new Produto
                     {
                         CODEMPRESA = Convert.ToInt32(tbCodEmpresa.Text),
@@ -90,12 +96,15 @@ namespace ZenCodeERP.Forms.Cadastro
                         DESCRICAO = rtbDescricao.Text,
                         PRECOUNITARIO = decimal.Parse(tbPrecoUnitario.Text, NumberStyles.Currency),
                         CODCLASSIFICACAO = Convert.ToInt32(tbCodClassificacao.Text),
+                        CUSTO = decimal.Parse(tbCusto.Text, NumberStyles.Currency),
+                        MARGEM = decimal.Parse(margem, NumberStyles.Number)
                     });
 
                     codProduto = Convert.ToInt32(tbCodProduto.Text);
                 }
                 else
                 {
+                    string margem = tbMargem.Text.Replace("%", "").Trim();
                     produtoRepository.Update(new Produto
                     {
                         CODEMPRESA = Convert.ToInt32(tbCodEmpresa.Text),
@@ -106,6 +115,8 @@ namespace ZenCodeERP.Forms.Cadastro
                         DESCRICAO = rtbDescricao.Text,
                         PRECOUNITARIO = decimal.Parse(tbPrecoUnitario.Text, NumberStyles.Currency),
                         CODCLASSIFICACAO = Convert.ToInt32(tbCodClassificacao.Text),
+                        CUSTO = decimal.Parse(tbCusto.Text, NumberStyles.Currency),
+                        MARGEM = decimal.Parse(margem, NumberStyles.Number)
                     });
                 }
 
@@ -157,17 +168,31 @@ namespace ZenCodeERP.Forms.Cadastro
 
         private void tbPrecoUnitario_TextChanged(object sender, EventArgs e)
         {
-            string textoLimpo = System.Text.RegularExpressions.Regex.Replace(tbPrecoUnitario.Text, "[^0-9]", "");
+            tbPrecoUnitario.TextChanged -= tbPrecoUnitario_TextChanged;
 
-            if (string.IsNullOrEmpty(textoLimpo))
+            try
+            {
+                string textoLimpo = System.Text.RegularExpressions.Regex.Replace(tbPrecoUnitario.Text, "[^0-9]", "");
+
+                if (string.IsNullOrEmpty(textoLimpo))
+                {
+                    tbPrecoUnitario.Text = "R$ 0,00";
+                }
+                else
+                {
+                    decimal valor = Convert.ToDecimal(textoLimpo) / 100;
+                    tbPrecoUnitario.Text = valor.ToString("C2");
+
+                }
+                tbPrecoUnitario.SelectionStart = tbPrecoUnitario.Text.Length;
+            }
+            catch
             {
                 tbPrecoUnitario.Text = "R$ 0,00";
             }
-            else
+            finally
             {
-                decimal valor = Convert.ToDecimal(textoLimpo) / 100;
-
-                tbPrecoUnitario.Text = valor.ToString("C2");
+                tbPrecoUnitario.TextChanged += tbPrecoUnitario_TextChanged;
             }
         }
 
@@ -177,6 +202,112 @@ namespace ZenCodeERP.Forms.Cadastro
             {
                 e.Handled = true;
             }
+        }
+
+        private void tbCusto_TextChanged(object sender, EventArgs e)
+        {
+            tbCusto.TextChanged -= tbCusto_TextChanged;
+
+            try
+            {
+                string textoLimpo = System.Text.RegularExpressions.Regex.Replace(tbCusto.Text, "[^0-9]", "");
+
+                if (string.IsNullOrEmpty(textoLimpo))
+                {
+                    tbCusto.Text = "R$ 0,00";
+                }
+                else
+                {
+                    decimal valor = Convert.ToDecimal(textoLimpo) / 100;
+                    tbCusto.Text = valor.ToString("C2");
+
+                }
+                tbCusto.SelectionStart = tbCusto.Text.Length;
+            }
+            catch
+            {
+                tbCusto.Text = "R$ 0,00";
+            }
+            finally
+            {
+                tbCusto.TextChanged += tbCusto_TextChanged;
+            }
+        }
+
+        private void tbCusto_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void tbMargem_TextChanged(object sender, EventArgs e)
+        {
+            tbMargem.TextChanged -= tbMargem_TextChanged;
+
+            try
+            {
+                string textoLimpo = System.Text.RegularExpressions.Regex.Replace(tbMargem.Text, "[^0-9]", "");
+
+                if (string.IsNullOrEmpty(textoLimpo))
+                {
+                    tbMargem.Text = "0,00%";
+                }
+                else
+                {
+                    decimal valor = Convert.ToDecimal(textoLimpo) / 100;
+
+                    tbMargem.Text = valor.ToString("N2") + "%";
+                }
+
+                tbMargem.SelectionStart = tbMargem.Text.Length;
+            }
+            catch
+            {
+                tbMargem.Text = "0,00%";
+            }
+            finally
+            {
+                tbMargem.TextChanged += tbMargem_TextChanged;
+            }
+        }
+
+        private void tbMargem_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void CalcularPrecoVenda()
+        {
+            string custoLimpo = System.Text.RegularExpressions.Regex.Replace(tbCusto.Text, "[^0-9]", "");
+            string margemLimpa = System.Text.RegularExpressions.Regex.Replace(tbMargem.Text, "[^0-9]", "");
+
+            decimal custo = 0;
+            decimal margem = 0;
+
+            decimal.TryParse(custoLimpo, out custo);
+            decimal.TryParse(margemLimpa, out margem);
+
+            custo = custo / 100;
+            margem = margem / 100;
+
+            decimal precoFinal = custo + (custo * (margem / 100));
+
+            tbPrecoUnitario.Text = precoFinal.ToString("C2");
+        }
+
+        private void tbCusto_Leave(object sender, EventArgs e)
+        {
+            CalcularPrecoVenda();
+        }
+
+        private void tbMargem_Leave(object sender, EventArgs e)
+        {
+            CalcularPrecoVenda();
         }
     }
 }

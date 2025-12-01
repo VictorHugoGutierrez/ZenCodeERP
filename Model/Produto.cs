@@ -15,6 +15,8 @@ namespace ZenCodeERP.Model
         public string NOME { get; set; }
         public string DESCRICAO { get; set; }
         public decimal PRECOUNITARIO { get; set; }
+        public decimal CUSTO { get; set; }
+        public decimal MARGEM { get; set; }
         public int CODCLASSIFICACAO { get; set; }
     }
 }

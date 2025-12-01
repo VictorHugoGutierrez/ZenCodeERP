@@ -10,6 +10,8 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using ZenCodeERP.Data;
 using ZenCodeERP.Data.Repositories;
+using ZenCodeERP.Forms.Cadastro;
+using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
 
 namespace ZenCodeERP.Forms.Visao
@@ -18,9 +20,17 @@ namespace ZenCodeERP.Forms.Visao
     {
         private UsuarioRepository usuarioRepository = new UsuarioRepository();
 
+        private FormCadastroMovimentacao lookup;
+
         public FormVisaoUsuarios()
         {
             InitializeComponent();
+        }
+
+        public FormVisaoUsuarios(FormCadastroMovimentacao lookup)
+        {
+            InitializeComponent();
+            this.lookup = lookup;
         }
 
         private void FormVisaoUsuarios_Load(object sender, EventArgs e)
@@ -95,7 +105,17 @@ namespace ZenCodeERP.Forms.Visao
         {
             if (gvUsuarios.SelectedRows.Count > 0)
             {
-                iBtnEditar_Click(sender, e);
+                if(lookup == null)
+                {
+                    iBtnEditar_Click(sender, e);
+                }
+                else
+                {
+                    lookup.codUsuario = ((DataRowView)gvUsuarios.SelectedRows[0].DataBoundItem).Row["Cód. Usuário"].ToString();
+                    lookup.nomeUsuario = ((DataRowView)gvUsuarios.SelectedRows[0].DataBoundItem).Row["Nome"].ToString();
+
+                    this.Dispose();
+                }
             }
         }
 

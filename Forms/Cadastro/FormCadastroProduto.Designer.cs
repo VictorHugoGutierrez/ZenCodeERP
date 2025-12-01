@@ -32,9 +32,9 @@ namespace ZenCodeERP.Forms.Cadastro
         /// </summary>
         private void InitializeComponent()
         {
-            components = new System.ComponentModel.Container();
             tabControl1 = new TabControl();
             tabPage1 = new TabPage();
+            tbPrecoUnitario = new MaskedTextBox();
             lbPrecoUnitario = new Label();
             lbDescricao = new Label();
             rtbDescricao = new RichTextBox();
@@ -55,7 +55,10 @@ namespace ZenCodeERP.Forms.Cadastro
             btnOk = new Button();
             btnCancelar = new Button();
             btnSalvar = new Button();
-            tbPrecoUnitario = new MaskedTextBox();
+            tbCusto = new MaskedTextBox();
+            lbCusto = new Label();
+            tbMargem = new MaskedTextBox();
+            lbMargem = new Label();
             tabControl1.SuspendLayout();
             tabPage1.SuspendLayout();
             panelBottom.SuspendLayout();
@@ -74,6 +77,10 @@ namespace ZenCodeERP.Forms.Cadastro
             // 
             // tabPage1
             // 
+            tabPage1.Controls.Add(tbMargem);
+            tabPage1.Controls.Add(lbMargem);
+            tabPage1.Controls.Add(tbCusto);
+            tabPage1.Controls.Add(lbCusto);
             tabPage1.Controls.Add(tbPrecoUnitario);
             tabPage1.Controls.Add(lbPrecoUnitario);
             tabPage1.Controls.Add(lbDescricao);
@@ -100,10 +107,20 @@ namespace ZenCodeERP.Forms.Cadastro
             tabPage1.Text = "Identificação";
             tabPage1.UseVisualStyleBackColor = true;
             // 
+            // tbPrecoUnitario
+            // 
+            tbPrecoUnitario.Location = new Point(307, 156);
+            tbPrecoUnitario.Name = "tbPrecoUnitario";
+            tbPrecoUnitario.ReadOnly = true;
+            tbPrecoUnitario.Size = new Size(142, 23);
+            tbPrecoUnitario.TabIndex = 27;
+            tbPrecoUnitario.TextChanged += tbPrecoUnitario_TextChanged;
+            tbPrecoUnitario.KeyPress += tbPrecoUnitario_KeyPress;
+            // 
             // lbPrecoUnitario
             // 
             lbPrecoUnitario.AutoSize = true;
-            lbPrecoUnitario.Location = new Point(9, 138);
+            lbPrecoUnitario.Location = new Point(307, 138);
             lbPrecoUnitario.Name = "lbPrecoUnitario";
             lbPrecoUnitario.Size = new Size(82, 15);
             lbPrecoUnitario.TabIndex = 26;
@@ -294,14 +311,43 @@ namespace ZenCodeERP.Forms.Cadastro
             btnSalvar.Text = "Salvar";
             btnSalvar.Click += btnSalvar_Click;
             // 
-            // tbPrecoUnitario
+            // tbCusto
             // 
-            tbPrecoUnitario.Location = new Point(9, 156);
-            tbPrecoUnitario.Name = "tbPrecoUnitario";
-            tbPrecoUnitario.Size = new Size(142, 23);
-            tbPrecoUnitario.TabIndex = 27;
-            tbPrecoUnitario.TextChanged += new System.EventHandler(this.tbPrecoUnitario_TextChanged);
-            tbPrecoUnitario.KeyPress += new KeyPressEventHandler(this.tbPrecoUnitario_KeyPress);
+            tbCusto.Location = new Point(9, 156);
+            tbCusto.Name = "tbCusto";
+            tbCusto.Size = new Size(142, 23);
+            tbCusto.TabIndex = 29;
+            tbCusto.Leave += tbCusto_Leave;
+            tbCusto.TextChanged += tbCusto_TextChanged;
+            tbCusto.KeyPress += tbCusto_KeyPress;
+            // 
+            // lbCusto
+            // 
+            lbCusto.AutoSize = true;
+            lbCusto.Location = new Point(9, 138);
+            lbCusto.Name = "lbCusto";
+            lbCusto.Size = new Size(38, 15);
+            lbCusto.TabIndex = 28;
+            lbCusto.Text = "Custo";
+            // 
+            // tbMargem
+            // 
+            tbMargem.Location = new Point(159, 156);
+            tbMargem.Name = "tbMargem";
+            tbMargem.Size = new Size(142, 23);
+            tbMargem.TabIndex = 31;
+            tbMargem.Leave += tbMargem_Leave;
+            tbMargem.TextChanged += tbMargem_TextChanged;
+            tbMargem.KeyPress += tbMargem_KeyPress;
+            // 
+            // lbMargem
+            // 
+            lbMargem.AutoSize = true;
+            lbMargem.Location = new Point(155, 138);
+            lbMargem.Name = "lbMargem";
+            lbMargem.Size = new Size(52, 15);
+            lbMargem.TabIndex = 30;
+            lbMargem.Text = "Margem";
             // 
             // FormCadastroProduto
             // 
@@ -313,7 +359,7 @@ namespace ZenCodeERP.Forms.Cadastro
             Icon = Properties.Resources.iconZenCode;
             Name = "FormCadastroProduto";
             StartPosition = FormStartPosition.CenterScreen;
-            Text = "Cadastro de Cliente Fornecedor";
+            Text = "Cadastro de Produto";
             Load += FormCadastroProduto_Load;
             tabControl1.ResumeLayout(false);
             tabPage1.ResumeLayout(false);
@@ -348,5 +394,9 @@ namespace ZenCodeERP.Forms.Cadastro
         private CheckBox chkAtivo;
         private Label lbPrecoUnitario;
         private MaskedTextBox tbPrecoUnitario;
+        private MaskedTextBox tbMargem;
+        private Label lbMargem;
+        private MaskedTextBox tbCusto;
+        private Label lbCusto;
     }
 }
