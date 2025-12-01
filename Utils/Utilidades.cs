@@ -141,7 +141,6 @@ namespace ZenCodeERP.Utils
             string sAtual = deltaAtual.ToString().Replace(",", ".");
             string sSaldo = deltaSaldo.ToString().Replace(",", ".");
             string sReservada = deltaReservada.ToString().Replace(",", ".");
-
             if (dt.Rows.Count > 0)
             {
                 // UPDATE

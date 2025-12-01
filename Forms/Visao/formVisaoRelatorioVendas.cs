@@ -111,7 +111,7 @@ namespace ZenCodeERP.Forms.Visao
                                 ON E.CODEMPRESA = M.CODEMPRESA 
                             WHERE  
                                 M.DATA BETWEEN ? AND ? 
-                                AND M.TIPOMOVIMENTO = 'VENDA' 
+                                AND M.TIPOMOVIMENTO = 'Saída' 
                             GROUP BY  
                                 E.CODEMPRESA, 
                                 E.NOMEFANTASIA, 

@@ -29,12 +29,12 @@ namespace ZenCodeERP.Forms.Visao
                 string coluna = "CODEMPRESA, CODMOVIMENTACAO, STATUS, VALORTOTAL, CODUSUARIO, CODCLIFOR, TIPOMOVIMENTO, DATA, OBSERVACAO";
                 string tabela = "MOVIMENTACAO";
                 string relacionamento = @"";
-                
+
                 string where = "CODEMPRESA = " + AppZenCodeContext.CodEmpresa;
 
                 utilidades.GetVisao(gvMovimentacao, coluna, tabela, relacionamento, where);
             }
-            catch(Exception ex)
+            catch (Exception ex)
             {
                 MessageBox.Show(ex.Message, "Mensagem", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
@@ -79,7 +79,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnFechar_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            if (MessageBox.Show("Deseja realmente fechar?", "Mensagem.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 this.Dispose();
             else
                 return;
@@ -92,7 +92,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnFaturar_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 if (gvMovimentacao.SelectedRows.Count > 0)
                 {
@@ -133,6 +133,15 @@ namespace ZenCodeERP.Forms.Visao
 
                     if (tipoMovimento == "SAÍDA")
                     {
+                        string sqlValidaEstoque = $"SELECT * FROM CONTROLEESTOQUE WHERE CODEMPRESA = {codEmpresa} AND CODPRODUTO = {codProduto}";
+                        DataTable dtValidaEstoque = DataBaseConnection.Instance().ExecuteQuery(sqlValidaEstoque);
+                        DataRow dtrValidaEstoque = dtValidaEstoque.Rows[0];
+
+                        int qtdSaldo = Convert.ToInt32(dtrValidaEstoque["QUANTIDADESALDO"]);
+                        int qtdReserva = Convert.ToInt32(dtrValidaEstoque["QUANTIDADERESERVADA"]);
+
+                        if ((qtdSaldo - qtdReserva) < 0) throw new Exception("Quantidade Reservada é maior que a atual. Será necessário repor o estoque antes de efetuar esse faturamento.");
+
                         utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, -qtd, 0, -qtd);
                     }
                     else if (tipoMovimento == "ENTRADA")
@@ -156,7 +165,7 @@ namespace ZenCodeERP.Forms.Visao
 
         private void iBtnCancelar_Click(object sender, EventArgs e)
         {
-            try 
+            try
             {
                 if (gvMovimentacao.SelectedRows.Count > 0)
                 {
@@ -196,11 +205,11 @@ namespace ZenCodeERP.Forms.Visao
 
                     if (tipoMovimento == "SAÍDA")
                     {
-                        if(statusAtual == 0)
+                        if (statusAtual == 0)
                         {
                             utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, 0, qtd, -qtd);
                         }
-                        else if(statusAtual == 1)
+                        else if (statusAtual == 1)
                         {
                             utilidades.AtualizarOuCriarEstoque(codEmpresa, codProduto, qtd, qtd, 0);
                         }
@@ -227,6 +236,11 @@ namespace ZenCodeERP.Forms.Visao
         private void iBtnAtualizar_Click(object sender, EventArgs e)
         {
             CarregaGrid();
+        }
+
+        private void iBtnProcessos_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

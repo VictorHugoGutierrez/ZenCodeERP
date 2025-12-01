@@ -55,7 +55,7 @@ namespace ZenCodeERP.Forms.Visao
             toolStrip1.Items.AddRange(new ToolStripItem[] { iBtnNovo, iBtnEditar, iBtnExcluir, iBtnAtualizar, iBtnFechar, iBtnProcessos });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
-            toolStrip1.Size = new Size(1486, 37);
+            toolStrip1.Size = new Size(1172, 37);
             toolStrip1.TabIndex = 0;
             toolStrip1.Text = "toolStrip1";
             // 
@@ -66,7 +66,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnNovo.IconFont = IconFont.Auto;
             iBtnNovo.IconSize = 32;
             iBtnNovo.Name = "iBtnNovo";
-            iBtnNovo.Size = new Size(66, 34);
+            iBtnNovo.Size = new Size(75, 34);
             iBtnNovo.Text = "Novo";
             iBtnNovo.Click += iBtnNovo_Click;
             // 
@@ -77,7 +77,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnEditar.IconFont = IconFont.Auto;
             iBtnEditar.IconSize = 32;
             iBtnEditar.Name = "iBtnEditar";
-            iBtnEditar.Size = new Size(69, 34);
+            iBtnEditar.Size = new Size(77, 34);
             iBtnEditar.Text = "Editar";
             iBtnEditar.Click += iBtnEditar_Click;
             // 
@@ -88,7 +88,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnExcluir.IconFont = IconFont.Auto;
             iBtnExcluir.IconSize = 32;
             iBtnExcluir.Name = "iBtnExcluir";
-            iBtnExcluir.Size = new Size(72, 34);
+            iBtnExcluir.Size = new Size(82, 34);
             iBtnExcluir.Text = "Excluir";
             iBtnExcluir.Click += iBtnExcluir_Click;
             // 
@@ -110,7 +110,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnFechar.IconFont = IconFont.Auto;
             iBtnFechar.IconSize = 32;
             iBtnFechar.Name = "iBtnFechar";
-            iBtnFechar.Size = new Size(74, 34);
+            iBtnFechar.Size = new Size(83, 34);
             iBtnFechar.Text = "Fechar";
             iBtnFechar.Click += iBtnFechar_Click;
             // 
@@ -122,8 +122,9 @@ namespace ZenCodeERP.Forms.Visao
             iBtnProcessos.IconFont = IconFont.Auto;
             iBtnProcessos.IconSize = 32;
             iBtnProcessos.Name = "iBtnProcessos";
-            iBtnProcessos.Size = new Size(98, 34);
+            iBtnProcessos.Size = new Size(113, 34);
             iBtnProcessos.Text = "Processos";
+            iBtnProcessos.Click += iBtnProcessos_Click;
             // 
             // iBtnFaturar
             // 
@@ -132,7 +133,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnFaturar.IconFont = IconFont.Auto;
             iBtnFaturar.IconSize = 24;
             iBtnFaturar.Name = "iBtnFaturar";
-            iBtnFaturar.Size = new Size(77, 34);
+            iBtnFaturar.Size = new Size(86, 34);
             iBtnFaturar.Text = "Faturar";
             iBtnFaturar.Click += iBtnFaturar_Click;
             // 
@@ -143,7 +144,7 @@ namespace ZenCodeERP.Forms.Visao
             iBtnCancelar.IconFont = IconFont.Auto;
             iBtnCancelar.IconSize = 24;
             iBtnCancelar.Name = "iBtnCancelar";
-            iBtnCancelar.Size = new Size(83, 34);
+            iBtnCancelar.Size = new Size(94, 34);
             iBtnCancelar.Text = "Cancelar";
             iBtnCancelar.Click += iBtnCancelar_Click;
             // 
@@ -152,9 +153,9 @@ namespace ZenCodeERP.Forms.Visao
             panel1.Controls.Add(gvMovimentacao);
             panel1.Dock = DockStyle.Fill;
             panel1.Location = new Point(0, 37);
-            panel1.Margin = new Padding(4, 3, 4, 3);
+            panel1.Margin = new Padding(5, 4, 5, 4);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1486, 720);
+            panel1.Size = new Size(1172, 658);
             panel1.TabIndex = 1;
             // 
             // gvMovimentacao
@@ -168,25 +169,25 @@ namespace ZenCodeERP.Forms.Visao
             gvMovimentacao.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             gvMovimentacao.Dock = DockStyle.Fill;
             gvMovimentacao.Location = new Point(0, 0);
-            gvMovimentacao.Margin = new Padding(4, 3, 4, 3);
+            gvMovimentacao.Margin = new Padding(5, 4, 5, 4);
             gvMovimentacao.Name = "gvMovimentacao";
             gvMovimentacao.ReadOnly = true;
             gvMovimentacao.RowHeadersVisible = false;
+            gvMovimentacao.RowHeadersWidth = 51;
             gvMovimentacao.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            gvMovimentacao.Size = new Size(1486, 720);
+            gvMovimentacao.Size = new Size(1172, 658);
             gvMovimentacao.TabIndex = 0;
             gvMovimentacao.DoubleClick += gvMovimentacao_DoubleClick;
             // 
             // FormVisaoMovimentacao
             // 
-            Dock = DockStyle.Fill;
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1486, 757);
+            ClientSize = new Size(1172, 695);
             Controls.Add(panel1);
             Controls.Add(toolStrip1);
             Icon = Properties.Resources.iconZenCode;
-            Margin = new Padding(4, 3, 4, 3);
+            Margin = new Padding(5, 4, 5, 4);
             Name = "FormVisaoMovimentacao";
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Visão Movimentação";
