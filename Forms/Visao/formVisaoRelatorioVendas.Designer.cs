@@ -169,6 +169,7 @@ namespace ZenCodeERP.Forms.Visao
             // 
             // formVisaoRelatorioVendas
             // 
+            Dock = DockStyle.Fill;
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1378, 472);

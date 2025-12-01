@@ -14,6 +14,7 @@ using ZenCodeERP.Data.Repositories;
 using ZenCodeERP.Forms.Visao;
 using ZenCodeERP.Model;
 using ZenCodeERP.Utils;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace ZenCodeERP.Forms.Cadastro
 {
@@ -298,6 +299,16 @@ namespace ZenCodeERP.Forms.Cadastro
                     int index = gvMovimentacaoItem.SelectedRows[i].Index;
                     DataRow row1 = ((DataRowView)gvMovimentacaoItem.Rows[index].DataBoundItem).Row;
 
+                    int codProduto = Convert.ToInt32(row1["Cód. Produto"]);
+                    decimal qtd = Convert.ToDecimal(row1["Quantidade"]);
+
+                    if (cbStatus.SelectedIndex == 0)
+                    {
+                        if (cbTipoMovimento.Text.ToUpper() == "SAÍDA")
+                        {
+                            EstornarItemEstoque(AppZenCodeContext.CodEmpresa, codProduto, qtd);
+                        }
+                    }
                     movimentacaoItemRepository.Delete(AppZenCodeContext.CodEmpresa, Convert.ToInt32(row1["Cód. Movimentação"]), Convert.ToInt32(row1["Cód. Item Movimentação"]));
                 }
 
@@ -317,34 +328,25 @@ namespace ZenCodeERP.Forms.Cadastro
             AtualizaValorTotal();
         }
 
-        private void AtualizaEstoque()
-        {
-            if(cbStatus.SelectedIndex == 0)
-            {
-                if (cbTipoMovimento.Text.ToUpper() == "SAÍDA")
-                {
-                    string sqlItens = $"SELECT CODPRODUTO, SUM(QUANTIDADE) AS QUANTIDADE FROM MOVIMENTACAOITEM WHERE CODEMPRESA = {AppZenCodeContext.CodEmpresa} AND CODMOVIMENTACAO = {codMovimentacao} GROUP BY CODPRODUTO";
-                    DataTable dtItens = DataBaseConnection.Instance().ExecuteQuery(sqlItens);
-
-                    foreach (DataRow item in dtItens.Rows)
-                    {
-                        int codProduto = Convert.ToInt32(item["CODPRODUTO"]);
-                        decimal qtd = Convert.ToDecimal(item["QUANTIDADE"]);
-                        utilidades.AtualizarOuCriarEstoque(AppZenCodeContext.CodEmpresa, codProduto, 0, -qtd, qtd);
-                    }
-                }
-            }
-        }
-
         private void AtualizaValorTotal()
         {
             if (gvMovimentacaoItem.RowCount > 0)
             {
-                AtualizaEstoque();
                 decimal valorTotal = Convert.ToDecimal(DataBaseConnection.Instance().ExecuteGetField("SELECT SUM(VALORTOTAL) FROM MOVIMENTACAOITEM WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ?", AppZenCodeContext.CodEmpresa, tbCodMovimentacao.Text));
                 DataBaseConnection.Instance().ExecuteTransaction("UPDATE MOVIMENTACAO SET VALORTOTAL = ? WHERE CODEMPRESA = ? AND CODMOVIMENTACAO = ?", valorTotal, AppZenCodeContext.CodEmpresa, tbCodMovimentacao.Text);
                 tbValorTotal.Text = valorTotal.ToString("C2");
             }
+        }
+
+        public void EstornarItemEstoque(int codEmpresa, int codProduto, decimal qtdItem)
+        {
+            utilidades.AtualizarOuCriarEstoque(
+                codEmpresa,
+                codProduto,
+                qtdItem,
+                0,
+                -qtdItem
+            );
         }
 
         #endregion

@@ -24,6 +24,7 @@ namespace ZenCodeERP.Forms.Cadastro
         public int codMovimentacaoItem;
         public string TipoMovimento;
         public bool edita = false;
+        private Utilidades utilidades = new Utilidades();
 
         public int status;
 
@@ -91,9 +92,12 @@ namespace ZenCodeERP.Forms.Cadastro
                     });
 
                     codMovimentacaoItem = Convert.ToInt32(tbCodMovimentacaoItem.Text);
+                    AtualizaEstoque();
                 }
                 else
                 {
+                    EstornarMovimentacao();
+
                     movimentacaoItemRepository.Update(new MovimentacaoItem
                     {
                         CODEMPRESA = Convert.ToInt32(tbCodEmpresa.Text),
@@ -105,6 +109,8 @@ namespace ZenCodeERP.Forms.Cadastro
                         VALORTOTAL = decimal.Parse(tbValorTotal.Text, NumberStyles.Currency),
                         CUSTOUNITARIO = decimal.Parse(tbCustoUnitario.Text, NumberStyles.Currency)
                     });
+
+                    AtualizaEstoque();
                 }
 
                 return true;
@@ -114,7 +120,6 @@ namespace ZenCodeERP.Forms.Cadastro
                 MessageBox.Show($"Erro ao salvar: {ex.Message}", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return false;
             }
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -256,6 +261,36 @@ namespace ZenCodeERP.Forms.Cadastro
             if (!char.IsDigit(e.KeyChar) && e.KeyChar != (char)8)
             {
                 e.Handled = true;
+            }
+        }
+
+        private void EstornarMovimentacao()
+        {
+            if (status == 0)
+            {
+                if (TipoMovimento.ToUpper() == "SAÍDA")
+                {
+                    utilidades.EstornarMovimentacao(AppZenCodeContext.CodEmpresa, codMovimentacao);
+                }
+            }
+        }
+
+        private void AtualizaEstoque()
+        {
+            if (status == 0)
+            {
+                if (TipoMovimento.ToUpper() == "SAÍDA")
+                {
+                    string sqlItens = $"SELECT CODPRODUTO, SUM(QUANTIDADE) AS QUANTIDADE FROM MOVIMENTACAOITEM WHERE CODEMPRESA = {AppZenCodeContext.CodEmpresa} AND CODMOVIMENTACAO = {codMovimentacao} GROUP BY CODPRODUTO";
+                    DataTable dtItens = DataBaseConnection.Instance().ExecuteQuery(sqlItens);
+
+                    foreach (DataRow item in dtItens.Rows)
+                    {
+                        int codProduto = Convert.ToInt32(item["CODPRODUTO"]);
+                        decimal qtd = Convert.ToDecimal(item["QUANTIDADE"]);
+                        utilidades.AtualizarOuCriarEstoque(AppZenCodeContext.CodEmpresa, codProduto, 0, -qtd, qtd);
+                    }
+                }
             }
         }
     }

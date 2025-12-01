@@ -163,5 +163,25 @@ namespace ZenCodeERP.Utils
                 DataBaseConnection.Instance().ExecuteTransaction(sqlInsert);
             }
         }
+
+        public void EstornarMovimentacao(int codEmpresa, int codMovimentacao)
+        {
+            string sqlEstorno = $@"
+                SELECT CODPRODUTO, SUM(QUANTIDADE) AS QUANTIDADE 
+                FROM MOVIMENTACAOITEM 
+                WHERE CODEMPRESA = {codEmpresa} AND CODMOVIMENTACAO = {codMovimentacao} 
+                GROUP BY CODPRODUTO;
+            ";
+
+            DataTable dtEstorno = DataBaseConnection.Instance().ExecuteQuery(sqlEstorno);
+
+            foreach (DataRow item in dtEstorno.Rows)
+            {
+                int codProduto = Convert.ToInt32(item["CODPRODUTO"]);
+                decimal qtdEstornada = Convert.ToDecimal(item["QUANTIDADE"]);
+
+                AtualizarOuCriarEstoque(codEmpresa, codProduto, 0, qtdEstornada,-qtdEstornada);
+            }
+        }
     }
 }
