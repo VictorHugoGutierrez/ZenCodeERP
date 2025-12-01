@@ -137,7 +137,7 @@ namespace ZenCodeERP.Forms.Visao
                         DataTable dtValidaEstoque = DataBaseConnection.Instance().ExecuteQuery(sqlValidaEstoque);
                         DataRow dtrValidaEstoque = dtValidaEstoque.Rows[0];
 
-                        int qtdSaldo = Convert.ToInt32(dtrValidaEstoque["QUANTIDADESALDO"]);
+                        int qtdSaldo = Convert.ToInt32(dtrValidaEstoque["QUANTIDADEATUAL"]);
                         int qtdReserva = Convert.ToInt32(dtrValidaEstoque["QUANTIDADERESERVADA"]);
 
                         if ((qtdSaldo - qtdReserva) < 0) throw new Exception("Quantidade Reservada é maior que a atual. Será necessário repor o estoque antes de efetuar esse faturamento.");

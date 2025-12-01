@@ -164,10 +164,5 @@ namespace ZenCodeERP.Forms
             this.panel2.Controls.Add(form);
             form.Show();
         }
-
-        private void toolStripButtonRelatorio_Click(object sender, EventArgs e)
-        {
-
-        }
     }
 }

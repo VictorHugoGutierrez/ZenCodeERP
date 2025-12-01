@@ -50,7 +50,8 @@ namespace ZenCodeERP.Data.Repositories
                 CODPRODUTO = Convert.ToInt32(row["CODPRODUTO"]),
                 QUANTIDADE = Convert.ToDecimal(row["QUANTIDADE"]),
                 VALORUNITARIO = Convert.ToDecimal(row["VALORUNITARIO"]),
-                VALORTOTAL = Convert.ToDecimal(row["VALORTOTAL"])
+                VALORTOTAL = Convert.ToDecimal(row["VALORTOTAL"]),
+                CUSTOUNITARIO = Convert.ToDecimal(row["CUSTOUNITARIO"])
             };
         }
 
